@@ -1,6 +1,5 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)  
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)  
-[![codecov](https://codecov.io/gh/mgrofsky/AegisShield/branch/main/graph/badge.svg?token=FDBPY65ZYP)](https://codecov.io/gh/mgrofsky/AegisShield)
 [![codecov](https://codecov.io/gh/mgrofsky/AegisShield/graph/badge.svg?token=W91TRNEP92)](https://codecov.io/gh/mgrofsky/AegisShield)
 
 ### Coverage Overview
