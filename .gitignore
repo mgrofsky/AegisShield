@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+.DS_Store
+aegisshield.pxd
+local_config.py
+.vscode
+.venv
+.streamlit
+output.txt
+test.py
+aegisshield/
+get-pip.py
+error_log.txt
+old_batch_outputs
+aegisshield_errors.log
+logs/error.log

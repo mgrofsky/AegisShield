@@ -1,0 +1,10 @@
+openai
+streamlit
+OTXv2
+nvdlib
+setuptools
+markdown2
+xhtml2pdf
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.12.0

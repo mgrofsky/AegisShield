@@ -1,0 +1,18 @@
+[run]
+source = .
+omit = 
+    main-batch.py
+    api_key_handler_local.py 
+    local_config_bak.py
+    tests/*
+    */tests/*
+    */dist-packages/*
+    */lib32/python*/*/dist-packages/*
+    */include/python*/*/dist-packages/*
+    */local/lib/python*/*/dist-packages/*
+    */local/lib64/python*/*/dist-packages/*
+    */local/lib32/python*/*/dist-packages/*
+    */local/include/python*/*/dist-packages/*
+    */lib/python*/*/site-packages/*
+    main-batch.py 
+    */lib/python*/*/site-packages/* 

@@ -1,0 +1,17 @@
+{
+    "app_input": "The system being threat-modeled is a Visual Sensor Network (VSN), which is a specialized type of sensor network designed for capturing, processing, and transmitting visual data, such as images or videos, across a distributed network of camera nodes...",
+    "app_type": "IoT Application",
+    "industry_sector": "Information Technology",
+    "sensitive_data": "High",
+    "internet_facing": "Yes",
+    "num_employees": "Unknown",
+    "compliance_requirements": [],
+    "technical_ability": "Low",
+    "authentication": [],
+    "selected_technologies": {
+        "Linux": "cpe:2.3:o:linux:linux_kernel"
+    },
+    "selected_versions": {
+        "Linux": "*"
+    }
+}

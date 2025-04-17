@@ -1,0 +1,13 @@
+{
+    "app_input": "The system under threat modeling involves social media networks, specifically Facebook, Twitter, and LinkedIn. These platforms allow users to create profiles, connect with others, share content, and communicate across a global network.\n\n**Key components of the system include:**\n\n- **User Profiles:** Users create and manage their profiles, which contain personal information, activity logs, and privacy settings.\n\n- **Content Sharing and Messaging:** Users can post updates, share photos, videos, and other content, and engage in direct messaging with other users. This content is managed by the platform's backend systems.\n\n- **Backend Servers:** These servers handle the processing of user data, content management, and real-time communication across the platform. They manage data storage, retrieval, and processing, ensuring the continuous operation of the social media network.\n\n- **Third-Party Integrations:** Users can link their accounts to third-party applications, which may introduce additional security risks. These integrations often require data sharing between the social media platform and external services.\n\n- **Security and Privacy Controls:** The platforms provide tools for users to manage their privacy settings, control who can see their content, and secure their accounts. However, the effectiveness of these controls can vary.\n\nThis system represents a typical setup of social media networks where data flows between user devices, backend servers, and third-party integrations. These platforms are internet-facing and handle a significant amount of sensitive user data, including personal information and communication details, making security a critical concern.",
+    "app_type": "Web Application",
+    "industry_sector": "Information Technology",
+    "sensitive_data": "High",
+    "internet_facing": "Yes",
+    "num_employees": "Unknown",
+    "compliance_requirements": ["COPPA", "CCPA"],
+    "technical_ability": "Low",
+    "authentication": [],
+    "selected_technologies": {},
+    "selected_versions": {}
+}
