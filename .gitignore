@@ -16,3 +16,4 @@ aegisshield_errors.log
 logs/error.log
 .ruff_cache/
 .pytest_cache/
+.pre-commit-config.yaml

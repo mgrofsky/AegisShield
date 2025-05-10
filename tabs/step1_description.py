@@ -26,7 +26,6 @@ Session State Variables:
     - image_analysis_content: The AI analysis of the uploaded image
     - last_analyzed_file: Name of the last analyzed image file
 """
-
 import base64
 import logging
 from typing import Any
