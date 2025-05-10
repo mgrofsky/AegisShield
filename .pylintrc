@@ -1,5 +1,0 @@
-[MASTER]
-ignore=tests  # Example: Ignore this directory if necessary
-
-[MESSAGES CONTROL]
-disable=R0801  # Disable duplicate-code warnings
