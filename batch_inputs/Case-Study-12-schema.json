@@ -1,0 +1,23 @@
+{
+    "app_input": "The system being threat modeled is the Open Energy Monitor (OEM) system, an open-source platform for home automation and energy monitoring. The OEM system is designed to monitor and control various home appliances and energy usage, with a particular focus on the MQTT protocol for communication between IoT devices.\n\nKey components of the system include:\n\n- **emonPi and emonBase**: These are base stations that collect data from other devices in the system. They act as central hubs for data collection, processing, and storage within the OEM system.\n\n- **EmonTh and emonTx**: These modules are responsible for measuring environmental conditions such as temperature and humidity, as well as monitoring power consumption and production within the home.\n\n- **WiFi MQTT Relay**: A general-purpose relay controlled remotely via the MQTT protocol, used to manage various devices within the home automation system.\n\n- **MQTT Broker and Clients**: The MQTT protocol facilitates communication between devices. The MQTT broker manages message distribution among clients, and the system relies heavily on this protocol for device communication.\n\n- **EmonCMS Web Application**: A web-based interface that allows users to visualize the data collected by the OEM system. It provides insights into energy usage, environmental conditions, and system performance, enabling users to monitor and control their home automation setup.",
+    "app_type": "IoT Application",
+    "industry_sector": "Energy",
+    "sensitive_data": "High",
+    "internet_facing": "Yes",
+    "num_employees": "Unknown",
+    "compliance_requirements": ["ISO/IEC 30141"],
+    "technical_ability": "Low",
+    "authentication": [],
+    "selected_technologies": {
+        "MySQL": "cpe:2.3:a:mysql:mysql:",
+        "Raspberry Pi OS (Raspbian)": "cpe:2.3:o:raspberrypi:raspbian:",
+        "PHP": "cpe:2.3:a:php:php:",
+        "Python": "cpe:2.3:a:python:python:"
+    },
+    "selected_versions": {
+        "MySQL": "*",
+        "Raspberry Pi OS (Raspbian)": "*",
+        "PHP": "*",
+        "Python": "*"
+    }
+}

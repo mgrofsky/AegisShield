@@ -1,0 +1,30 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "C4"]
+ignore = ["E501", "B007"]
+exclude = [
+    "aegisshield_errors.log",
+    "output.txt",
+    "test.py",
+    "__pycache__",
+    ".pytest_cache",
+    ".streamlit",
+    ".vscode",
+    "logs",
+    "batch_outputs",
+    "old_batch_outputs",
+    "batch_inputs",
+    "case_studies",
+    "MITRE_ATTACK_DATA",
+    "tests/__pycache__",
+    "tests/*",
+    "api_key_handler_local.py"
+]
+
+
+
+[tool.ruff.lint.isort]
+known-first-party = ["tabs"]

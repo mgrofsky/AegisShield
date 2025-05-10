@@ -1,0 +1,13 @@
+{
+    "app_input": "The system being threat-modeled is a smart manufacturing system that integrates Cyber-Physical Systems (CPS) with the Internet of Things (IoT) and utilizes cloud computing services. The architecture includes:\n\n- **Control Center:** The central hub where control commands are issued through a Wide Area Network (WAN) to Remote Terminal Units (RTUs). The Control Center includes a Human-Machine Interface (HMI) for monitoring plant operations, and a Manufacturing Execution System (MES) that interfaces with Enterprise Resource Planning (ERP) systems and manages production workflows. The MES relies on a database for storing sensitive operational data.\n\n- **Remote SCADA System:** Each RTU in the SCADA system is responsible for collecting data and status information from field devices, processing this data, and sending it to the gateway. It also receives control commands from the Control Center and delivers them to the relevant field devices.\n\n- **Field Devices:** These include sensors, actuators, and Programmable Logic Controllers (PLCs) that monitor and control industrial processes. The PLCs are crucial for executing control logic and communicating data back to the RTUs. These devices are often reconfigurable and can be accessed via direct connections or LAN.\n\n- **Gateway:** The gateway is responsible for transferring data between the SCADA system and cloud services. It applies encryption and decryption processes to secure the data before transmitting it to the cloud. The gateway also handles communication between the system's field devices and cloud services.\n\n- **Cloud Services:** The cloud services manage data storage, processing, and analytics. This includes brokers for organizing data streams, HTTP servers for user interaction and reporting, and cloud storage for long-term data retention. The system uses protocols like MQTT for data communication and provides functionalities such as event management and real-time data processing.\n\nThe system operates within a smart manufacturing environment, where advanced technologies are leveraged to monitor, control, and optimize industrial operations. The integration of CPS, IoT, and cloud computing allows for real-time data analytics, remote monitoring, and the automation of various industrial processes, making it a critical infrastructure in the manufacturing industry.",
+    "app_type": "Industrial Internet of Things (IIoT)",
+    "industry_sector": "Manufacturing",
+    "sensitive_data": "High",
+    "internet_facing": "Yes",
+    "num_employees": "Unknown",
+    "compliance_requirements": ["IEC 62443"],
+    "technical_ability": "Low",
+    "authentication": [],
+    "selected_technologies": {},
+    "selected_versions": {}
+}

@@ -1,0 +1,19 @@
+{
+    "app_input": "The system under threat modeling is a Distributed Control System (DCS) within an oil refinery. The DCS is a critical component of the refinery's operational technology (OT) and is responsible for centrally collecting information from multiple sensors, analyzing this data, and sending necessary commands to actuators to adjust the values. The system's primary objective is to maintain an optimal operating environment within the refinery.\n\n**Key components of the system include:**\n\n- **DCS Controller:** Centralizes process control functions and communicates with sensors and actuators to manage the refinery's operations.\n\n- **DCS Servers:** Provide screen values and user profile information to operator and engineering workstations (OWS and EWS).\n\n- **Engineering Workstation (EWS):** Used by engineers to manage controller settings and configurations within the DCS.\n\n- **Operator Workstation (OWS):** Used by operators to monitor and adjust process set-point values.\n\n- **Active Directory (AD):** Provides centralized user account management and authentication within the DCS environment.\n\n- **GPS Server:** Provides time synchronization within the DCS network.\n\n- **Historian:** Stores process and operational data for trend analysis, which is crucial for monitoring and improving refinery operations.\n\n- **Safety Instrumented System (SIS):** Although not the primary focus of this threat model, the SIS works in conjunction with the DCS to ensure fail-safe operation against dangerous conditions.\n\nThe system operates in an isolated network, interacting with various components within a production process. However, due to the increased connectivity with corporate networks and the internet, the system is exposed to cybersecurity risks. The DCS is designed to prioritize the CIA triad—Confidentiality, Integrity, and Availability—with a particular emphasis on maintaining availability to ensure continuous operations in the refinery environment.",
+    "app_type": "ICS or SCADA System",
+    "industry_sector": "Energy",
+    "sensitive_data": "High",
+    "internet_facing": "Yes",
+    "num_employees": "Unknown",
+    "compliance_requirements": ["IEC 62443"],
+    "technical_ability": "Low",
+    "authentication": ["Active Directory (AD)"],
+    "selected_technologies": {
+        "Windows": "cpe:2.3:o:microsoft:windows",
+        "Linux": "cpe:2.3:o:linux:linux_kernel"
+    },
+    "selected_versions": {
+        "Windows": "*",
+        "Linux": "*"
+    }
+}

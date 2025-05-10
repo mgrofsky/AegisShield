@@ -1,0 +1,21 @@
+{
+    "app_input": "The system under consideration is a contact tracing application used to monitor and control the spread of COVID-19 by tracking users' interactions and proximity to one another. The architecture of the system is presented in both centralized and decentralized forms:\n\n- **Centralized Architecture:** In this setup, users must register with a central server, which generates temporary IDs for each device. These IDs are exchanged between devices when they come into contact. If a user tests positive for COVID-19, the collected data, including the temporary IDs, is sent to the central server, which then maps the contacts and notifies other users who may have been exposed.\n\n- **Decentralized Architecture:** In this architecture, most of the data processing occurs on the user's device. The application generates rolling keys locally on each device, which are exchanged with other devices during interactions. If a user tests positive, the rolling keys are uploaded to the server, where other users can download and compare them with their stored keys to determine potential exposure.\n\n**Key components include:**\n- **User Devices:** Smartphones or tablets equipped with the contact tracing app, utilizing Bluetooth and/or GPS to monitor and record close contacts with other users.\n- **Mobile Application:** The client-side app installed on user devices, managing proximity data and providing exposure alerts.\n- **Central Server (Centralized Architecture):** Responsible for generating IDs, collecting, processing data, and notifying potential exposures.\n- **Service Server (Decentralized Architecture):** Manages rolling keys and identifies exposures through key comparisons.\n- **Log Files:** Store timestamps, device configurations, and metadata related to application operation.",
+    "app_type": "Mobile Application",
+    "industry_sector": "Healthcare",
+    "sensitive_data": "High",
+    "internet_facing": "Yes",
+    "num_employees": "Unknown",
+    "compliance_requirements": ["HIPAA"],
+    "technical_ability": "Low",
+    "authentication": [],
+    "selected_technologies": {
+        "Operating Systems": {
+            "iOS": "cpe:2.3:o:apple:iphone_os:",
+            "Android": "cpe:2.3:o:google:android:"
+        }
+    },
+    "selected_versions": {
+        "iOS": "*",
+        "Android": "*"
+    }
+}
