@@ -15,10 +15,10 @@ https://doi.org/10.1007/s42979-022-01021-3
 | **Dataflow Diagram** | 🟢 Yes (The document includes Data Flow Diagrams (DFDs) illustrating the architecture and data flows within the Cyber-Physical System (CPS) used for the window cleaning operation). |
 | **Application Type** | 🟢 Cyber-Physical System (CPS) Application. |
 | **Industry Sector** | 🟢 Commercial Services (specifically focusing on window cleaning operations using advanced IoT and cloud technologies). |
-| **Data Sensitivity** | 🟡 High (Inferred due to the handling of sensitive operational data, including GPS tracking, real-time IoT data, and business intelligence related to resource usage). |
-| **Internet Facing** | 🟡 Yes (The system includes connectivity with external networks, such as cloud services, making it internet-facing). |
+| **Data Sensitivity** | 🟢 High (Inferred due to the handling of sensitive operational data, including GPS tracking, real-time IoT data, and business intelligence related to resource usage). |
+| **Internet Facing** | 🟢 Yes (The system includes connectivity with external networks, such as cloud services, making it internet-facing). |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
-| **Compliance Requirements** | 🔴 None. |
+| **Compliance Requirements** | 🟡 None. |
 | **Authentication Methods** | 🟢 Firebase Authentication, API Key (mentioned in the context of securing access to the Firestore database and mobile applications). |
 | **Database Technologies and Versions** | 🟢 Google Firestore (a real-time NoSQL database used for data storage in the cloud). |
 | **Operating Systems and Versions Used** | 🔴 Not specified (However, the system interacts with multiple platforms, including Android, iOS, Windows, macOS, and Linux). |
@@ -53,11 +53,11 @@ The **CPS is designed to enhance the efficiency and reliability of window cleani
 | **Application/System Description or DFD** | 🟢 **5** | The paper includes a **clear and detailed DFD** illustrating **the architecture and data flows** within the **Cyber-Physical System (CPS)** used for **window cleaning operations**. |
 | **Application Type** | 🟢 **5** | The system is **explicitly described as a Cyber-Physical System (CPS)**, integrating **IoT devices and cloud services** to **optimize and monitor window cleaning operations**. |
 | **Industry Sector** | 🟢 **5** | The **industry sector is clearly identified as Commercial Services**, specifically focusing on **window cleaning operations using advanced IoT and cloud technologies**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity is inferred** due to the **handling of sensitive operational data**, such as **GPS tracking, real-time IoT data, and business intelligence related to resource usage**. |
-| **Internet Facing** | 🟡 **5** | The system is **explicitly described as internet-facing**, with **connectivity to external networks**, including **cloud services for data storage and management**. |
-| **Compliance Requirements** | 🔴 **1** | **No compliance requirements** are mentioned in the paper, **representing a gap in regulatory adherence**. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity is inferred** due to the **handling of sensitive operational data**, such as **GPS tracking, real-time IoT data, and business intelligence related to resource usage**. |
+| **Internet Facing** | 🟢 **5** | The system is **explicitly described as internet-facing**, with **connectivity to external networks**, including **cloud services for data storage and management**. |
+| **Compliance Requirements** | 🟡 **3** | **No compliance requirements** are mentioned in the paper, **representing a gap in regulatory adherence**. |
 | **Authentication Methods** | 🟢 **5** | The paper mentions **Firebase Authentication and API Key** for **securing access to the Firestore database and mobile applications**. |
-| **Technical Details** | 🟡 **3** | The paper mentions **Google Firestore and Python**, but **lacks comprehensive details on operating systems and programming languages**, leaving **some gaps in technical depth**. |
+| **Technical Details** | 🟡 **2** | The paper mentions **Google Firestore and Python**, but **lacks comprehensive details on operating systems and programming languages**, leaving **some gaps in technical depth**. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear explanations of vulnerabilities and attack vectors relevant to the CPS**. |
 
 ---

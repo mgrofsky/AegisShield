@@ -15,8 +15,8 @@ https://doi.org/10.4218/etrij.2021-0181
 | **Dataflow Diagram** | 🟢 Yes (The document includes Data Flow Diagrams (DFDs) illustrating the data flows within the distributed control system (DCS) in an oil refinery). |
 | **Application Type** | 🟢 Industrial Control System (ICS) (specifically a Distributed Control System (DCS) in an oil refinery). |
 | **Industry Sector** | 🟢 Oil and Gas (The focus is on DCS operations within an oil refinery). |
-| **Data Sensitivity** | 🟡 High (This is inferred due to the critical nature of the data handled within the DCS, which impacts safety and operational integrity). |
-| **Internet Facing** | 🟡 Yes (The DCS is connected to corporate networks and the internet, increasing its exposure to cybersecurity threats). |
+| **Data Sensitivity** | 🟢 High (This is inferred due to the critical nature of the data handled within the DCS, which impacts safety and operational integrity). |
+| **Internet Facing** | 🟢 Yes (The DCS is connected to corporate networks and the internet, increasing its exposure to cybersecurity threats). |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
 | **Compliance Requirements** | 🟡 IEC 62443 (Inferred due to relevance to cybersecurity requirements for industrial automation and control systems). |
 | **Authentication Methods** | 🟢 Active Directory (AD) is used for centralized user account management and authentication within the DCS environment. |
@@ -55,8 +55,8 @@ The system operates in an **isolated network**, interacting with **various compo
 | **Application/System DFD** | 🟢 **5** | The paper includes a **comprehensive and accurate DFD**, clearly illustrating the **data flows and interactions** between the **Distributed Control System (DCS) components**. |
 | **Application Type** | 🟢 **5** | The application is **explicitly identified** as an **Industrial Control System (ICS)**, specifically focusing on a **Distributed Control System (DCS)** within the context of an **oil refinery**. |
 | **Industry Sector** | 🟢 **5** | The **industry sector is clearly stated** as **Oil and Gas**, directly relevant to the **system being threat-modeled** in the **refinery context**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity is inferred** due to the **critical nature of the operational and process data in the DCS**, impacting **both safety and operational integrity**. |
-| **Internet Facing** | 🟡 **5** | The **DCS is explicitly described as being connected to corporate networks and the internet**, increasing its **exposure to cybersecurity risks**. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity is inferred** due to the **critical nature of the operational and process data in the DCS**, impacting **both safety and operational integrity**. |
+| **Internet Facing** | 🟢 **5** | The **DCS is explicitly described as being connected to corporate networks and the internet**, increasing its **exposure to cybersecurity risks**. |
 | **Compliance Requirements** | 🟡 **3** | Compliance with **IEC 62443** is **inferred**, but **not explicitly mentioned**, leaving some **uncertainty about specific regulatory adherence**. |
 | **Authentication Methods** | 🟢 **5** | The use of **Active Directory (AD)** for **centralized user authentication and account management** is **explicitly mentioned in the paper**. |
 | **Technical Details** | 🟡 **2** | **General-purpose operating systems such as Windows and Linux are inferred**, but **specific versions and deeper technical details are not provided**. |

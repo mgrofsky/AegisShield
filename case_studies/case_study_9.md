@@ -14,9 +14,9 @@ https://doi.org/10/gt5bnm
 | --- | --- |
 | **Dataflow Diagram** | 🟢 Yes (The document includes a Data Flow Diagram (DFD) that illustrates the architecture and data flows within the AI-ML system). |
 | **Application Type** | 🟢 AI/ML Application (specifically focusing on machine learning models within various domains, including predictive maintenance). |
-| **Industry Sector** | 🟡 Information Technology (Inferred from the document’s focus on AI-ML systems applied to various technological domains). |
-| **Data Sensitivity** | 🟡 High (Inferred due to the handling of critical data throughout the AI/ML life-cycle, including training data and model outputs). |
-| **Internet Facing** | 🟡 Yes (The system includes connectivity with external networks, making it internet-facing, especially when involving cloud-based AI/ML services). |
+| **Industry Sector** | 🟡 Information Technology (Inferred from the document's focus on AI-ML systems applied to various technological domains). |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity inferred** from the **critical nature of the data handled** throughout the **ML life-cycle**, such as **training data, model outputs, and sensor data**, making the **data highly sensitive**. |
+| **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with **explicit mention of connectivity to external networks, cloud services, and remote data processing**, increasing the **system's exposure to threats**. |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
 | **Compliance Requirements** | 🔴 None specified (The document does not explicitly mention compliance requirements such as industry standards or regulations). |
 | **Authentication Methods** | 🔴 Not specified (The document discusses security vulnerabilities and threats but does not specify existing authentication methods). |
@@ -53,10 +53,10 @@ The system **operates in a connected environment**, with **data flowing from the
 | **Criteria** | **Score** | **Justification** |
 | --- | --- | --- |
 | **Application/System Description or DFD** | 🟢 **5** | The paper provides a **detailed DFD** that clearly illustrates **the data flows and interactions** within the **AI/ML system**, following the **ML life-cycle** from **data ingestion to model deployment and maintenance**. |
-| **Application Type** | 🟢 **5** | The application is **explicitly identified as an AI/ML system**, focusing on **predictive maintenance and power optimization** within the **renewable energy sector**, meeting the **rubric’s criteria**. |
+| **Application Type** | 🟢 **5** | The application is **explicitly identified as an AI/ML system**, focusing on **predictive maintenance and power optimization** within the **renewable energy sector**, meeting the **rubric's criteria**. |
 | **Industry Sector** | 🟡 **3** | The **industry sector is inferred as Information Technology**, given the **focus on AI/ML applications**, but this is **not explicitly mentioned in the paper**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity inferred** from the **critical nature of the data handled** throughout the **ML life-cycle**, such as **training data, model outputs, and sensor data**, making the **data highly sensitive**. |
-| **Internet Facing** | 🟡 **5** | The system is **internet-facing**, with **explicit mention of connectivity to external networks, cloud services, and remote data processing**, increasing the **system's exposure to threats**. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity inferred** from the **critical nature of the data handled** throughout the **ML life-cycle**, such as **training data, model outputs, and sensor data**, making the **data highly sensitive**. |
+| **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with **explicit mention of connectivity to external networks, cloud services, and remote data processing**, increasing the **system's exposure to threats**. |
 | **Compliance Requirements** | 🔴 **1** | **No specific compliance requirements** or regulations, such as **ISO or GDPR**, are mentioned in the paper, which **leaves a gap in the compliance discussion**. |
 | **Authentication Methods** | 🔴 **1** | **No authentication methods are explicitly mentioned**, representing a **significant gap in the security architecture** of the system. |
 | **Technical Details** | 🔴 **1** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided in the paper, which **limits the technical understanding**. |

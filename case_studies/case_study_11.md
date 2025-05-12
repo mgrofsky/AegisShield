@@ -15,11 +15,11 @@ https://doi.org/10.1109/ACCESS.2022.3231189
 | **Dataflow Diagram** | 🟢 Yes (The document includes a Data Flow Diagram (DFD) that illustrates the architecture and data flows within the Vehicular Fog Computing (VFC) system). |
 | **Application Type** | 🟢 Vehicular Fog Computing (VFC) Application. |
 | **Industry Sector** | 🟢 Automotive (The focus is on vehicular systems and infrastructure). |
-| **Data Sensitivity** | 🟡 High (Inferred due to the handling of sensitive data related to vehicle operations, road conditions, and potentially critical safety information). |
-| **Internet Facing** | 🟡 Yes (The system includes connectivity with external networks, including communication with cloud services and other vehicles). |
+| **Data Sensitivity** | 🟢 High (Inferred due to the handling of sensitive data related to vehicle operations, road conditions, and potentially critical safety information). |
+| **Internet Facing** | 🟢 Yes (The system includes connectivity with external networks, including communication with cloud services and other vehicles). |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
 | **Compliance Requirements** | 🟡 ISO/SAE 21434 and ISO 26262 (Inferred due to the automotive context, where these standards are applicable for cybersecurity and functional safety in vehicular systems). |
-| **Authentication Methods** | 🔴 Not specified (The document discusses security concerns but does not specify the authentication methods used). |
+| **Authentication Methods** | 🟢 Not specified (The document discusses security concerns but does not specify the authentication methods used). |
 | **Database Technologies & Versions** | 🔴 Not specified. |
 | **Operating Systems & Versions** | 🔴 Not specified. |
 | **Programming Languages & Versions** | 🔴 Not specified. |
@@ -47,14 +47,14 @@ The **VFC system** is designed to **enhance the safety, efficiency, and reliabil
 
 | **Criteria** | **Score** | **Justification** |
 | --- | --- | --- |
-| **Application/System Description or DFD** | 🟢 **5** | The paper includes a **detailed DFD** illustrating **data flows between vehicles, fog nodes, and cloud services**, which enhances **understanding of the system’s architecture**. |
+| **Application/System Description or DFD** | 🟢 **5** | The paper includes a **detailed DFD** illustrating **data flows between vehicles, fog nodes, and cloud services**, which enhances **understanding of the system's architecture**. |
 | **Application Type** | 🟢 **5** | The application is **explicitly described** as a **Vehicular Fog Computing (VFC) system**, focusing on **the management and processing of vehicular data in real-time**. |
 | **Industry Sector** | 🟢 **5** | The **industry sector is clearly identified** as **Automotive**, focusing on **vehicular systems and infrastructure within the VFC context**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity inferred** from the **handling of critical vehicular data**, including **vehicle status, road conditions, and safety information**, which are **crucial for real-time decision-making**. |
-| **Internet Facing** | 🟡 **5** | The system is **internet-facing**, with **connectivity between vehicles, fog nodes, and cloud services**, which is **clearly described in the paper**. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity inferred** from the **handling of critical vehicular data**, including **vehicle status, road conditions, and safety information**, which are **crucial for real-time decision-making**. |
+| **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with **connectivity between vehicles, fog nodes, and cloud services**, which is **clearly described in the paper**. |
 | **Compliance Requirements** | 🟡 **3** | **ISO/SAE 21434 and ISO 26262 are inferred** based on the **automotive context**, but the paper **does not explicitly mention compliance** with these or other **regulatory standards**. |
-| **Authentication Methods** | 🔴 **2** | **Security concerns are discussed**, but **specific authentication methods are not detailed**, representing a **gap in the security architecture**. |
-| **Technical Details** | 🔴 **1** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided in the paper. |
+| **Authentication Methods** | 🟢 **5** | **Security concerns are discussed**, but **specific authentication methods are not detailed**, representing a **gap in the security architecture**. |
+| **Technical Details** | 🟡 **2** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided in the paper. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear explanations of vulnerabilities and mitigations**, making the **threat analysis robust**. |
 
 ---

@@ -13,8 +13,8 @@ https://doi.org/10.3390/s20133629
 | **Dataflow Diagram** | 🔴 No |
 | **Application Type** | 🟢 IoT Application (specifically a Visual Sensor Network) |
 | **Industry Sector** | 🟡 Information Technology (Inferred based on the focus on visual sensor networks and their applications in areas like surveillance and industrial monitoring) |
-| **Data Sensitivity** | 🟡 High (Inferred from the discussion about privacy concerns and the sensitivity of visual data) |
-| **Internet Facing** | 🟡 Yes (Inferred based on the discussion of external interfaces and potential connections to the internet) |
+| **Data Sensitivity** | 🟢 High (Inferred from the discussion about privacy concerns and the sensitivity of visual data) |
+| **Internet Facing** | 🟢 Yes (Inferred based on the discussion of external interfaces and potential connections to the internet) |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the paper) |
 | **Compliance Requirements** | 🔴 None (Not mentioned in the paper) |
 | **Authentication Methods** | 🔴 None (The paper discusses various attack vectors but does not specify existing authentication methods) |
@@ -48,14 +48,14 @@ The **VSN operates in a distributed manner**, with each node processing **visual
 
 | **Criteria** | **Score** | **Justification** |
 | --- | --- | --- |
-| **Application/System DFD** | 🔴 **1** | There is **no Data Flow Diagram (DFD)** provided in the paper, which limits the system’s representation for analysis. |
+| **Application/System DFD** | 🔴 **1** | There is **no Data Flow Diagram (DFD)** provided in the paper, which limits the system's representation for analysis. |
 | **Application Type** | 🟢 **5** | The application is explicitly identified as an **IoT Application**, specifically focused on a **Visual Sensor Network (VSN)**. |
 | **Industry Sector** | 🟡 **3** | The industry sector is **inferred as Information Technology**, based on the **focus on VSNs for surveillance and industrial monitoring**, though **not explicitly stated**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity inferred**, from the discussion on **privacy concerns and the sensitive nature of visual data**. |
-| **Internet Facing** | 🟡 **5** | The system is **internet-facing**, with discussions on **external interfaces and potential internet connections** clearly described. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity inferred**, from the discussion on **privacy concerns and the sensitive nature of visual data**. |
+| **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with discussions on **external interfaces and potential internet connections** clearly described. |
 | **Compliance Requirements** | 🔴 **1** | **No compliance requirements** mentioned, leaving a gap in the evaluation of **regulatory standards**. |
 | **Authentication Methods** | 🔴 **1** | **No authentication methods specified**, a notable omission given the **security focus of the paper**. |
-| **Technical Details** | 🟡 **2** | **Linux-based systems mentioned** for nodes, but **specific versions, databases, and programming languages** are missing. |
+| **Technical Details** | 🔴 **2** | **Linux-based systems mentioned** for nodes, but **specific versions, databases, and programming languages** are missing. |
 | **Threat Details** | 🟢 **5** | **Threats are well-defined and categorized using the STRIDE framework**, with **a comprehensive explanation of risks**, making the **threat analysis robust**. |
 
 ---

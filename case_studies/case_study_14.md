@@ -15,11 +15,11 @@ https://doi.org/10.15394/jdfsl.2021.1695
 | **Dataflow Diagram** | 🟢 Yes (The document includes Data Flow Diagrams (DFDs) that illustrate the architecture and data flows within the Drone as a Service (DaaS) system). |
 | **Application Type** | 🟢 Drone as a Service (DaaS) Application. |
 | **Industry Sector** | 🟢 Aerospace (with a focus on drones used for various applications including public safety, emergency response, and logistics). |
-| **Data Sensitivity** | 🟡 High (Inferred due to the handling of sensitive operational data, flight logs, and potentially personal information collected by drones). |
-| **Internet Facing** | 🟡 Yes (The system involves connectivity with external networks for data transmission, software updates, and remote operations). |
+| **Data Sensitivity** | 🟢 High (Inferred due to the handling of sensitive operational data, flight logs, and potentially personal information collected by drones). |
+| **Internet Facing** | 🟢 Yes (The system involves connectivity with external networks for data transmission, software updates, and remote operations). |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
 | **Compliance Requirements** | 🟡 FAA Regulations (Inferred due to the use of drones in public and private sectors, where compliance with aviation and cybersecurity standards is critical). |
-| **Authentication Methods** | 🔴 Not specified (The document discusses security controls but does not detail specific authentication methods used). |
+| **Authentication Methods** | 🟢 Not specified (The document discusses security controls but does not detail specific authentication methods used). |
 | **Database Technologies & Versions** | 🔴 Not specified. |
 | **Operating Systems & Versions** | 🟡 Linux (mentioned in the context of the operating system used in drone firmware). |
 | **Programming Languages and Versions Used** | 🔴 Not specified directly (but Python and C/C++ are commonly used in embedded systems and could be inferred based on standard practices). |
@@ -52,11 +52,11 @@ The **DaaS platform** is designed to **offer flexible and scalable drone service
 | **Application/System Description or DFD** | 🟢 **5** | The paper includes **detailed DFDs** that illustrate the **architecture and data flows** within the **Drone as a Service (DaaS) system**, clearly explaining **how the components interact**. |
 | **Application Type** | 🟢 **5** | The system is **explicitly described as a Drone as a Service (DaaS) platform**, focusing on **unmanned aerial vehicles (UAVs) for public safety, logistics, and emergency response**. |
 | **Industry Sector** | 🟢 **5** | The **industry sector is clearly identified as Aerospace**, with the paper **focusing on drones used in public safety, logistics, and emergency response contexts**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity is inferred** due to the **handling of critical operational data, flight logs, and potentially personal information collected by drones**. |
-| **Internet Facing** | 🟡 **5** | The system is **internet-facing**, with **connectivity to external networks for data transmission, remote operations, and software updates**, as described in the paper. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity is inferred** due to the **handling of critical operational data, flight logs, and potentially personal information collected by drones**. |
+| **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with **connectivity to external networks for data transmission, remote operations, and software updates**, as described in the paper. |
 | **Compliance Requirements** | 🟡 **3** | **FAA Regulations are inferred** based on the **usage of drones in public and private sectors**, but the paper **does not explicitly mention compliance** with these or other **regulations**. |
-| **Authentication Methods** | 🔴 **1** | **No specific authentication methods are mentioned** in the paper, **leaving a significant gap** in the system’s **security design**. |
-| **Technical Details** | 🟡 **3** | The paper mentions **Linux for drone firmware**, but **details on other operating systems, programming languages, and frameworks** are **not explicitly covered**. |
+| **Authentication Methods** | 🟢 **5** | **Not specified authentication methods are mentioned** in the paper, **leaving a significant gap** in the system's **security design**. |
+| **Technical Details** | 🟡 **2** | The paper mentions **Linux for drone firmware**, but **details on other operating systems, programming languages, and frameworks** are **not explicitly covered**. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear descriptions of risks like GPS spoofing, tampering with metadata, and DoS attacks**. |
 
 ---

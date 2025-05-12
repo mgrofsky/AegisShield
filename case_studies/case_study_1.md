@@ -60,7 +60,7 @@ The system allows users to interact via **voice commands**, triggering **audio r
 | **Compliance Requirements** | 🔴 **1** | No mention of **compliance requirements**, leaving a **significant gap** in regulatory context. |
 | **Authentication Methods** | 🔴 **1** | **Authentication methods not mentioned**, a **critical omission** given the security concerns discussed in the paper. |
 | **Technical Details** | 🔴 **1** | **No specific technical details** on **databases, operating systems, or programming languages** are provided. |
-| **Threat Details** | 🟢 **4** | **Threats are well-defined & categorized using the STRIDE model**, though **more depth & additional mitigations** would strengthen the analysis. |
+| **Threat Details** | 🟡 **4** | **Threats are well-defined & categorized using the STRIDE model**, though **more depth & additional mitigations** would strengthen the analysis. |
 
 ---
 

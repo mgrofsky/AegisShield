@@ -15,10 +15,10 @@ https://doi.org/10.1109/5gwf52925.2021.00050
 | **Dataflow Diagram** | 🟢 Yes (The document includes diagrams that illustrate trust boundaries and component interactions, which are part of the system architecture.) |
 | **Application Type** | 🟢 5G/Wireless System (The application involves 5G core slicing, which is a key feature of 5G wireless networks.) |
 | **Industry Sector** | 🟢 Telecommunications (The system is directly related to telecommunications infrastructure.) |
-| **Data Sensitivity** | 🟡 High (This is inferred from the handling of critical and potentially sensitive data within the 5G network slices.) |
-| **Internet Facing** | 🟡 Yes (5G core slicing involves interactions with external networks, making it internet-facing.) |
+| **Data Sensitivity** | 🟢 High (This is inferred from the handling of critical and potentially sensitive data within the 5G network slices.) |
+| **Internet Facing** | 🟢 Yes (5G core slicing involves interactions with external networks, making it internet-facing.) |
 | **Number of Employees** | 🔴 Unknown (The document does not provide details on the number of employees involved.) |
-| **Compliance Requirements** | 🟢 3GPP TS 33.501 (This standard is relevant to 5G security architecture and is part of the system’s compliance requirements.) |
+| **Compliance Requirements** | 🟢 3GPP TS 33.501 (This standard is relevant to 5G security architecture and is part of the system's compliance requirements.) |
 | **Authentication Methods** | 🔴 None (There is no explicit mention of authentication methods being implemented in the system prior to threat modeling recommendations.) |
 | **Database Technologies & Versions** | 🔴 Not specified (The document does not detail any specific database technologies or versions.) |
 | **Operating Systems & Versions** | 🔴 Not specified (The document does not detail the operating systems in use.) |
@@ -51,11 +51,11 @@ The **5G core slicing system** operates in a highly **virtualized and dynamic en
 
 | **Criteria** | **Score** | **Justification** |
 | --- | --- | --- |
-| **Application/System DFD** | 🟢 **5** | The paper includes **clear and detailed DFDs** illustrating **trust boundaries and component interactions** within the 5G core slicing system, enhancing understanding of the system’s operation. |
+| **Application/System DFD** | 🟢 **5** | The paper includes **clear and detailed DFDs** illustrating **trust boundaries and component interactions** within the 5G core slicing system, enhancing understanding of the system's operation. |
 | **Application Type** | 🟢 **5** | The application is explicitly identified as a **5G/Wireless System**, focusing on **network slicing**, a core feature of 5G infrastructure. |
 | **Industry Sector** | 🟢 **5** | The paper clearly states that the system is within the **Telecommunications** industry, focusing on **5G network operations**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity inferred** due to the **critical and sensitive nature of the data** flowing within the network slices, including **user plane and control plane data**. |
-| **Internet Facing** | 🟡 **5** | The system is **internet-facing**, involving interactions with **external networks and cloud services**, making this clear in the system’s architecture. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity inferred** due to the **critical and sensitive nature of the data** flowing within the network slices, including **user plane and control plane data**. |
+| **Internet Facing** | 🟢 **5** | The system is **internet-facing**, involving interactions with **external networks and cloud services**, making this clear in the system's architecture. |
 | **Compliance Requirements** | 🟢 **5** | Compliance with **3GPP TS 33.501** is explicitly mentioned, which governs the **security architecture for 5G systems**. |
 | **Authentication Methods** | 🔴 **1** | **Authentication methods are not mentioned**, despite the **security focus of the paper**, representing a significant gap in the design discussion. |
 | **Technical Details** | 🔴 **1** | No technical details regarding **databases, operating systems, or programming languages** are provided in the paper, limiting the technical understanding. |

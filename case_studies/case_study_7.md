@@ -13,8 +13,8 @@ https://doi.org/10.1109/wf-iot58464.2023.10539377
 | **Dataflow Diagram** | 🟢 Yes (The document includes a Data Flow Diagram (DFD) that illustrates the architecture and data flows within the Ambient Intelligence (AmI) system). |
 | **Application Type** | 🟢 IoT Application (specifically Ambient Intelligence (AmI) systems). |
 | **Industry Sector** | 🟡 Information Technology (The focus is on smart environments powered by Ambient Intelligence, which falls under the broader IT sector). |
-| **Data Sensitivity** | 🟡 High (This is inferred due to the handling of sensitive data, including personal information, environmental data, and system configurations). |
-| **Internet Facing** | 🟡 Yes (The system includes connectivity with external networks, making it internet-facing). |
+| **Data Sensitivity** | 🟢 High (This is inferred due to the handling of sensitive data, including personal information, environmental data, and system configurations). |
+| **Internet Facing** | 🟢 Yes (The system includes connectivity with external networks, making it internet-facing). |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
 | **Compliance Requirements** | 🔴 None specified (The document does not explicitly mention compliance requirements such as industry standards or regulations). |
 | **Authentication Methods** | 🟢 Various methods, including passwords, PINs, biometric identifiers, smart cards, and hardware tokens, are mentioned for securing access to the system. |
@@ -46,11 +46,11 @@ The **Ambient Intelligence system** operates in **environments like smart homes,
 
 | **Criteria** | **Score** | **Justification** |
 | --- | --- | --- |
-| **Application/System Description or DFD** | 🟢 **5** | The paper provides a **clear and detailed DFD** that illustrates **data flows and interactions within the Ambient Intelligence (AmI) system**, significantly enhancing the **understanding of the system’s architecture**. |
+| **Application/System Description or DFD** | 🟢 **5** | The paper provides a **clear and detailed DFD** that illustrates **data flows and interactions within the Ambient Intelligence (AmI) system**, significantly enhancing the **understanding of the system's architecture**. |
 | **Application Type** | 🟢 **5** | The application type is **explicitly identified** as an **IoT application**, specifically focusing on **Ambient Intelligence (AmI) systems**. |
 | **Industry Sector** | 🟡 **3** | The **industry sector is inferred as Information Technology**, based on the **focus on smart environments**, but this is **not explicitly mentioned in the paper**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity is inferred** due to the **handling of sensitive personal and environmental data**, which is **discussed in detail**, making this **criterion fully met**. |
-| **Internet Facing** | 🟡 **5** | The system is **explicitly described as internet-facing**, with **connections to external networks**, which **exposes it to potential cybersecurity risks**. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity is inferred** due to the **handling of sensitive personal and environmental data**, which is **discussed in detail**, making this **criterion fully met**. |
+| **Internet Facing** | 🟢 **5** | The system is **explicitly described as internet-facing**, with **connections to external networks**, which **exposes it to potential cybersecurity risks**. |
 | **Compliance Requirements** | 🔴 **1** | **No compliance requirements**, such as **industry standards or regulations**, are **explicitly mentioned in the paper**, which is a **significant gap**. |
 | **Authentication Methods** | 🟢 **5** | The paper details **various authentication methods**, including **passwords, PINs, biometric identifiers, smart cards, and hardware tokens**, meeting the **rubric criteria for this category**. |
 | **Technical Details** | 🔴 **1** | **No specific technical details** regarding **databases, operating systems, or programming languages** are mentioned, leaving a **gap in the technical understanding** of the system. |

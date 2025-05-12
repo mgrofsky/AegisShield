@@ -14,8 +14,8 @@ https://doi.org/10.48550/arXiv.2301.05653
 | --- | --- |
 | **Dataflow Diagram** | 🟢 Yes (The document includes Data Flow Diagrams (DFDs) that illustrate the architecture and data flows within the messaging applications analyzed). |
 | **Application Type** | 🟢 Messaging Application. |
-| **Industry Sector** | 🟡 Communications (focusing on secure communications and privacy within the messaging application sector). |
-| **Data Sensitivity** | 🟡 High (Inferred due to the handling of sensitive personal communication data and the emphasis on privacy and security). |
+| **Industry Sector** | 🟢 Communications (focusing on secure communications and privacy within the messaging application sector). |
+| **Data Sensitivity** | 🟢 High (Inferred due to the handling of sensitive personal communication data and the emphasis on privacy and security). |
 | **Internet Facing** | 🟢 Yes (The messaging applications are designed to operate over the internet, making them inherently internet-facing). |
 | **Number of Employees** | 🔴 Unknown (Not mentioned in the document). |
 | **Compliance Requirements** | 🟡 CCPA, COPPA (Inferred based on the handling of personal data within the context of privacy-focused messaging applications, particularly for users in California and Children). |
@@ -47,14 +47,14 @@ The system comprises several **widely used end-to-end encrypted (E2EE) messaging
 
 | **Criteria** | **Score** | **Justification** |
 | --- | --- | --- |
-| **Application/System Description or DFD** | 🟢 **5** | The paper includes **detailed DFDs** that **illustrate the architecture and data flows** within **end-to-end encrypted (E2EE) messaging applications** like **Signal, WhatsApp, and Telegram**, clearly explaining **the system’s components and interactions**. |
+| **Application/System Description or DFD** | 🟢 **5** | The paper includes **detailed DFDs** that **illustrate the architecture and data flows** within **end-to-end encrypted (E2EE) messaging applications** like **Signal, WhatsApp, and Telegram**, clearly explaining **the system's components and interactions**. |
 | **Application Type** | 🟢 **5** | The application type is **explicitly identified as Messaging Applications**, focusing on **secure, encrypted communications**, clearly meeting **the rubric's criteria**. |
-| **Industry Sector** | 🟡 **5** | The **industry sector is clearly inferred as Communications**, focusing on **secure communication and privacy within the messaging application sector**. |
-| **Data Sensitivity** | 🟡 **5** | **High data sensitivity is explicitly discussed** due to the **handling of personal communication data**, including **private messages and contact information**, which are **core to the functionality of E2EE messaging systems**. |
+| **Industry Sector** | 🟢 **5** | The **industry sector is clearly inferred as Communications**, focusing on **secure communication and privacy within the messaging application sector**. |
+| **Data Sensitivity** | 🟢 **5** | **High data sensitivity is explicitly discussed** due to the **handling of personal communication data**, including **private messages and contact information**, which are **core to the functionality of E2EE messaging systems**. |
 | **Internet Facing** | 🟢 **5** | The **messaging applications are explicitly described as internet-facing**, as they **operate across the web and mobile devices**, facilitating **communication between users globally**. |
 | **Compliance Requirements** | 🟡 **3** | **Compliance with CCPA and COPPA is inferred**, based on **the privacy focus of the applications**, but **the paper does not explicitly mention compliance with these regulations**. |
 | **Authentication Methods** | 🟢 **5** | The paper **details the use of public/private key pairs for authentication**, including **long-term identity keys and ephemeral asymmetric keys**, which are **core to the security of these applications**. |
-| **Technical Details** | 🟡 **3** | While **SQLite and macOS are mentioned** for **storage and system testing**, **specific details on other databases, operating systems, and programming languages** are **inferred but not comprehensively detailed**. |
+| **Technical Details** | 🟡 **2** | While **SQLite and macOS are mentioned** for **storage and system testing**, **specific details on other databases, operating systems, and programming languages** are **inferred but not comprehensively detailed**. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear explanations of the security risks for each application**, making **the threat analysis robust**. |
 
 ---
