@@ -54,7 +54,7 @@ The **VFC system** is designed to **enhance the safety, efficiency, and reliabil
 | **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with **connectivity between vehicles, fog nodes, and cloud services**, which is **clearly described in the paper**. |
 | **Compliance Requirements** | 🟡 **3** | **ISO/SAE 21434 and ISO 26262 are inferred** based on the **automotive context**, but the paper **does not explicitly mention compliance** with these or other **regulatory standards**. |
 | **Authentication Methods** | 🟢 **5** | **Security concerns are discussed**, but **specific authentication methods are not detailed**, representing a **gap in the security architecture**. |
-| **Technical Details** | 🟡 **2** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided in the paper. |
+| **Technical Details** | 🔴 **2** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided in the paper. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear explanations of vulnerabilities and mitigations**, making the **threat analysis robust**. |
 
 ---

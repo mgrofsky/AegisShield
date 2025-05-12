@@ -56,7 +56,7 @@ The **DaaS platform** is designed to **offer flexible and scalable drone service
 | **Internet Facing** | 🟢 **5** | The system is **internet-facing**, with **connectivity to external networks for data transmission, remote operations, and software updates**, as described in the paper. |
 | **Compliance Requirements** | 🟡 **3** | **FAA Regulations are inferred** based on the **usage of drones in public and private sectors**, but the paper **does not explicitly mention compliance** with these or other **regulations**. |
 | **Authentication Methods** | 🟢 **5** | **Not specified authentication methods are mentioned** in the paper, **leaving a significant gap** in the system's **security design**. |
-| **Technical Details** | 🟡 **2** | The paper mentions **Linux for drone firmware**, but **details on other operating systems, programming languages, and frameworks** are **not explicitly covered**. |
+| **Technical Details** | 🔴 **2** | The paper mentions **Linux for drone firmware**, but **details on other operating systems, programming languages, and frameworks** are **not explicitly covered**. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear descriptions of risks like GPS spoofing, tampering with metadata, and DoS attacks**. |
 
 ---

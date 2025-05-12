@@ -57,7 +57,7 @@ The **CPS is designed to enhance the efficiency and reliability of window cleani
 | **Internet Facing** | 🟢 **5** | The system is **explicitly described as internet-facing**, with **connectivity to external networks**, including **cloud services for data storage and management**. |
 | **Compliance Requirements** | 🟡 **3** | **No compliance requirements** are mentioned in the paper, **representing a gap in regulatory adherence**. |
 | **Authentication Methods** | 🟢 **5** | The paper mentions **Firebase Authentication and API Key** for **securing access to the Firestore database and mobile applications**. |
-| **Technical Details** | 🟡 **2** | The paper mentions **Google Firestore and Python**, but **lacks comprehensive details on operating systems and programming languages**, leaving **some gaps in technical depth**. |
+| **Technical Details** | 🔴 **2** | The paper mentions **Google Firestore and Python**, but **lacks comprehensive details on operating systems and programming languages**, leaving **some gaps in technical depth**. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear explanations of vulnerabilities and attack vectors relevant to the CPS**. |
 
 ---

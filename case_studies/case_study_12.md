@@ -56,7 +56,7 @@ The system operates in a **connected environment**, where **data flows between s
 | **Internet Facing** | 🟢 **5** | The system is **internet-facing**, as it **relies on external networks to facilitate data communication**. |
 | **Compliance Requirements** | 🟡 **3** | **ISO/IEC 30141 is inferred** due to the **IoT system's focus**, but **specific compliance standards are not explicitly discussed in the paper**. |
 | **Authentication Methods** | 🟢 **5** | **5-factor authentication is mentioned**, representing a **strong authentication method**. |
-| **Technical Details** | 🟡 **2** | **MySQL, Raspberry Pi OS, and PHP are inferred or mentioned**, but **more comprehensive technical details such as other programming languages are not fully explored**. |
+| **Technical Details** | 🔴 **2** | **MySQL, Raspberry Pi OS, and PHP are inferred or mentioned**, but **more comprehensive technical details such as other programming languages are not fully explored**. |
 | **Threat Details** | 🟢 **5** | The **threats are well-defined using the STRIDE framework**, with **clear explanations of vulnerabilities and attack scenarios** in the **Open Energy Monitor system**. |
 
 ---

@@ -64,7 +64,7 @@ The system is **designed to operate in a networked environment**, where **data f
 | **Internet Facing** | 🟢 **5** | The system is **internet-facing**, as **described in the paper**, with **data exchanged between users' devices and central servers or decentralized networks**. |
 | **Compliance Requirements** | 🟡 **3** | **HIPAA is inferred**, given the **handling of personal health data in the context of the U.S.**, but the paper **does not explicitly mention compliance with this or any other regulation**. |
 | **Authentication Methods** | 🟢 **5** | The paper **does not specify any authentication methods**, leaving a **significant gap in the security discussion**. |
-| **Technical Details** | 🟡 **2** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided, **limiting the understanding of the underlying infrastructure**. |
+| **Technical Details** | 🔴 **2** | **No specific technical details** regarding **databases, operating systems, or programming languages** are provided, **limiting the understanding of the underlying infrastructure**. |
 | **Threat Details** | 🟢 **5** | The **threats are comprehensively defined using the STRIDE framework**, with **clear explanations of the risks involved** in **both centralized and decentralized contact tracing systems**. |
 
 ---

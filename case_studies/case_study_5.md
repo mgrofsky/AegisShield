@@ -59,7 +59,7 @@ The system operates in an **isolated network**, interacting with **various compo
 | **Internet Facing** | 🟢 **5** | The **DCS is explicitly described as being connected to corporate networks and the internet**, increasing its **exposure to cybersecurity risks**. |
 | **Compliance Requirements** | 🟡 **3** | Compliance with **IEC 62443** is **inferred**, but **not explicitly mentioned**, leaving some **uncertainty about specific regulatory adherence**. |
 | **Authentication Methods** | 🟢 **5** | The use of **Active Directory (AD)** for **centralized user authentication and account management** is **explicitly mentioned in the paper**. |
-| **Technical Details** | 🟡 **2** | **General-purpose operating systems such as Windows and Linux are inferred**, but **specific versions and deeper technical details are not provided**. |
+| **Technical Details** | 🔴 **2** | **General-purpose operating systems such as Windows and Linux are inferred**, but **specific versions and deeper technical details are not provided**. |
 | **Threat Details** | 🟢 **5** | The **threats are well-defined** and **categorized using the STRIDE model**, with **clear explanations of risks and effective mitigations**, making the **analysis comprehensive**. |
 
 ---
