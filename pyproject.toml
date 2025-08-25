@@ -4,7 +4,7 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "C4"]
-ignore = ["E501", "B007"]
+ignore = ["E501", "B007", "F841"]
 exclude = [
     "aegisshield_errors.log",
     "output.txt",

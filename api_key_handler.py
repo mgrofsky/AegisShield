@@ -45,8 +45,17 @@ def render_api_key_inputs():
             """
             ### 🔑 Required: OpenAI API Key
             1. Enter your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field below.
-            2. The key is only stored in your browser session and is not saved or shared.
+            2. Select your preferred OpenAI model below.
+            3. The key is only stored in your browser session and is not saved or shared.
             """
+        )
+
+        # Add model selection input field to the sidebar
+        selected_model = st.selectbox(
+            "Select the model you would like to use:",
+            ["gpt-4o", "gpt-5"],
+            key="selected_model",
+            help="Both models work well with gpt-5 being a bit more verbose.",
         )
 
         # OpenAI API key input field
@@ -61,7 +70,7 @@ def render_api_key_inputs():
             st.error("⚠️ OpenAI API key is required to proceed")
         st.markdown(
             """
-            3. Begin on Step 1 and move through the steps to generate a threat model.
+            4. Begin on Step 1 and move through the steps to generate a threat model.
             """
         )
         if openai_api_key:

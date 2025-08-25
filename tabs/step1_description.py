@@ -182,7 +182,7 @@ def render(model_provider: str, selected_model: str, openai_api_key: str, defaul
 
         with col1:
             # Handle image upload and analysis if OpenAI API is selected
-            if model_provider == "OpenAI API" and selected_model in ["gpt-4o"]:
+            if model_provider == "OpenAI API" and selected_model in ["gpt-4o", "gpt-5"]:
                 uploaded_file = st.file_uploader(UI_TEXT['image_upload'], type=["jpg", "jpeg", "png"])
 
                 if uploaded_file is not None:
