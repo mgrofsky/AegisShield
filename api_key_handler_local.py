@@ -41,7 +41,7 @@ def render_api_key_inputs():
         # Add model selection input field to the sidebar
         selected_model = st.selectbox(
             "Select the model you would like to use:",
-            ["gpt-4o"],
+            ["gpt-4o", "gpt-5"],
             key="selected_model",
             help="OpenAI have moved to continuous model upgrades so `gpt-3.5-turbo`, `gpt-4`, and `gpt-4-turbo` point to the latest available version of each model.",
         )
