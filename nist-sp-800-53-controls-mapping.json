@@ -1,0 +1,509 @@
+{
+  "metadata": {
+    "application": "AegisShield Threat Modeler",
+    "framework": "NIST SP 800-53 Rev. 5",
+    "version": "1.0",
+    "generated_date": "2025-09-28T02:43:59Z",
+    "description": "Machine-readable mapping of NIST SP 800-53 Rev. 5 security controls implemented in AegisShield",
+    "total_controls": 15,
+    "control_families": 6
+  },
+  "controls": [
+    {
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement",
+      "control_family": "Access Control",
+      "control_family_abbreviation": "AC",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "api_key_handler.py",
+      "implementation_locations": [
+        {
+          "file": "api_key_handler.py",
+          "functions": ["render_api_key_inputs"],
+          "line_references": [73, 82],
+          "code_comments": [
+            "NIST AC-3: Access enforcement through credential validation",
+            "NIST AC-3: Enforce access control through authenticator validation"
+          ]
+        }
+      ],
+      "description": "Validates API keys before granting access to external services (OpenAI, NVD, AlienVault OTX)",
+      "implementation_details": "API key validation and access control enforcement for external service authentication",
+      "evidence": "Password-type input validation, session state management, error messages for missing credentials",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "IA-2",
+      "control_name": "Identification and Authentication (Organizational Users)",
+      "control_family": "Identification and Authentication",
+      "control_family_abbreviation": "IA",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "api_key_handler.py",
+      "implementation_locations": [
+        {
+          "file": "api_key_handler.py",
+          "functions": ["load_api_keys", "render_api_key_inputs"],
+          "line_references": [8],
+          "code_comments": [
+            "IA-2 (Identification and Authentication): Authentication to external services"
+          ]
+        }
+      ],
+      "description": "Manages authentication credentials for external threat intelligence and AI services",
+      "implementation_details": "Authentication to external services via API keys for OpenAI, NVD, and AlienVault OTX",
+      "evidence": "API key management system, secure credential storage, service authentication",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "IA-5",
+      "control_name": "Authenticator Management",
+      "control_family": "Identification and Authentication",
+      "control_family_abbreviation": "IA",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "api_key_handler.py",
+      "implementation_locations": [
+        {
+          "file": "api_key_handler.py",
+          "functions": ["load_api_keys", "render_api_key_inputs"],
+          "line_references": [4, 15, 20, 72, 78],
+          "code_comments": [
+            "IA-5 (Authenticator Management): API key management and secure storage",
+            "IA-5(1): Authenticator Management | Password-Based Authentication",
+            "NIST IA-5(1): Secure storage and retrieval of authenticators",
+            "NIST IA-5(1): Masked input for sensitive authenticator data",
+            "NIST IA-5(1): Obscure display of authenticators"
+          ]
+        }
+      ],
+      "description": "Secure API key management and storage using Streamlit secrets, password-type input fields, and session-based credential management",
+      "implementation_details": "IA-5(1) Password-Based Authentication with masked input fields and secure storage",
+      "evidence": "Streamlit secrets integration, password-type input masking, session credential management",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"],
+      "enhancement_implemented": "IA-5(1)"
+    },
+    {
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection",
+      "control_family": "System and Communications Protection",
+      "control_family_abbreviation": "SC",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "nvd_search.py",
+      "implementation_locations": [
+        {
+          "file": "nvd_search.py",
+          "functions": ["retry_with_backoff", "search_nvd"],
+          "line_references": [13, 37, 128],
+          "code_comments": [
+            "SC-7 (Boundary Protection): External API communication security",
+            "SC-7: Boundary Protection - Resilient external API communication",
+            "SC-7: Boundary Protection - Secure NVD API communication"
+          ]
+        },
+        {
+          "file": "alientvault_search.py",
+          "functions": ["fetch_otx_data"],
+          "line_references": [14, 69],
+          "code_comments": [
+            "SC-7 (Boundary Protection): Secure external threat intelligence API communication",
+            "SC-7: Boundary Protection - Secure API communication with threat intelligence provider"
+          ]
+        }
+      ],
+      "description": "Resilient communication with external threat intelligence sources, retry mechanisms for network failures, secure API endpoints",
+      "implementation_details": "Secure external API communications with retry mechanisms and failure handling",
+      "evidence": "HTTP error handling, timeout management, exponential backoff retry logic",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "SC-12",
+      "control_name": "Cryptographic Key Establishment and Management",
+      "control_family": "System and Communications Protection",
+      "control_family_abbreviation": "SC",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "api_key_handler.py",
+      "implementation_locations": [
+        {
+          "file": "api_key_handler.py",
+          "functions": ["load_api_keys"],
+          "line_references": [5, 16],
+          "code_comments": [
+            "SC-12 (Cryptographic Key Establishment and Management): Key lifecycle management",
+            "SC-12(2): Cryptographic Key Establishment | Symmetric Keys"
+          ]
+        }
+      ],
+      "description": "Management of cryptographic keys for external service authentication",
+      "implementation_details": "API key lifecycle management with SC-12(2) Symmetric Keys implementation",
+      "evidence": "API key storage, retrieval, and session management systems",
+      "assessment_methods": ["examine", "interview"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"],
+      "enhancement_implemented": "SC-12(2)"
+    },
+    {
+      "control_id": "SI-4",
+      "control_name": "Information System Monitoring",
+      "control_family": "System and Information Integrity",
+      "control_family_abbreviation": "SI",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "nvd_search.py",
+      "implementation_locations": [
+        {
+          "file": "nvd_search.py",
+          "functions": ["retry_with_backoff"],
+          "line_references": [15, 38],
+          "code_comments": [
+            "SI-4 (Information System Monitoring): Continuous vulnerability monitoring",
+            "SI-4: Information System Monitoring - Connection failure monitoring"
+          ]
+        },
+        {
+          "file": "alientvault_search.py",
+          "functions": ["fetch_otx_data"],
+          "line_references": [11, 66],
+          "code_comments": [
+            "SI-4 (Information System Monitoring): Continuous threat intelligence monitoring",
+            "SI-4: Information System Monitoring - External threat intelligence collection"
+          ]
+        }
+      ],
+      "description": "Continuous vulnerability monitoring via NVD, external threat intelligence monitoring via AlienVault OTX, connection failure monitoring and logging",
+      "implementation_details": "Continuous monitoring and threat intelligence collection from external sources",
+      "evidence": "NVD vulnerability monitoring, OTX threat intelligence collection, connection monitoring logs",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "SI-7",
+      "control_name": "Software, Firmware, and Information Integrity",
+      "control_family": "System and Information Integrity",
+      "control_family_abbreviation": "SI",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "nvd_search.py",
+      "implementation_locations": [
+        {
+          "file": "nvd_search.py",
+          "functions": ["search_nvd"],
+          "line_references": [11, 126],
+          "code_comments": [
+            "SI-7 (Software, Firmware, and Information Integrity): Vulnerability assessment and monitoring",
+            "SI-7: Software Integrity - Technology version vulnerability analysis"
+          ]
+        }
+      ],
+      "description": "Automated vulnerability identification for software components, technology version vulnerability analysis, CVE-based integrity assessment",
+      "implementation_details": "Vulnerability assessment and software integrity monitoring through NVD integration",
+      "evidence": "CVE database integration, software version tracking, vulnerability assessment reports",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "SI-11",
+      "control_name": "Error Handling",
+      "control_family": "System and Information Integrity",
+      "control_family_abbreviation": "SI",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "error_handler.py",
+      "implementation_locations": [
+        {
+          "file": "error_handler.py",
+          "functions": ["log_error", "display_error_to_user", "handle_exception"],
+          "line_references": [14, 53, 82, 88, 97],
+          "code_comments": [
+            "SI-11 (Error Handling): Systematic error handling and user notification",
+            "SI-11: Error Handling - Comprehensive error capture and logging",
+            "SI-11: Error Handling - User-friendly error messages without sensitive details",
+            "NIST SI-11: Display sanitized error message to user (no sensitive data exposure)",
+            "SI-11: Error Handling - Centralized exception management"
+          ]
+        }
+      ],
+      "description": "Centralized exception management, user-friendly error messages without sensitive data exposure, comprehensive error capture and logging",
+      "implementation_details": "Systematic error handling and user notification with complete error handling framework",
+      "evidence": "Centralized error handling system, sanitized user messages, comprehensive error logging",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "AU-3",
+      "control_name": "Content of Audit Records",
+      "control_family": "Audit and Accountability",
+      "control_family_abbreviation": "AU",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "error_handler.py",
+      "implementation_locations": [
+        {
+          "file": "error_handler.py",
+          "functions": ["setup_logging", "log_error", "handle_exception"],
+          "line_references": [10, 32, 50, 61, 98],
+          "code_comments": [
+            "AU-3 (Content of Audit Records): Comprehensive logging with timestamps and context",
+            "AU-3: Content of Audit Records - Structured logging format",
+            "AU-3: Content of Audit Records - Complete error context and metadata",
+            "NIST AU-3: Content of Audit Records - Structured log entry with context",
+            "AU-3: Content of Audit Records - Complete exception context capture"
+          ]
+        },
+        {
+          "file": "nvd_search.py",
+          "functions": ["retry_with_backoff", "search_nvd"],
+          "line_references": [14, 39, 127],
+          "code_comments": [
+            "AU-3 (Content of Audit Records): API interaction logging",
+            "AU-3: Content of Audit Records - Retry attempt logging",
+            "AU-3: Content of Audit Records - Comprehensive vulnerability logging"
+          ]
+        },
+        {
+          "file": "alientvault_search.py",
+          "functions": ["fetch_otx_data"],
+          "line_references": [15, 70],
+          "code_comments": [
+            "AU-3 (Content of Audit Records): Threat intelligence query logging",
+            "AU-3: Content of Audit Records - Comprehensive threat intelligence query logging"
+          ]
+        }
+      ],
+      "description": "Complete error context and metadata capture, API interaction logging, vulnerability scan result logging, threat intelligence query logging",
+      "implementation_details": "Comprehensive logging with structured content across all modules",
+      "evidence": "Structured log formats, comprehensive metadata capture, contextual error information",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "AU-4",
+      "control_name": "Audit Storage Capacity",
+      "control_family": "Audit and Accountability",
+      "control_family_abbreviation": "AU",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "error_handler.py",
+      "implementation_locations": [
+        {
+          "file": "error_handler.py",
+          "functions": ["setup_logging"],
+          "line_references": [11, 33],
+          "code_comments": [
+            "AU-4 (Audit Storage Capacity): Log file management and storage",
+            "AU-4: Audit Storage Capacity - Log directory creation and management"
+          ]
+        }
+      ],
+      "description": "Automated log directory creation and file management",
+      "implementation_details": "Log file management and storage with automatic directory creation",
+      "evidence": "Log directory structure, file handler configuration, storage management",
+      "assessment_methods": ["examine", "interview"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "AU-6",
+      "control_name": "Audit Review, Analysis, and Reporting",
+      "control_family": "Audit and Accountability",
+      "control_family_abbreviation": "AU",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "error_handler.py",
+      "implementation_locations": [
+        {
+          "file": "error_handler.py",
+          "functions": ["log_error", "display_error_to_user", "handle_exception"],
+          "line_references": [12, 52, 66, 83, 99],
+          "code_comments": [
+            "AU-6 (Audit Review, Analysis, and Reporting): Error analysis and reporting",
+            "AU-6: Audit Review - Structured format for analysis",
+            "NIST AU-6: Write to console for immediate audit review",
+            "AU-6: Audit Review - User notification as part of error handling process",
+            "AU-6: Audit Review - Error logging for analysis"
+          ]
+        }
+      ],
+      "description": "Structured log format for analysis, user notification as part of error handling, console output for immediate audit review",
+      "implementation_details": "Error analysis and reporting capabilities with structured formats",
+      "evidence": "Console output for immediate review, structured error formats, user notification system",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "AU-8",
+      "control_name": "Time Stamps",
+      "control_family": "Audit and Accountability",
+      "control_family_abbreviation": "AU",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "error_handler.py",
+      "implementation_locations": [
+        {
+          "file": "error_handler.py",
+          "functions": ["setup_logging", "log_error"],
+          "line_references": [13, 34, 51, 59],
+          "code_comments": [
+            "AU-8 (Time Stamps): Timestamp generation for all logged events",
+            "AU-8: Time Stamps - Timestamp format configuration",
+            "AU-8: Time Stamps - Precise timestamp for each error event",
+            "NIST AU-8: Time Stamps - Generate precise timestamp for audit record"
+          ]
+        }
+      ],
+      "description": "Consistent timestamp format for all audit records with precise timestamp generation",
+      "implementation_details": "Precise timestamp generation for all logged events",
+      "evidence": "Consistent timestamp formats, datetime integration, audit record timestamping",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "RA-3",
+      "control_name": "Risk Assessment",
+      "control_family": "Risk Assessment",
+      "control_family_abbreviation": "RA",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "alientvault_search.py",
+      "implementation_locations": [
+        {
+          "file": "alientvault_search.py",
+          "functions": ["fetch_otx_data"],
+          "line_references": [12, 67],
+          "code_comments": [
+            "RA-3 (Risk Assessment): Threat intelligence integration for risk analysis",
+            "RA-3: Risk Assessment - Industry-specific threat intelligence for risk analysis"
+          ]
+        }
+      ],
+      "description": "Industry-specific threat intelligence collection to support risk assessment activities",
+      "implementation_details": "Threat intelligence integration for risk analysis using AlienVault OTX",
+      "evidence": "Industry-specific threat intelligence queries, risk-relevant data collection, threat assessment integration",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning",
+      "control_family": "Risk Assessment",
+      "control_family_abbreviation": "RA",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "nvd_search.py",
+      "implementation_locations": [
+        {
+          "file": "nvd_search.py",
+          "functions": ["search_nvd"],
+          "line_references": [12, 125],
+          "code_comments": [
+            "RA-5 (Vulnerability Scanning): Automated vulnerability identification via NVD",
+            "RA-5: Vulnerability Scanning - Automated CVE discovery and assessment"
+          ]
+        }
+      ],
+      "description": "Automated CVE discovery via NVD API, technology-specific vulnerability scanning, CVSS score-based vulnerability prioritization",
+      "implementation_details": "Automated vulnerability identification and assessment through NVD integration",
+      "evidence": "NVD API integration, CVE database queries, CVSS scoring, vulnerability prioritization",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    },
+    {
+      "control_id": "PM-16",
+      "control_name": "Threat Awareness Program",
+      "control_family": "Program Management",
+      "control_family_abbreviation": "PM",
+      "implementation_status": "implemented",
+      "implementation_tier": "organizational",
+      "primary_file": "alientvault_search.py",
+      "implementation_locations": [
+        {
+          "file": "alientvault_search.py",
+          "functions": ["fetch_otx_data"],
+          "line_references": [13, 68],
+          "code_comments": [
+            "PM-16 (Threat Awareness Program): External threat intelligence consumption",
+            "PM-16: Threat Awareness Program - Structured threat intelligence consumption"
+          ]
+        }
+      ],
+      "description": "Structured threat intelligence collection to support organizational threat awareness",
+      "implementation_details": "External threat intelligence consumption through AlienVault OTX integration",
+      "evidence": "Threat intelligence feeds, structured data consumption, organizational awareness capabilities",
+      "assessment_methods": ["examine", "interview", "test"],
+      "responsible_role": "system_developer",
+      "compliance_frameworks": ["FedRAMP", "FISMA"]
+    }
+  ],
+  "control_families": {
+    "AC": {
+      "name": "Access Control",
+      "controls_count": 1,
+      "implementation_percentage": 100
+    },
+    "IA": {
+      "name": "Identification and Authentication",
+      "controls_count": 2,
+      "implementation_percentage": 100
+    },
+    "SC": {
+      "name": "System and Communications Protection",
+      "controls_count": 2,
+      "implementation_percentage": 100
+    },
+    "SI": {
+      "name": "System and Information Integrity",
+      "controls_count": 3,
+      "implementation_percentage": 100
+    },
+    "AU": {
+      "name": "Audit and Accountability",
+      "controls_count": 4,
+      "implementation_percentage": 100
+    },
+    "RA": {
+      "name": "Risk Assessment",
+      "controls_count": 2,
+      "implementation_percentage": 100
+    },
+    "PM": {
+      "name": "Program Management",
+      "controls_count": 1,
+      "implementation_percentage": 100
+    }
+  },
+  "assessment_summary": {
+    "total_controls_implemented": 15,
+    "implementation_coverage": "100%",
+    "primary_assessment_methods": ["examine", "interview", "test"],
+    "compliance_frameworks_supported": ["FedRAMP", "FISMA"],
+    "last_assessment_date": "2025-09-28T02:43:59Z",
+    "next_review_due": "2026-09-28T02:43:59Z"
+  },
+  "automation_fields": {
+    "policy_matrix_compatible": true,
+    "grc_tool_importable": true,
+    "assessment_automation_ready": true,
+    "evidence_links_provided": true,
+    "control_testing_automated": false,
+    "continuous_monitoring_enabled": true
+  }
+}
