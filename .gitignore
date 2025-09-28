@@ -17,3 +17,6 @@ logs/error.log
 .ruff_cache/
 .pytest_cache/
 .pre-commit-config.yaml
+.coverage.Loki.local.38434.XVejpvXx.c
+WARP.md
+.gitignore
