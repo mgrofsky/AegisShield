@@ -421,7 +421,6 @@ AegisShield provides comprehensive compliance documentation for enterprise and f
 |----------|---------|--------|
 | [`NIST-SP-800-53-CONTROLS.md`](NIST-SP-800-53-CONTROLS.md) | Human-readable control implementation guide | Markdown |
 | [`nist-sp-800-53-controls-mapping.json`](nist-sp-800-53-controls-mapping.json) | Machine-readable control mappings for automation | JSON |
-| [`WARP.md`](WARP.md) | Development and architecture guidelines | Markdown |
 
 ### Control Implementation Summary
 
