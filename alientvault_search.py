@@ -7,6 +7,13 @@ from requests.exceptions import HTTPError, RequestException, Timeout
 
 from error_handler import handle_exception
 
+# NIST SP 800-53 Rev. 5 Control Mappings:
+# - SI-4 (Information System Monitoring): Continuous threat intelligence monitoring
+# - RA-3 (Risk Assessment): Threat intelligence integration for risk analysis
+# - PM-16 (Threat Awareness Program): External threat intelligence consumption
+# - SC-7 (Boundary Protection): Secure external threat intelligence API communication
+# - AU-3 (Content of Audit Records): Threat intelligence query logging
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -54,6 +61,13 @@ def fetch_otx_data(
 ) -> str:
     """
     Fetch Threat Intelligence data from AlienVault OTX.
+    
+    NIST SP 800-53 Rev. 5 Controls Implemented:
+    - SI-4: Information System Monitoring - External threat intelligence collection
+    - RA-3: Risk Assessment - Industry-specific threat intelligence for risk analysis
+    - PM-16: Threat Awareness Program - Structured threat intelligence consumption
+    - SC-7: Boundary Protection - Secure API communication with threat intelligence provider
+    - AU-3: Content of Audit Records - Comprehensive threat intelligence query logging
     
     Args:
         api_key: The API key for accessing the OTX API

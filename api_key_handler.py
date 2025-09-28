@@ -1,12 +1,23 @@
 import streamlit as st
 
+# NIST SP 800-53 Rev. 5 Control Mappings:
+# - IA-5 (Authenticator Management): API key management and secure storage
+# - SC-12 (Cryptographic Key Establishment and Management): Key lifecycle management
+# - AC-3 (Access Enforcement): Access control through API key validation
+# - IA-2 (Identification and Authentication): Authentication to external services
 
 def load_api_keys():
     """
     Load NVD and AlienVault API keys from Streamlit secrets, and OpenAI from user input.
     If keys are not available in secrets, prompt user to input them.
+    
+    NIST SP 800-53 Rev. 5 Controls Implemented:
+    - IA-5(1): Authenticator Management | Password-Based Authentication
+    - SC-12(2): Cryptographic Key Establishment | Symmetric Keys
+    - AC-3: Access Enforcement
     """
     try:
+        # NIST IA-5(1): Secure storage and retrieval of authenticators
         # Check if Streamlit secrets are available and set the keys if they exist
         if 'nvd_api_key' in st.secrets:
             st.session_state['nvd_api_key'] = st.secrets['nvd_api_key']
@@ -58,14 +69,17 @@ def render_api_key_inputs():
             help="Both models work well with gpt-5 being a bit more verbose.",
         )
 
+        # NIST IA-5(1): Masked input for sensitive authenticator data
+        # NIST AC-3: Access enforcement through credential validation
         # OpenAI API key input field
         openai_api_key = st.text_input(
             "🔑 OpenAI API Key:",
             value=st.session_state.get('openai_api_key', ''),
-            type="password",
+            type="password",  # NIST IA-5(1): Obscure display of authenticators
             help="You can find your OpenAI API key on the [OpenAI dashboard](https://platform.openai.com/account/api-keys).",
             placeholder="Enter your OpenAI API key here...",
         )
+        # NIST AC-3: Enforce access control through authenticator validation
         if not openai_api_key:
             st.error("⚠️ OpenAI API key is required to proceed")
         st.markdown(

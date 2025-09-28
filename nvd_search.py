@@ -7,6 +7,13 @@ from requests.exceptions import HTTPError, RequestException, Timeout
 
 from error_handler import handle_exception
 
+# NIST SP 800-53 Rev. 5 Control Mappings:
+# - SI-7 (Software, Firmware, and Information Integrity): Vulnerability assessment and monitoring
+# - RA-5 (Vulnerability Scanning): Automated vulnerability identification via NVD
+# - SC-7 (Boundary Protection): External API communication security
+# - AU-3 (Content of Audit Records): API interaction logging
+# - SI-4 (Information System Monitoring): Continuous vulnerability monitoring
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -25,6 +32,11 @@ class NVDAPIError(Exception):
 def retry_with_backoff(func, config: NVDConfig | None = None):
     """
     Retry a function with exponential backoff.
+    
+    NIST SP 800-53 Rev. 5 Controls Implemented:
+    - SC-7: Boundary Protection - Resilient external API communication
+    - SI-4: Information System Monitoring - Connection failure monitoring
+    - AU-3: Content of Audit Records - Retry attempt logging
     
     Args:
         func: The function to retry
@@ -108,6 +120,12 @@ def search_nvd(
 ) -> str:
     """
     Search the NVD for CVEs related to a specific technology and version using NVDLib.
+    
+    NIST SP 800-53 Rev. 5 Controls Implemented:
+    - RA-5: Vulnerability Scanning - Automated CVE discovery and assessment
+    - SI-7: Software Integrity - Technology version vulnerability analysis
+    - AU-3: Content of Audit Records - Comprehensive vulnerability logging
+    - SC-7: Boundary Protection - Secure NVD API communication
 
     Args:
         api_key (str): The API key for accessing the NVD API.
