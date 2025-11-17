@@ -77,6 +77,9 @@ def fetch_cpe_name(api_key: str, cpe_prefix: str, version: str = "*") -> str:
     Raises:
         NVDAPIError: If there's an error accessing the NVD API or no CPE is found.
     """
+    # Mask API key for security - never log sensitive credentials
+    masked_key = f"{api_key[:8]}..." if api_key and len(api_key) > 8 else "***"
+    
     cpe_match_string = f"{cpe_prefix}{version}:*"
     logger.debug(f"Searching for CPE with match string: {cpe_match_string}")
 
@@ -143,7 +146,10 @@ def search_nvd(
         NVDAPIError: If there's an error accessing the NVD API or processing the results.
     """
     config = config or NVDConfig()
-    logger.info(f"Searching NVD for: {cpe_name}{version} | Tech: {tech} | Category: {category}")
+    # Mask API key for security - never log sensitive credentials  
+    masked_key = f"{api_key[:8]}..." if api_key and len(api_key) > 8 else "***"
+    
+    logger.info(f"Searching NVD for CPE: {cpe_name}{version} | Tech: {tech} | Category: {category}")
 
     try:
         cpe_name = fetch_cpe_name(api_key, cpe_name, version)
