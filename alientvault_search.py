@@ -86,13 +86,16 @@ def fetch_otx_data(
         AlienVaultAPIError: If there's an error accessing the OTX API or processing the results
     """
     try:
+        # Mask API key for security - never log sensitive credentials
+        masked_key = f"{api_key[:8]}..." if api_key and len(api_key) > 8 else "***"
+        
         # Initialize OTXv2 with the provided API key
         otx = OTXv2(api_key)
         cti_data = []
 
         # Construct the search query based on the provided industry
         query = f"{industry if industry else ''}".strip()
-        logger.debug(f"Searching OTX with query: {query}")
+        logger.debug(f"Searching OTX with query: {query if query else '(empty)'}")
 
         # Calculate the date for filtering pulses
         modified_since = (datetime.now() - timedelta(days=days)).isoformat()
