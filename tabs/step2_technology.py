@@ -67,6 +67,7 @@ APP_TYPE_OPTIONS = [
     "SaaS application",
     "Smart Grid Systems",
     "Vehicular Fog Computing (VFC)",
+    "VoIP/Telephony System",
     "Wearable Devices",
     "Web application"
 ]
