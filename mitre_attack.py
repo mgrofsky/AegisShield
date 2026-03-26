@@ -30,6 +30,7 @@ ENTERPRISE_APP_TYPES = [
     "Messaging application",
     "HPC System",
     "Drone as a Service (DaaS) Application",
+    "VoIP/Telephony System",
 ]
 
 ICS_APP_TYPES = [
