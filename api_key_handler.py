@@ -64,9 +64,9 @@ def render_api_key_inputs():
         # Add model selection input field to the sidebar
         selected_model = st.selectbox(
             "Select the model you would like to use:",
-            ["gpt-4o", "gpt-5"],
+            ["gpt-5.4"],
             key="selected_model",
-            help="Both models work well with gpt-5 being a bit more verbose.",
+            help="OpenAI GPT-5.4 model for threat modeling.",
         )
 
         # NIST IA-5(1): Masked input for sensitive authenticator data
