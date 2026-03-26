@@ -92,7 +92,7 @@ def render(model_provider: str, selected_model: str, openai_api_key: str) -> Non
     
     Args:
         model_provider: The selected AI model provider (e.g., "OpenAI API")
-        selected_model: The selected AI model name (e.g., "gpt-4o")
+        selected_model: The selected AI model name (e.g., "gpt-5.4")
         openai_api_key: The OpenAI API key for authentication
         
     Note:

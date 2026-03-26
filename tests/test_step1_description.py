@@ -127,7 +127,7 @@ def test_analyze_image_success(mock_uploaded_file):
     with patch('tabs.step1_description.get_image_analysis') as mock_get_analysis:
         mock_get_analysis.return_value = MOCK_IMAGE_ANALYSIS_OUTPUT
         
-        result = analyze_image(mock_uploaded_file, "test-key", "gpt-4o")
+        result = analyze_image(mock_uploaded_file, "test-key", "gpt-5.4")
         
         assert result == MOCK_IMAGE_ANALYSIS_OUTPUT['choices'][0]['message']['content']
         mock_get_analysis.assert_called_once()
@@ -138,7 +138,7 @@ def test_analyze_image_invalid_file():
     file.size = 11 * 1024 * 1024  # 11MB
     file.type = "image/png"
     
-    result = analyze_image(file, "test-key", "gpt-4o")
+    result = analyze_image(file, "test-key", "gpt-5.4")
     assert result is None
 
 @patch('tabs.step1_description.UI_TEXT', MOCK_UI_TEXT)
@@ -147,7 +147,7 @@ def test_analyze_image_api_error(mock_uploaded_file):
          patch('tabs.step1_description.handle_exception') as mock_handle_error:
         mock_get_analysis.side_effect = Exception("API Error")
         
-        result = analyze_image(mock_uploaded_file, "test-key", "gpt-4o")
+        result = analyze_image(mock_uploaded_file, "test-key", "gpt-5.4")
         
         assert result is None
         mock_handle_error.assert_called_once()
@@ -191,7 +191,7 @@ def test_render_complete(mock_session_state, mock_streamlit):
         mock_form.return_value = mock_form_instance
         mock_submit.return_value = True  # Form is submitted
 
-        render("OpenAI API", "gpt-4o", "test-key", "default description")
+        render("OpenAI API", "gpt-5.4", "test-key", "default description")
 
         # Verify form was used
         mock_form.assert_called_once()

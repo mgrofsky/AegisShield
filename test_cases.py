@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration constants
-DEFAULT_MODEL_NAME = "gpt-4o"
+DEFAULT_MODEL_NAME = "gpt-5.4"
 
 def create_test_cases_prompt(threats: str) -> str:
     """

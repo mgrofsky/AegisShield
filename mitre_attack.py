@@ -324,7 +324,7 @@ def get_relevant_techniques(prompt,openai_api_key):
     client = OpenAI(api_key=openai_api_key)
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-5.4",
         messages=[
             {
                 "role": "system",

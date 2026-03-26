@@ -21,7 +21,7 @@ try:
     default_nvd_api_key = conf.default_nvd_api_key
     default_openai_api_key = conf.default_openai_api_key
     default_alienvault_api_key = conf.default_alienvault_api_key
-    selected_model = "gpt-4o"  # The OpenAI model selected for threat modeling
+    selected_model = "gpt-5.4"  # The OpenAI model selected for threat modeling
 except ImportError as e:
     handle_exception(e, "local_config.py not found or missing keys")
     exit(1)
