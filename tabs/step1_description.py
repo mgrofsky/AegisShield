@@ -94,8 +94,8 @@ def analyze_image(uploaded_file: Any, openai_api_key: str, selected_model: str) 
     Args:
         uploaded_file: The uploaded file object from Streamlit
         openai_api_key: The OpenAI API key for authentication
-        selected_model: The selected AI model name (e.g., "gpt-4o")
-        
+        selected_model: The selected AI model name (e.g., "gpt-5.4")
+
     Returns:
         Optional[str]: The AI-generated analysis of the image if successful, None otherwise
         
@@ -157,7 +157,7 @@ def render(model_provider: str, selected_model: str, openai_api_key: str, defaul
     
     Args:
         model_provider: The selected AI model provider (e.g., "OpenAI API")
-        selected_model: The selected AI model name (e.g., "gpt-4o")
+        selected_model: The selected AI model name (e.g., "gpt-5.4")
         openai_api_key: The OpenAI API key for authentication
         default_app_description: The default application description to display
         
@@ -182,7 +182,7 @@ def render(model_provider: str, selected_model: str, openai_api_key: str, defaul
 
         with col1:
             # Handle image upload and analysis if OpenAI API is selected
-            if model_provider == "OpenAI API" and selected_model in ["gpt-4o", "gpt-5"]:
+            if model_provider == "OpenAI API" and selected_model in ["gpt-5.4"]:
                 uploaded_file = st.file_uploader(UI_TEXT['image_upload'], type=["jpg", "jpeg", "png"])
 
                 if uploaded_file is not None:

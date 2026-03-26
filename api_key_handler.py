@@ -42,7 +42,7 @@ def render_api_key_inputs():
         st.session_state['model_provider'] = "OpenAI API"  # Default value
 
     if 'selected_model' not in st.session_state or not st.session_state['selected_model']:
-        st.session_state['selected_model'] = "gpt-4o"  # Default value
+        st.session_state['selected_model'] = "gpt-5.4"  # Default value
 
     #model_provider = st.selectbox(
        # "Select your preferred model provider:",

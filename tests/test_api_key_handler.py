@@ -43,7 +43,7 @@ def test_render_api_key_inputs_default_state(mock_markdown, mock_text_input):
     
     # Check default values are set
     assert st.session_state['model_provider'] == 'OpenAI API'
-    assert st.session_state['selected_model'] == 'gpt-4o'
+    assert st.session_state['selected_model'] == 'gpt-5.4'
     
     # Verify OpenAI key input was rendered
     mock_text_input.assert_called()
