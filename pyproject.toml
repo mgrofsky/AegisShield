@@ -27,4 +27,4 @@ exclude = [
 
 
 [tool.ruff.lint.isort]
-known-first-party = ["tabs"]
+known-first-party = ["clients", "components", "config", "data", "pages", "services", "state", "utils"]
