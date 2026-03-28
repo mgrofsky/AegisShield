@@ -27,11 +27,11 @@ logger = logging.getLogger(__name__)
 
 
 def render():
-    if not require_steps_completed(1):
-        return
-
     if st.button("← Back to Description"):
         st.switch_page("pages/1_Description.py")
+
+    if not require_steps_completed(1):
+        return
 
     st.markdown("Select the technology details of your application for accurate threat modeling.")
     st.markdown("---")

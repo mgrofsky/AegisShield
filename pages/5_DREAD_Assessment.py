@@ -20,11 +20,11 @@ logger = logging.getLogger(__name__)
 
 
 def render():
-    if not require_steps_completed(1, 2, 3, 4):
-        return
-
     if st.button("← Back to Mitigations"):
         st.switch_page("pages/4_Mitigations.py")
+
+    if not require_steps_completed(1, 2, 3, 4):
+        return
 
     st.markdown(
         "DREAD assesses threats based on **D**amage potential, **R**eproducibility, "

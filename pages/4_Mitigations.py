@@ -19,11 +19,11 @@ logger = logging.getLogger(__name__)
 
 
 def render():
-    if not require_steps_completed(1, 2, 3):
-        return
-
     if st.button("← Back to Threat Model"):
         st.switch_page("pages/3_Threat_Model.py")
+
+    if not require_steps_completed(1, 2, 3):
+        return
 
     st.markdown(
         "Generate potential mitigations for the threats identified in the threat model. "

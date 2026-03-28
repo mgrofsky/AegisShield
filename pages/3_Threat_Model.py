@@ -25,11 +25,11 @@ logger = logging.getLogger(__name__)
 
 
 def render():
-    if not require_steps_completed(1, 2):
-        return
-
     if st.button("← Back to Technology"):
         st.switch_page("pages/2_Technology.py")
+
+    if not require_steps_completed(1, 2):
+        return
 
     st.markdown("Generate the threat model based on your application description and technology details.")
     st.markdown("---")

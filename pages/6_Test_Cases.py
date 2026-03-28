@@ -19,11 +19,11 @@ logger = logging.getLogger(__name__)
 
 
 def render():
-    if not require_steps_completed(1, 2, 3, 4, 5):
-        return
-
     if st.button("← Back to DREAD Assessment"):
         st.switch_page("pages/5_DREAD_Assessment.py")
+
+    if not require_steps_completed(1, 2, 3, 4, 5):
+        return
 
     st.markdown(
         "Generate security test cases using Gherkin syntax (Given-When-Then). "

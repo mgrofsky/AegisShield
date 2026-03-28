@@ -17,11 +17,11 @@ logger = logging.getLogger(__name__)
 
 
 def render():
-    if not require_steps_completed(1, 2, 3, 4, 5, 6):
-        return
-
     if st.button("← Back to Test Cases"):
         st.switch_page("pages/6_Test_Cases.py")
+
+    if not require_steps_completed(1, 2, 3, 4, 5, 6):
+        return
 
     st.markdown(
         "Generate a comprehensive PDF report compiling all threat modeling results: "
