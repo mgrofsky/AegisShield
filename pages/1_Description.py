@@ -64,6 +64,7 @@ def render():
                                     handle_exception(e, "Error analyzing the image.")
 
         # Application description form
+        _advance = False
         with st.form(key="app_description_form"):
             app_input = st.text_area(
                 label="Application Description",
@@ -80,7 +81,7 @@ def render():
                 if is_valid:
                     st.session_state["app_input"] = app_input
                     set_step_completed(1)
-                    st.switch_page("pages/2_Technology.py")
+                    _advance = True
                 else:
                     st.error(err)
 
@@ -109,6 +110,10 @@ def render():
 
         The more detailed your description, the more comprehensive the threat model.
         """)
+
+    # Navigate after form closes so session state changes are committed first
+    if _advance:
+        st.switch_page("pages/2_Technology.py")
 
 
 render()
