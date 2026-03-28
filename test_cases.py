@@ -1,15 +1,12 @@
 import logging
 
-from openai import OpenAI
-
+from config import DEFAULT_MODEL_NAME
 from error_handler import handle_exception
+from openai_client import get_openai_client
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Configuration constants
-DEFAULT_MODEL_NAME = "gpt-5.4"
 
 def create_test_cases_prompt(threats: str) -> str:
     """
@@ -70,8 +67,7 @@ def get_test_cases(api_key: str, model_name: str | None = None, prompt: str | No
     logger.info(f"Generating test cases using model: {model_name}")
     
     try:
-        client = OpenAI(api_key=api_key)
-        logger.debug("Created OpenAI client")
+        client = get_openai_client(api_key)
 
         response = client.chat.completions.create(
             model=model_name,

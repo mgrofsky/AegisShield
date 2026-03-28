@@ -3,16 +3,14 @@ import logging
 from typing import Any
 
 import streamlit as st
-from openai import OpenAI
 
+from config import DEFAULT_MODEL_NAME
 from error_handler import handle_exception
+from openai_client import get_openai_client
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Configuration constants
-DEFAULT_MODEL_NAME = "gpt-5.4"
 
 def dread_json_to_markdown(dread_assessment: dict[str, Any]) -> str:
     """
@@ -151,8 +149,7 @@ def get_dread_assessment(api_key: str, model_name: str | None = None, prompt: st
     logger.info(f"Generating DREAD assessment using model: {model_name}")
     
     try:
-        client = OpenAI(api_key=api_key)
-        logger.debug("Created OpenAI client")
+        client = get_openai_client(api_key)
 
         response = client.chat.completions.create(
             model=model_name,

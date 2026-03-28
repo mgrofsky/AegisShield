@@ -15,14 +15,14 @@ def test_get_attack_tree_missing_prompt(mock_handle_exception):
     get_attack_tree("fake_key", prompt=None)
     assert mock_handle_exception.call_count == 2
 
-@patch('attack_tree.OpenAI')
-def test_get_attack_tree_success(mock_openai):
+@patch('attack_tree.get_openai_client')
+def test_get_attack_tree_success(mock_get_client):
     mock_client = MagicMock()
     mock_client.chat.completions.create.return_value.choices = [
         MagicMock(message=MagicMock(content="```mermaid\ngraph\n```"))
     ]
-    mock_openai.return_value = mock_client
+    mock_get_client.return_value = mock_client
 
     result = get_attack_tree("fake_key", prompt="test")
     assert "graph" in result
-    mock_client.chat.completions.create.assert_called_once() 
+    mock_client.chat.completions.create.assert_called_once()

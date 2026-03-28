@@ -1,11 +1,11 @@
 import logging
-import time
 from datetime import datetime, timedelta
 
 from OTXv2 import OTXv2
-from requests.exceptions import HTTPError, RequestException, Timeout
+from requests.exceptions import HTTPError, Timeout
 
 from error_handler import handle_exception
+from retry import retry_with_backoff
 
 # NIST SP 800-53 Rev. 5 Control Mappings:
 # - SI-4 (Information System Monitoring): Continuous threat intelligence monitoring
@@ -21,33 +21,6 @@ logger = logging.getLogger(__name__)
 class AlienVaultAPIError(Exception):
     """Custom exception for AlienVault API related errors."""
     pass
-
-def retry_with_backoff(func, max_retries: int = 3, initial_delay: float = 1.0):
-    """
-    Retry a function with exponential backoff.
-    
-    Args:
-        func: The function to retry
-        max_retries: Maximum number of retry attempts
-        initial_delay: Initial delay between retries in seconds
-    
-    Returns:
-        The result of the function call or None if all retries fail
-    """
-    delay = initial_delay
-    
-    for attempt in range(max_retries):
-        try:
-            return func()
-        except (RequestException, Timeout) as e:
-            if attempt < max_retries - 1:
-                logger.warning(f"Attempt {attempt + 1} failed: {str(e)}. Retrying in {delay} seconds...")
-                time.sleep(delay)
-                delay *= 2  # Exponential backoff
-            else:
-                error = AlienVaultAPIError(f"Failed after {max_retries} attempts. Last error: {str(e)}")
-                handle_exception(error, f"Failed after {max_retries} retry attempts")
-                return None
 
 def fetch_otx_data(
     api_key: str,

@@ -40,9 +40,11 @@ from attack_tree import (
     create_attack_tree_prompt,
     get_attack_tree,
 )
+from config import MAX_RETRIES
 from error_handler import handle_exception
 from mitre_attack import fetch_mitre_attack_data, process_mitre_attack_data
 from nvd_search import search_nvd
+from retry import retry_with_backoff
 from threat_model import (
     create_threat_model_prompt,
     get_threat_model,
@@ -175,42 +177,44 @@ def render(model_provider: str, selected_model: str, openai_api_key: str) -> Non
                 model_output = None
 
                 with st.spinner("Analyzing application and creating potential threats..."):
-                    max_retries = 3
-                    retry_count = 0
-                    while retry_count < max_retries:
-                        try:
-                            if model_provider == "OpenAI API":
-                                model_output = get_threat_model(openai_api_key, selected_model, threat_model_prompt)
-                                if not model_output:
-                                    raise ValueError("No threat model output received")
-                            
-                            if model_output and isinstance(model_output, dict):
-                                threat_model = model_output.get("threat_model", [])
-                                improvement_suggestions = model_output.get("improvement_suggestions", [])
-                                
-                                if not isinstance(threat_model, list) or not isinstance(improvement_suggestions, list):
-                                    raise ValueError("Invalid model output format: threat_model and improvement_suggestions must be lists")
-                                
-                                st.session_state['session_threat_model_json'] = threat_model
-                                st.session_state['improvement_suggestions_json'] = improvement_suggestions
+                    def _generate_threat_model():
+                        if model_provider == "OpenAI API":
+                            output = get_threat_model(openai_api_key, selected_model, threat_model_prompt)
+                            if not output:
+                                raise ValueError("No threat model output received")
+                        else:
+                            raise ValueError(f"Unsupported model provider: {model_provider}")
 
-                                for threat in threat_model:
-                                    if not isinstance(threat, dict):
-                                        raise ValueError("Each threat must be a dictionary")
-                                    if 'MITRE ATT&CK Keywords' not in threat or not threat['MITRE ATT&CK Keywords']:
-                                        threat['MITRE ATT&CK Keywords'] = f"{threat.get('Scenario', '')} Potential impact: {threat.get('Potential Impact', '')}"
+                        if not isinstance(output, dict):
+                            raise ValueError("Invalid model output format: expected a dictionary")
 
-                                st.session_state['threat_model'] = threat_model
-                                st.session_state['improvement_suggestions'] = improvement_suggestions
-                                break
-                            else:
-                                raise ValueError("Invalid model output format: expected a dictionary with threat_model and improvement_suggestions keys")
-                        except Exception as e:
-                            retry_count += 1
-                            if retry_count == max_retries:
-                                handle_exception(e, f"Error generating threat model after {max_retries} attempts.")
-                            else:
-                                st.warning(f"Error generating threat model. Retrying attempt {retry_count + 1}/{max_retries}...")
+                        tm = output.get("threat_model", [])
+                        suggestions = output.get("improvement_suggestions", [])
+
+                        if not isinstance(tm, list) or not isinstance(suggestions, list):
+                            raise ValueError("Invalid model output format: threat_model and improvement_suggestions must be lists")
+
+                        for t in tm:
+                            if not isinstance(t, dict):
+                                raise ValueError("Each threat must be a dictionary")
+                            if 'MITRE ATT&CK Keywords' not in t or not t['MITRE ATT&CK Keywords']:
+                                t['MITRE ATT&CK Keywords'] = f"{t.get('Scenario', '')} Potential impact: {t.get('Potential Impact', '')}"
+
+                        return tm, suggestions
+
+                    result = retry_with_backoff(
+                        _generate_threat_model,
+                        max_retries=MAX_RETRIES,
+                        exceptions=(Exception,),
+                        error_message="Error generating threat model",
+                    )
+
+                    if result:
+                        threat_model, improvement_suggestions = result
+                        st.session_state['session_threat_model_json'] = threat_model
+                        st.session_state['improvement_suggestions_json'] = improvement_suggestions
+                        st.session_state['threat_model'] = threat_model
+                        st.session_state['improvement_suggestions'] = improvement_suggestions
 
                 # Initialize markdown strings
                 st.session_state['improvement_suggestions_markdown'] = ""
@@ -257,40 +261,31 @@ def render(model_provider: str, selected_model: str, openai_api_key: str) -> Non
                         st.session_state['mitre_attack_markdown'] = "No MITRE ATT&CK data found.\n"
 
                 with st.spinner("Generating Attack Tree..."):
-                    max_retries = 3
-                    retry_count = 0
-                    while retry_count < max_retries:
-                        try:
-                            logger.info("Generating Attack Tree...")
-                            attack_tree_prompt = create_attack_tree_prompt(
-                                app_details['app_type'],
-                                app_details['authentication'],
-                                app_details['internet_facing'],
-                                app_details['sensitive_data'],
-                                st.session_state['mitre_data'],
-                                nvd_vulnerabilities,
-                                otx_vulnerabilities,
-                                app_input
-                            )
+                    def _generate_attack_tree():
+                        logger.info("Generating Attack Tree...")
+                        prompt = create_attack_tree_prompt(
+                            app_details['app_type'],
+                            app_details['authentication'],
+                            app_details['internet_facing'],
+                            app_details['sensitive_data'],
+                            st.session_state['mitre_data'],
+                            nvd_vulnerabilities,
+                            otx_vulnerabilities,
+                            app_input,
+                        )
+                        if model_provider == "OpenAI API":
+                            return get_attack_tree(openai_api_key, selected_model, prompt)
+                        raise ValueError(f"Unsupported model provider: {model_provider}")
 
-                            if model_provider == "OpenAI API":
-                                logger.info("Calling get_attack_tree")
-                                attack_tree_code = get_attack_tree(openai_api_key, selected_model, attack_tree_prompt)
+                    attack_tree_code = retry_with_backoff(
+                        _generate_attack_tree,
+                        max_retries=MAX_RETRIES,
+                        exceptions=(Exception,),
+                        error_message="Error generating attack tree",
+                    )
 
-                            st.session_state['attack_tree_code'] = attack_tree_code
-
-                            if st.session_state.get('attack_tree_code'):
-                                attack_tree_markdown = st.session_state['attack_tree_code']
-                            else:
-                                attack_tree_markdown = "No attack tree generated.\n"
-
-                            break
-                        except Exception as e:
-                            retry_count += 1
-                            if retry_count == max_retries:
-                                handle_exception(e, f"Error generating attack tree after {max_retries} attempts.")
-                            else:
-                                st.warning(f"Error generating attack tree. Retrying attempt {retry_count + 1}/{max_retries}...")
+                    st.session_state['attack_tree_code'] = attack_tree_code or ""
+                    attack_tree_markdown = st.session_state['attack_tree_code'] or "No attack tree generated.\n"
 
                 if nvd_vulnerabilities:
                     for tech_version, vulnerabilities in nvd_vulnerabilities.items():

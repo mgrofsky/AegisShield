@@ -4,7 +4,8 @@ from unittest.mock import MagicMock, Mock, call, patch
 
 from requests.exceptions import HTTPError, RequestException, Timeout
 
-from alientvault_search import AlienVaultAPIError, fetch_otx_data, retry_with_backoff
+from alientvault_search import AlienVaultAPIError, fetch_otx_data
+from retry import retry_with_backoff
 
 
 def test_retry_success():
@@ -16,15 +17,15 @@ def test_retry_success():
 def test_retry_fails():
     """Test that retry fails after max retries."""
     mock_func = MagicMock(side_effect=Timeout("Connection timeout"))
-    with patch('alientvault_search.handle_exception') as mock_handle:
-        retry_with_backoff(lambda: mock_func())
+    with patch('retry.handle_exception') as mock_handle:
+        retry_with_backoff(lambda: mock_func(), initial_delay=0.01)
         assert mock_handle.call_count == 1
 
 def test_retry_custom_params():
     """Test retry with custom max_retries and initial_delay."""
     mock_func = MagicMock(side_effect=Timeout("Connection timeout"))
-    with patch('alientvault_search.handle_exception') as mock_handle:
-        retry_with_backoff(lambda: mock_func(), max_retries=2, initial_delay=0.1)
+    with patch('retry.handle_exception') as mock_handle:
+        retry_with_backoff(lambda: mock_func(), max_retries=2, initial_delay=0.01)
         assert mock_handle.call_count == 1
 
 def test_alienvault_api_error():
@@ -200,23 +201,23 @@ def test_retry_with_backoff_all_fail():
     """Test retry_with_backoff when all attempts fail."""
     mock_func = Mock(side_effect=RequestException("Test error"))
     with patch('time.sleep') as mock_sleep:
-        with patch('alientvault_search.handle_exception') as mock_handle:
+        with patch('retry.handle_exception') as mock_handle:
             result = retry_with_backoff(mock_func, max_retries=2, initial_delay=0.1)
             assert result is None
             mock_handle.assert_called_once()
             error_msg = mock_handle.call_args[0][1]
-            assert "Failed after 2 retry attempts" in error_msg
+            assert "after 2 attempts" in error_msg
 
 def test_retry_with_backoff_timeout():
     """Test retry_with_backoff with Timeout exception."""
     mock_func = Mock(side_effect=Timeout("Test timeout"))
     with patch('time.sleep') as mock_sleep:
-        with patch('alientvault_search.handle_exception') as mock_handle:
+        with patch('retry.handle_exception') as mock_handle:
             result = retry_with_backoff(mock_func, max_retries=2, initial_delay=0.1)
             assert result is None
             mock_handle.assert_called_once()
             error_msg = mock_handle.call_args[0][1]
-            assert "Failed after 2 retry attempts" in error_msg
+            assert "after 2 attempts" in error_msg
 
 def test_fetch_otx_data_no_matching_pulses():
     """Test fetch_otx_data when pulses are found but none match filters."""
