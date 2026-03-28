@@ -58,6 +58,7 @@ def render_sidebar() -> None:
             value=st.session_state.get("openai_api_key", ""),
             type="password",
             placeholder="sk-...",
+            key="openai_key_input",
         )
         if openai_key:
             st.session_state["openai_api_key"] = openai_key
@@ -69,6 +70,7 @@ def render_sidebar() -> None:
             nvd_key = st.text_input(
                 "NVD API Key:",
                 type="password",
+                key="nvd_key_input",
                 help="[Get an NVD API key](https://nvd.nist.gov/developers/request-an-api-key)",
             )
             if nvd_key:
@@ -79,6 +81,7 @@ def render_sidebar() -> None:
             av_key = st.text_input(
                 "AlienVault OTX API Key:",
                 type="password",
+                key="av_key_input",
                 help="[Get an AlienVault key](https://otx.alienvault.com/api)",
             )
             if av_key:

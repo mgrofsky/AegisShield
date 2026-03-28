@@ -23,6 +23,9 @@ def render():
     if not require_steps_completed(1, 2, 3, 4):
         return
 
+    if st.button("← Back to Mitigations"):
+        st.switch_page("pages/4_Mitigations.py")
+
     st.markdown(
         "DREAD assesses threats based on **D**amage potential, **R**eproducibility, "
         "**E**xploitability, **A**ffected users, and **D**iscoverability."
