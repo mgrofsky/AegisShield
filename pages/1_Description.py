@@ -80,7 +80,7 @@ def render():
                 if is_valid:
                     st.session_state["app_input"] = app_input
                     set_step_completed(1)
-                    st.success("Application description saved. Move to the next step.")
+                    st.switch_page("pages/2_Technology.py")
                 else:
                     st.error(err)
 

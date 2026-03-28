@@ -46,15 +46,19 @@ def render():
                 handle_exception(e, "Error generating test cases after multiple attempts.")
                 return
 
-        st.markdown(st.session_state["session_test_cases_markdown"])
         set_step_completed(6)
 
+    if st.session_state.get("session_test_cases_markdown"):
+        st.markdown(st.session_state["session_test_cases_markdown"])
         st.download_button(
             label="Download Test Cases",
             data=st.session_state["session_test_cases_markdown"],
             file_name="test_cases.md",
             mime="text/markdown",
         )
+        st.markdown("---")
+        if st.button("Proceed to PDF Report →", type="primary"):
+            st.switch_page("pages/7_PDF_Report.py")
 
 
 render()

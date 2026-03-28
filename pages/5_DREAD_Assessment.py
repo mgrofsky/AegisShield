@@ -57,15 +57,19 @@ def render():
                 handle_exception(e, "Error generating DREAD assessment after multiple attempts.")
                 return
 
-        st.markdown(st.session_state["session_dread_assessment_markdown"])
         set_step_completed(5)
 
+    if st.session_state.get("session_dread_assessment_markdown"):
+        st.markdown(st.session_state["session_dread_assessment_markdown"])
         st.download_button(
             label="Download DREAD Assessment",
             data=st.session_state["session_dread_assessment_markdown"],
             file_name="dread_assessment.md",
             mime="text/markdown",
         )
+        st.markdown("---")
+        if st.button("Proceed to Test Cases →", type="primary"):
+            st.switch_page("pages/6_Test_Cases.py")
 
 
 render()

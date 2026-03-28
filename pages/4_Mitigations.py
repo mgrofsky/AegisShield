@@ -54,15 +54,19 @@ def render():
                 handle_exception(e, "Error generating mitigations after multiple attempts.")
                 return
 
-        st.markdown(st.session_state["session_mitigations_markdown"])
         set_step_completed(4)
 
+    if st.session_state.get("session_mitigations_markdown"):
+        st.markdown(st.session_state["session_mitigations_markdown"])
         st.download_button(
             label="Download Mitigations",
             data=st.session_state["session_mitigations_markdown"],
             file_name="mitigations.md",
             mime="text/markdown",
         )
+        st.markdown("---")
+        if st.button("Proceed to DREAD Assessment →", type="primary"):
+            st.switch_page("pages/5_DREAD_Assessment.py")
 
 
 render()

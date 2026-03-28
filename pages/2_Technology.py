@@ -122,7 +122,7 @@ def render():
                     "app_input": st.session_state["app_input"],
                 }
                 set_step_completed(2)
-                st.success("Technology details saved. Move to the next step.")
+                st.switch_page("pages/3_Threat_Model.py")
 
 
 render()

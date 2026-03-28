@@ -159,9 +159,9 @@ def render():
             status.update(label="Threat model generation complete!", state="complete", expanded=False)
             set_step_completed(3)
 
-        # Display results
         st.toast("Threat model generated successfully!")
 
+    if st.session_state.get("threat_model_markdown"):
         st.markdown(f"""### Improvement Suggestions\n\n{st.session_state['improvement_suggestions_markdown']}""")
         st.markdown(f"""### Threat Model\n\n{st.session_state['threat_model_markdown']}""", unsafe_allow_html=True)
 
@@ -179,6 +179,9 @@ def render():
             file_name="threat_model_results.md",
             mime="text/markdown",
         )
+        st.markdown("---")
+        if st.button("Proceed to Mitigations →", type="primary"):
+            st.switch_page("pages/4_Mitigations.py")
 
 
 render()
