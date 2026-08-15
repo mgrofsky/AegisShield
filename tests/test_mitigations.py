@@ -32,7 +32,7 @@ def test_get_mitigations_missing_prompt(mock_handle_exception):
     get_mitigations("fake_key", prompt=None)
     assert mock_handle_exception.call_count == 2
 
-@patch('mitigations.OpenAI')
+@patch('mitigations.get_openai_client')
 def test_get_mitigations_success(mock_openai):
     mock_client = MagicMock()
     mock_client.chat.completions.create.return_value.choices = [
@@ -46,7 +46,7 @@ def test_get_mitigations_success(mock_openai):
     assert "{}" in result
 
 @patch('mitigations.handle_exception')
-@patch('mitigations.OpenAI')
+@patch('mitigations.get_openai_client')
 def test_get_mitigations_api_error(mock_openai, mock_handle_exception):
     """Test that API errors are handled by error_handler."""
     mock_openai.return_value.chat.completions.create.side_effect = Exception("API Error")

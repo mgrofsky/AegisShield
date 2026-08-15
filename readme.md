@@ -25,6 +25,7 @@ AegisShield is a threat modeling tool designed to democratize the threat modelin
 - [Setup](#setup)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
+- [Responsible Use & Safety](#responsible-use--safety)
 - [Contributing](#contributing)
 - [FAQ](#faq)
 - [Research Context](#artifact-overview-research-context)
@@ -270,7 +271,7 @@ streamlit run main.py --server.port 8502
 ### Performance Optimization
 - **API Rate Limits**: Built-in exponential backoff for all external APIs
 - **Memory Management**: Streaming JSON processing for large MITRE datasets
-- **Caching Strategy**: No caching of sensitive data (security-first design)
+- **Caching Strategy**: Session-scoped in-memory state for active workflows; no dedicated persistent prompt database by default
 - **Concurrent Processing**: Configurable worker threads for batch operations
 
 ### Debug Mode
@@ -281,6 +282,30 @@ streamlit run main.py --logger.level debug
 # Check log files
 tail -f logs/error.log
 ```
+
+## Responsible Use & Safety
+
+AegisShield is designed for defensive cybersecurity documentation, threat modeling, and risk reduction.
+
+### Intended Defensive Use
+
+- Threat identification using STRIDE
+- Mitigation planning and risk assessment
+- Security test-case drafting
+- Compliance evidence and reporting support
+
+### Prohibited Use
+
+- Unauthorized access attempts
+- Exploit or malware development
+- Operational attack planning against real targets
+- Instructions intended to evade lawful security controls
+
+### Data Handling Note
+
+- During an active run, the app keeps working data in Streamlit session state so each step can be rendered and exported.
+- The app sends user-provided threat-modeling context to configured external APIs (OpenAI, NVD, and OTX) over encrypted connections.
+- Do not submit secrets or regulated data unless your organization has approved that use; redact sensitive identifiers when required.
 
 ## Contributing
 
@@ -339,7 +364,7 @@ A: AegisShield implements 15 self-assessed NIST SP 800-53 Rev. 5 security contro
 A: Absolutely! The machine-readable JSON control mappings support ServiceNow, RSA Archer, and custom dashboard integrations. See the Enterprise Integration section for examples.
 
 **Q: Does AegisShield store or transmit sensitive data?**
-A: AegisShield follows a security-first design with no caching of sensitive threat model data. API keys are managed securely, and all processing is done locally or through encrypted API calls.
+A: AegisShield keeps working threat-model data in memory during the active session and can export results when requested. For AI/threat-intelligence features, relevant user-provided context is transmitted to configured external APIs over encrypted connections.
 
 **Q: What compliance frameworks does AegisShield support?**
 A: Primary alignment with NIST SP 800-53 Rev. 5, with control mappings that support FedRAMP and FISMA programs. The flexible architecture also supports HIPAA, GDPR, SOC 2, and other regulatory frameworks through customizable mappings.
@@ -361,7 +386,7 @@ A: AegisShield includes comprehensive retry logic and graceful degradation. If M
 ### Data & Security
 
 **Q: Where is my threat model data stored?**
-A: Threat models are stored locally in your session and exported as PDF reports. No sensitive application data is transmitted to external services except for the anonymized prompts sent to OpenAI for threat generation.
+A: Threat model artifacts are maintained in the local session and can be exported as reports. Application description and related context you provide may be sent to configured external services (OpenAI, NVD, OTX) to generate results; redact sensitive data when needed.
 
 **Q: Can I run AegisShield in an air-gapped environment?**
 A: Partially. The core threat modeling logic works offline, but you'll need internet access for OpenAI API, NVD, and OTX threat intelligence. Consider using cached threat intelligence data for air-gapped deployments.

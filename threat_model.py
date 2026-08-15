@@ -2,51 +2,21 @@
 
 import json
 import logging
-import time
 from typing import Any
 
 import requests
-import streamlit as st
-from openai import OpenAI
-from requests.exceptions import RequestException, Timeout
 
 from error_handler import handle_exception
+from openai_client import get_openai_client
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 class ThreatModelAPIError(Exception):
     """Custom exception for Threat Model API related errors."""
     pass
-
-def retry_with_backoff(func, max_retries: int = 3, initial_delay: float = 1.0):
-    """
-    Retry a function with exponential backoff.
-    
-    Args:
-        func: The function to retry
-        max_retries: Maximum number of retry attempts
-        initial_delay: Initial delay between retries in seconds
-    
-    Returns:
-        The result of the function call
-    
-    Raises:
-        ThreatModelAPIError: If all retry attempts fail
-    """
-    delay = initial_delay
-    
-    for attempt in range(max_retries):
-        try:
-            return func()
-        except (RequestException, Timeout) as e:
-            if attempt < max_retries - 1:
-                logger.warning(f"Attempt {attempt + 1} failed: {str(e)}. Retrying in {delay} seconds...")
-                time.sleep(delay)
-                delay *= 2  # Exponential backoff
-            else:
-                handle_exception(ThreatModelAPIError(f"Failed after {max_retries} attempts. Last error: {str(e)}"), "Threat Model API request failed")
 
 def json_to_markdown(threat_model: list[dict[str, Any]], improvement_suggestions: list[str]) -> str:
     """
@@ -95,19 +65,6 @@ def json_to_markdown(threat_model: list[dict[str, Any]], improvement_suggestions
     except Exception as e:
         logger.error(f"Error converting JSON to markdown: {str(e)}")
         return "Error: Unable to format threat model data"
-
-
-if "threat_model" in st.session_state:
-    st.session_state["threat_model_markdown"] = json_to_markdown(
-        st.session_state["threat_model"], st.session_state["improvement_suggestions"]
-    )
-
-
-# Example usage:
-if "threat_model" in st.session_state:
-    st.session_state["threat_model_markdown"] = json_to_markdown(
-        st.session_state["threat_model"], st.session_state["improvement_suggestions"]
-    )
 
 
 # Function to create a prompt for generating a threat model
@@ -293,7 +250,7 @@ def get_threat_model(api_key: str, model_name: str, prompt: str) -> dict[str, An
         ThreatModelAPIError: If there's an error with the API call or response parsing
     """
     try:
-        client = OpenAI(api_key=api_key)
+        client = get_openai_client(api_key)
 
         response = client.chat.completions.create(
             model=model_name,

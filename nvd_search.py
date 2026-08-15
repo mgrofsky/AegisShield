@@ -1,11 +1,11 @@
 import logging
-import time
 from dataclasses import dataclass
 
 import nvdlib
-from requests.exceptions import HTTPError, RequestException, Timeout
+from requests.exceptions import HTTPError, Timeout
 
 from error_handler import handle_exception
+from retry import retry_with_backoff
 
 # NIST SP 800-53 Rev. 5 Control Mappings:
 # - SI-7 (Software, Firmware, and Information Integrity): Vulnerability assessment and monitoring
@@ -28,39 +28,6 @@ class NVDConfig:
 class NVDAPIError(Exception):
     """Custom exception for NVD API related errors."""
     pass
-
-def retry_with_backoff(func, config: NVDConfig | None = None):
-    """
-    Retry a function with exponential backoff.
-    
-    NIST SP 800-53 Rev. 5 Controls Implemented:
-    - SC-7: Boundary Protection - Resilient external API communication
-    - SI-4: Information System Monitoring - Connection failure monitoring
-    - AU-3: Content of Audit Records - Retry attempt logging
-    
-    Args:
-        func: The function to retry
-        config: Optional configuration settings
-    
-    Returns:
-        The result of the function call
-    
-    Raises:
-        NVDAPIError: If all retry attempts fail
-    """
-    config = config or NVDConfig()
-    delay = config.initial_delay
-    
-    for attempt in range(config.max_retries):
-        try:
-            return func()
-        except (RequestException, Timeout) as e:
-            if attempt < config.max_retries - 1:
-                logger.warning(f"Attempt {attempt + 1} failed: {str(e)}. Retrying in {delay} seconds...")
-                time.sleep(delay)
-                delay *= 2  # Exponential backoff
-            else:
-                handle_exception(NVDAPIError(f"Failed after {config.max_retries} attempts. Last error: {str(e)}"), "NVD API request failed")
 
 def fetch_cpe_name(api_key: str, cpe_prefix: str, version: str = "*") -> str:
     """
@@ -192,7 +159,12 @@ def search_nvd(
 
 
     try:
-        top_results = retry_with_backoff(_search_cves, config)
+        top_results = retry_with_backoff(
+            _search_cves,
+            max_retries=config.max_retries,
+            initial_delay=config.initial_delay,
+            error_message="NVD CVE search failed",
+        )
     except NVDAPIError as e:
         logger.error(f"Failed to search CVEs: {str(e)}")
         return f"Error: {str(e)}"

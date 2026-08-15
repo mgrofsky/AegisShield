@@ -16,6 +16,14 @@ from mitre_attack import (
 )
 
 
+@pytest.fixture(autouse=True)
+def clear_mitre_cache():
+    """Clear the st.cache_data cache before each test."""
+    fetch_mitre_attack_data.clear()
+    yield
+    fetch_mitre_attack_data.clear()
+
+
 def test_fetch_enterprise_data():
     """Test fetching enterprise attack data."""
     mock_data = '{"objects": [{"type": "attack-pattern"}]}'
@@ -331,24 +339,21 @@ def test_get_relevant_techniques_success():
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content='["attack-pattern--1"]'))]
     
-    with patch('openai.OpenAI') as mock_openai:
+    with patch('mitre_attack.get_openai_client') as mock_get_client:
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_response
-        mock_openai.return_value = mock_client
-        
-        # Mock the actual API call to avoid authentication errors
-        with patch('mitre_attack.OpenAI') as mock_openai_class:
-            mock_openai_class.return_value = mock_client
-            result = get_relevant_techniques("test prompt", "fake_key")
-            assert result == ["attack-pattern--1"]
-            mock_client.chat.completions.create.assert_called_once()
+        mock_get_client.return_value = mock_client
+
+        result = get_relevant_techniques("test prompt", "fake_key")
+        assert result == ["attack-pattern--1"]
+        mock_client.chat.completions.create.assert_called_once()
 
 def test_get_relevant_techniques_invalid_response():
     """Test handling of invalid OpenAI response."""
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content='{"invalid": "json"}'))]
     
-    with patch('mitre_attack.OpenAI') as mock_openai:
+    with patch('mitre_attack.get_openai_client') as mock_openai:
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_response
         mock_openai.return_value = mock_client
@@ -358,7 +363,7 @@ def test_get_relevant_techniques_invalid_response():
 
 def test_get_relevant_techniques_api_error():
     """Test handling of OpenAI API errors."""
-    with patch('mitre_attack.OpenAI') as mock_openai, \
+    with patch('mitre_attack.get_openai_client') as mock_openai, \
          patch('mitre_attack.handle_exception') as mock_handle:
         mock_client = MagicMock()
         mock_client.chat.completions.create.side_effect = Exception("API Error")
@@ -383,7 +388,7 @@ def test_get_relevant_techniques_empty_list():
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content='[]'))]
     
-    with patch('mitre_attack.OpenAI') as mock_openai:
+    with patch('mitre_attack.get_openai_client') as mock_openai:
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_response
         mock_openai.return_value = mock_client
@@ -396,7 +401,7 @@ def test_get_relevant_techniques_multiple_ids():
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content='["id1", "id2"]'))]
     
-    with patch('mitre_attack.OpenAI') as mock_openai:
+    with patch('mitre_attack.get_openai_client') as mock_openai:
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_response
         mock_openai.return_value = mock_client
@@ -409,7 +414,7 @@ def test_get_relevant_techniques_non_list():
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content='"single_id"'))]
     
-    with patch('mitre_attack.OpenAI') as mock_openai:
+    with patch('mitre_attack.get_openai_client') as mock_openai:
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_response
         mock_openai.return_value = mock_client

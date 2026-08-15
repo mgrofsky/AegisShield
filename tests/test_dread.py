@@ -148,7 +148,7 @@ def test_create_dread_assessment_prompt_special_characters():
     assert mitre_mapping in prompt
     assert nvd_vulnerabilities in prompt
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 @patch('dread.handle_exception')
 def test_get_dread_assessment_missing_api_key(mock_handle_exception, mock_openai):
     """Test handling of missing API key."""
@@ -171,7 +171,7 @@ def test_get_dread_assessment_missing_api_key(mock_handle_exception, mock_openai
     
     assert result is None
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 @patch('dread.handle_exception')
 def test_get_dread_assessment_missing_prompt(mock_handle_exception, mock_openai):
     """Test handling of missing prompt."""
@@ -194,7 +194,7 @@ def test_get_dread_assessment_missing_prompt(mock_handle_exception, mock_openai)
     
     assert result is None
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 @patch('dread.handle_exception')
 def test_get_dread_assessment_json_error(mock_handle_exception, mock_openai):
     """Test handling of JSON parsing error."""
@@ -208,7 +208,7 @@ def test_get_dread_assessment_json_error(mock_handle_exception, mock_openai):
     assert isinstance(mock_handle_exception.call_args[0][0], json.JSONDecodeError)
     assert result is None
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 @patch('dread.handle_exception')
 def test_get_dread_assessment_api_error(mock_handle_exception, mock_openai):
     """Test handling of API error."""
@@ -222,7 +222,7 @@ def test_get_dread_assessment_api_error(mock_handle_exception, mock_openai):
     )
     assert result is None
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 def test_get_dread_assessment_success(mock_openai):
     """Test successful API call with valid response."""
     mock_response = MagicMock()
@@ -245,7 +245,7 @@ def test_get_dread_assessment_success(mock_openai):
     assert "Risk Assessment" in result
     assert len(result["Risk Assessment"]) == 1
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 def test_get_dread_assessment_default_model(mock_openai):
     """Test using default model name."""
     mock_response = MagicMock()
@@ -257,7 +257,7 @@ def test_get_dread_assessment_default_model(mock_openai):
     assert result is not None
     mock_openai.return_value.chat.completions.create.assert_called_once()
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 @patch('dread.handle_exception')
 def test_get_dread_assessment_empty_response(mock_handle_exception, mock_openai):
     """Test handling of empty response from API."""
@@ -269,7 +269,7 @@ def test_get_dread_assessment_empty_response(mock_handle_exception, mock_openai)
     assert mock_handle_exception.call_count == 1
     assert result is None
 
-@patch('dread.OpenAI')
+@patch('dread.get_openai_client')
 @patch('dread.handle_exception')
 def test_get_dread_assessment_malformed_json(mock_handle_exception, mock_openai):
     """Test handling of malformed JSON response."""

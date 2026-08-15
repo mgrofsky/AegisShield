@@ -1,5 +1,7 @@
 import streamlit as st
 
+from config import DEFAULT_MODEL_NAME, MODEL_OPTIONS
+
 # NIST SP 800-53 Rev. 5 Control Mappings:
 # - IA-5 (Authenticator Management): API key management and secure storage
 # - SC-12 (Cryptographic Key Establishment and Management): Key lifecycle management
@@ -42,7 +44,7 @@ def render_api_key_inputs():
         st.session_state['model_provider'] = "OpenAI API"  # Default value
 
     if 'selected_model' not in st.session_state or not st.session_state['selected_model']:
-        st.session_state['selected_model'] = "gpt-5.4"  # Default value
+        st.session_state['selected_model'] = DEFAULT_MODEL_NAME
 
     #model_provider = st.selectbox(
        # "Select your preferred model provider:",
@@ -64,9 +66,9 @@ def render_api_key_inputs():
         # Add model selection input field to the sidebar
         selected_model = st.selectbox(
             "Select the model you would like to use:",
-            ["gpt-5.4"],
+            MODEL_OPTIONS,
             key="selected_model",
-            help="OpenAI GPT-5.4 model for threat modeling.",
+            help="OpenAI model for threat modeling.",
         )
 
         # NIST IA-5(1): Masked input for sensitive authenticator data

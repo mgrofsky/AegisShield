@@ -31,7 +31,7 @@ def test_get_test_cases_missing_prompt(mock_handle_exception):
     get_test_cases("test_key", prompt=None)
     assert mock_handle_exception.call_count == 2
 
-@patch('test_cases.OpenAI')
+@patch('test_cases.get_openai_client')
 def test_get_test_cases(mock_openai):
     """Test get_test_cases with mocked OpenAI client."""
     # Setup mock response
@@ -44,7 +44,7 @@ def test_get_test_cases(mock_openai):
     assert result == "Test test case response"
 
 @patch('test_cases.handle_exception')
-@patch('test_cases.OpenAI')
+@patch('test_cases.get_openai_client')
 def test_get_test_cases_api_error(mock_openai, mock_handle_exception):
     """Test that API errors are handled by error_handler."""
     mock_openai.return_value.chat.completions.create.side_effect = Exception("API Error")

@@ -4,7 +4,8 @@ from unittest.mock import MagicMock, Mock, patch
 
 from requests.exceptions import HTTPError, Timeout
 
-from nvd_search import NVDAPIError, NVDConfig, fetch_cpe_name, retry_with_backoff, search_nvd
+from nvd_search import NVDAPIError, NVDConfig, fetch_cpe_name, search_nvd
+from retry import retry_with_backoff
 
 
 def test_retry_success():
@@ -16,10 +17,9 @@ def test_retry_success():
 def test_retry_fails():
     """Test that retry handles failures properly."""
     mock_func = MagicMock(side_effect=Timeout("Connection timeout"))
-    config = NVDConfig(max_retries=1)
-    
-    with patch('nvd_search.handle_exception') as mock_handle:
-        retry_with_backoff(lambda: mock_func(), config)
+
+    with patch('retry.handle_exception') as mock_handle:
+        retry_with_backoff(lambda: mock_func(), max_retries=1, initial_delay=0.01)
         mock_handle.assert_called_once()
 
 def test_fetch_cpe_name():

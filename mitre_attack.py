@@ -3,9 +3,11 @@ import logging
 import random
 import time
 
-from openai import OpenAI
+import streamlit as st
 
+from config import MAX_TECHNIQUES, RATE_LIMIT_SLEEP_MAX, RATE_LIMIT_SLEEP_MIN
 from error_handler import handle_exception
+from openai_client import get_openai_client
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -45,11 +47,7 @@ ICS_APP_TYPES = [
     "Wearable Devices",
 ]
 
-# MITRE ATT&CK processing configuration
-MAX_TECHNIQUES = 25  # Maximum number of techniques to consider per threat
-RATE_LIMIT_SLEEP_MIN = 0  # Minimum seconds to sleep between API calls
-RATE_LIMIT_SLEEP_MAX = 5  # Maximum seconds to sleep between API calls
-
+@st.cache_data
 def fetch_mitre_attack_data(app_type):
     """
     Fetches MITRE ATT&CK data based on the application type.
@@ -322,10 +320,10 @@ def get_relevant_techniques(prompt,openai_api_key):
     Returns:
     list: The ID of the most relevant attack patterns as determined by ChatGPT.
     """
-    client = OpenAI(api_key=openai_api_key)
+    client = get_openai_client(openai_api_key)
 
     response = client.chat.completions.create(
-        model="gpt-5.4",
+        model=st.session_state.get("selected_model", "gpt-5.4"),
         messages=[
             {
                 "role": "system",
