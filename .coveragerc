@@ -3,7 +3,7 @@ source = .
 omit = 
     main-batch.py
     api_key_handler_local.py 
-    local_config_bak.py
+    local_config.example.py
     tests/*
     */tests/*
     */dist-packages/*

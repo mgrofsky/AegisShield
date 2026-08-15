@@ -2,7 +2,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)  
 [![codecov](https://codecov.io/gh/mgrofsky/AegisShield/graph/badge.svg?token=W91TRNEP92)](https://codecov.io/gh/mgrofsky/AegisShield)
 [![NIST SP 800-53](https://img.shields.io/badge/NIST%20SP%20800--53-15%20Controls-green.svg)](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
-[![FedRAMP Ready](https://img.shields.io/badge/FedRAMP-Ready-blue.svg)](https://www.fedramp.gov/)
+[![NIST SP 800-53](https://img.shields.io/badge/NIST%20SP%20800--53%20Rev.%205-Aligned-blue.svg)](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 
 ### Coverage Overview
 [![Coverage Grid](https://codecov.io/gh/mgrofsky/AegisShield/graphs/tree.svg?token=W91TRNEP92)](https://codecov.io/gh/mgrofsky/AegisShield)
@@ -13,7 +13,7 @@
 
 ![AegisShield](aegisshield.png)
 
-AegisShield is an enterprise-ready threat modeling tool designed to democratize the threat modeling process while meeting federal and enterprise compliance requirements. It leverages GPT-4o and integrates with multiple threat intelligence sources to provide comprehensive threat analysis with **NIST SP 800-53 Rev. 5 compliance** and **FedRAMP readiness**.
+AegisShield is a threat modeling tool designed to democratize the threat modeling process while supporting federal and enterprise compliance programs. It leverages GPT-4o and integrates with multiple threat intelligence sources to provide comprehensive threat analysis aligned with **NIST SP 800-53 Rev. 5 controls**.
 
 ## Table of Contents
 
@@ -65,8 +65,8 @@ AegisShield implements **15 NIST SP 800-53 Rev. 5 security controls** across 6 c
 
 ### Compliance Benefits
 
-- ✅ **FedRAMP Ready**: Implements core controls required for Federal Risk and Authorization Management Program
-- ✅ **FISMA Compliant**: Supports Federal Information Security Management Act requirements
+- ✅ **NIST SP 800-53 Rev. 5 Aligned**: 15 self-assessed control implementations across 6 control families
+- ✅ **Federal Framework Mapping**: Machine-readable control mappings that support FedRAMP and FISMA compliance programs
 - ✅ **Enterprise Security**: Demonstrates industry-standard security practices
 - ✅ **Audit Trail**: Complete traceability with machine-readable control mappings
 
@@ -98,7 +98,7 @@ For detailed control implementation documentation, see:
 - **Industry Support**: Finance, healthcare, government, technology, and others
 - **Security & Compliance**: 
   - **NIST SP 800-53 Rev. 5**: 15 implemented security controls with full traceability
-  - **FedRAMP & FISMA**: Federal compliance readiness with machine-readable mappings
+  - **FedRAMP & FISMA**: Machine-readable control mappings that support federal compliance programs
   - **Authentication methods**: Secure API key management and multi-factor authentication support
   - **Compliance standards**: HIPAA, GDPR, SOC 2, and other regulatory framework alignment
   - **Data sensitivity classification**: High/Medium/Low with appropriate handling controls
@@ -191,7 +191,7 @@ jq '.controls[] | select(has("enhancement_implemented")) | {control_id, enhancem
    ```
 
 2. **Configure API Keys**:
-   Create a `local_config.py` file with:
+   Copy `local_config.example.py` to `local_config.py` and fill in your keys:
    ```python
    default_nvd_api_key="YOUR_NVD_KEY"
    default_openai_api_key="YOUR_OPENAI_KEY"
@@ -333,7 +333,7 @@ A: Yes! Each session generates a complete threat model for one application. You 
 ### Compliance & Enterprise
 
 **Q: Is AegisShield suitable for federal environments?**
-A: Yes! AegisShield implements 15 NIST SP 800-53 Rev. 5 security controls and is FedRAMP ready. It includes comprehensive audit trails and machine-readable compliance mappings.
+A: AegisShield implements 15 self-assessed NIST SP 800-53 Rev. 5 security controls with comprehensive audit trails and machine-readable mappings that support federal compliance programs. Note that FedRAMP authorization applies to cloud service offerings; AegisShield itself has not been through a formal authorization or third-party assessment.
 
 **Q: Can I integrate AegisShield with existing GRC tools?**
 A: Absolutely! The machine-readable JSON control mappings support ServiceNow, RSA Archer, and custom dashboard integrations. See the Enterprise Integration section for examples.
@@ -342,7 +342,7 @@ A: Absolutely! The machine-readable JSON control mappings support ServiceNow, RS
 A: AegisShield follows a security-first design with no caching of sensitive threat model data. API keys are managed securely, and all processing is done locally or through encrypted API calls.
 
 **Q: What compliance frameworks does AegisShield support?**
-A: Primary support for NIST SP 800-53 Rev. 5, FedRAMP, and FISMA. The flexible architecture also supports HIPAA, GDPR, SOC 2, and other regulatory frameworks through customizable mappings.
+A: Primary alignment with NIST SP 800-53 Rev. 5, with control mappings that support FedRAMP and FISMA programs. The flexible architecture also supports HIPAA, GDPR, SOC 2, and other regulatory frameworks through customizable mappings.
 
 ### Technical
 
@@ -428,7 +428,7 @@ AegisShield provides comprehensive compliance documentation for enterprise and f
 - **Control Families**: 6 families (AC, IA, SC, SI, AU, RA, PM)
 - **Implementation Coverage**: 100% of identified applicable controls
 - **Enhancement Controls**: IA-5(1), SC-12(2) implemented
-- **Compliance Frameworks**: FedRAMP, FISMA ready
+- **Compliance Frameworks**: Mappings support FedRAMP and FISMA programs
 
 ### Assessment and Auditing
 
