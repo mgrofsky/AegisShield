@@ -1,0 +1,104 @@
+{
+  "framework": "eu-ai-act",
+  "name": "EU AI Act",
+  "version": "Regulation (EU) 2024/1689 — high-risk obligations applicable from 2026",
+  "source": "https://eur-lex.europa.eu/eli/reg/2024/1689 — public domain (EU Publications Office)",
+  "obligations": [
+    {
+      "id": "EUAIA-9",
+      "article": "Art. 9",
+      "name": "Risk management system",
+      "summary": "Establish, implement, document and maintain a continuous risk-management process across the AI system's lifecycle. Identify reasonably foreseeable risks, including those during human oversight, and adopt risk-mitigation measures.",
+      "threat_keywords": [
+        "risk", "mitigation", "lifecycle", "monitoring", "harm",
+        "denial", "exfiltration", "tampering", "spoofing"
+      ]
+    },
+    {
+      "id": "EUAIA-10",
+      "article": "Art. 10",
+      "name": "Data and data governance",
+      "summary": "Training, validation and testing data must meet quality criteria: relevant, representative, free of errors and complete. Bias examination, data-collection processes documented.",
+      "threat_keywords": [
+        "training", "data quality", "bias", "poisoning", "dataset",
+        "data integrity", "tampering", "data poisoning"
+      ]
+    },
+    {
+      "id": "EUAIA-11",
+      "article": "Art. 11",
+      "name": "Technical documentation",
+      "summary": "Maintain technical documentation demonstrating compliance: system architecture, data flows, performance metrics, validation runs, post-market monitoring plan.",
+      "threat_keywords": [
+        "documentation", "audit", "traceability", "post-market"
+      ]
+    },
+    {
+      "id": "EUAIA-12",
+      "article": "Art. 12",
+      "name": "Record-keeping (automatic logs)",
+      "summary": "High-risk AI systems must automatically log events relevant to identifying risks and substantial modifications, retained for an appropriate period.",
+      "threat_keywords": [
+        "logging", "audit log", "repudiation", "retention", "monitoring"
+      ]
+    },
+    {
+      "id": "EUAIA-13",
+      "article": "Art. 13",
+      "name": "Transparency and information to deployers",
+      "summary": "Provide instructions for use, capabilities/limitations, expected accuracy, robustness, and cybersecurity properties so deployers can use the system as intended.",
+      "threat_keywords": [
+        "transparency", "documentation", "limitations", "accuracy"
+      ]
+    },
+    {
+      "id": "EUAIA-14",
+      "article": "Art. 14",
+      "name": "Human oversight",
+      "summary": "Design measures so natural persons can effectively oversee operation, intervene, and override outputs (including stop / kill-switch capability).",
+      "threat_keywords": [
+        "oversight", "intervention", "override", "kill switch",
+        "elevation of privilege", "agency"
+      ]
+    },
+    {
+      "id": "EUAIA-15",
+      "article": "Art. 15",
+      "name": "Accuracy, robustness and cybersecurity",
+      "summary": "Ensure appropriate accuracy, robustness, and cybersecurity throughout lifecycle; resilient to errors, faults, inconsistencies, adversarial inputs, model evasion, and data poisoning.",
+      "threat_keywords": [
+        "robustness", "cybersecurity", "adversarial", "evasion",
+        "model evasion", "data poisoning", "denial of service",
+        "tampering", "information disclosure", "privilege escalation"
+      ]
+    },
+    {
+      "id": "EUAIA-17",
+      "article": "Art. 17",
+      "name": "Quality management system",
+      "summary": "Providers must put in place a documented QMS covering compliance, design control, technical specifications, data-management procedures, and post-market monitoring.",
+      "threat_keywords": [
+        "quality management", "supply chain", "documentation"
+      ]
+    },
+    {
+      "id": "EUAIA-72",
+      "article": "Art. 72",
+      "name": "Post-market monitoring",
+      "summary": "Providers actively collect and review data on system performance throughout its lifetime, including continuous compliance with the requirements above.",
+      "threat_keywords": [
+        "monitoring", "post-market", "logging", "anomaly", "drift"
+      ]
+    },
+    {
+      "id": "EUAIA-73",
+      "article": "Art. 73",
+      "name": "Reporting of serious incidents",
+      "summary": "Providers must notify market-surveillance authorities of serious incidents (including significant cybersecurity breaches) within prescribed timelines.",
+      "threat_keywords": [
+        "incident response", "serious incident", "breach notification",
+        "denial of service"
+      ]
+    }
+  ]
+}

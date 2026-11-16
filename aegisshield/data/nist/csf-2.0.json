@@ -1,0 +1,95 @@
+{
+  "version": "NIST CSF 2.0 (2024)",
+  "source": "https://www.nist.gov/cyberframework — public domain (NIST)",
+  "functions": [
+    {
+      "id": "GV",
+      "name": "Govern",
+      "summary": "Establish, communicate, and monitor the organization's cybersecurity risk management strategy, expectations, and policy.",
+      "categories": [
+        {"id": "GV.OC", "name": "Organizational Context"},
+        {"id": "GV.RM", "name": "Risk Management Strategy"},
+        {"id": "GV.RR", "name": "Roles, Responsibilities, and Authorities"},
+        {"id": "GV.PO", "name": "Policy"},
+        {"id": "GV.OV", "name": "Oversight"},
+        {"id": "GV.SC", "name": "Cybersecurity Supply Chain Risk Management"}
+      ]
+    },
+    {
+      "id": "ID",
+      "name": "Identify",
+      "summary": "Develop the organization's understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities.",
+      "categories": [
+        {"id": "ID.AM", "name": "Asset Management"},
+        {"id": "ID.RA", "name": "Risk Assessment"},
+        {"id": "ID.IM", "name": "Improvement"}
+      ]
+    },
+    {
+      "id": "PR",
+      "name": "Protect",
+      "summary": "Develop and implement appropriate safeguards to ensure delivery of critical services.",
+      "categories": [
+        {"id": "PR.AA", "name": "Identity Management, Authentication, and Access Control"},
+        {"id": "PR.AT", "name": "Awareness and Training"},
+        {"id": "PR.DS", "name": "Data Security"},
+        {"id": "PR.PS", "name": "Platform Security"},
+        {"id": "PR.IR", "name": "Technology Infrastructure Resilience"}
+      ]
+    },
+    {
+      "id": "DE",
+      "name": "Detect",
+      "summary": "Develop and implement appropriate activities to identify the occurrence of a cybersecurity event.",
+      "categories": [
+        {"id": "DE.CM", "name": "Continuous Monitoring"},
+        {"id": "DE.AE", "name": "Adverse Event Analysis"}
+      ]
+    },
+    {
+      "id": "RS",
+      "name": "Respond",
+      "summary": "Develop and implement appropriate activities to take action regarding a detected cybersecurity incident.",
+      "categories": [
+        {"id": "RS.MA", "name": "Incident Management"},
+        {"id": "RS.AN", "name": "Incident Analysis"},
+        {"id": "RS.CO", "name": "Incident Response Reporting and Communication"},
+        {"id": "RS.MI", "name": "Incident Mitigation"}
+      ]
+    },
+    {
+      "id": "RC",
+      "name": "Recover",
+      "summary": "Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity incident.",
+      "categories": [
+        {"id": "RC.RP", "name": "Incident Recovery Plan Execution"},
+        {"id": "RC.CO", "name": "Incident Recovery Communication"}
+      ]
+    }
+  ],
+  "stride_to_csf": {
+    "Spoofing": ["PR.AA", "DE.CM", "GV.PO"],
+    "Tampering": ["PR.DS", "PR.PS", "DE.CM"],
+    "Repudiation": ["DE.AE", "RS.AN", "GV.PO"],
+    "Information Disclosure": ["PR.DS", "PR.AA", "DE.CM"],
+    "Denial of Service": ["PR.IR", "DE.CM", "RS.MI"],
+    "Elevation of Privilege": ["PR.AA", "PR.PS", "DE.CM"]
+  },
+  "tactic_to_csf": {
+    "Initial Access": ["PR.AA", "PR.PS", "DE.CM"],
+    "Execution": ["PR.PS", "DE.CM"],
+    "Persistence": ["PR.PS", "DE.CM"],
+    "Privilege Escalation": ["PR.AA", "PR.PS"],
+    "Defense Evasion": ["DE.CM", "DE.AE"],
+    "Credential Access": ["PR.AA", "PR.DS"],
+    "Discovery": ["DE.CM"],
+    "Lateral Movement": ["PR.AA", "DE.CM"],
+    "Collection": ["PR.DS", "DE.CM"],
+    "Command and Control": ["PR.IR", "DE.CM"],
+    "Exfiltration": ["PR.DS", "DE.CM", "RS.MI"],
+    "Impact": ["RS.MI", "RC.RP"],
+    "Resource Development": ["GV.SC", "ID.RA"],
+    "Reconnaissance": ["DE.CM", "ID.RA"],
+    "ML Attack Staging": ["GV.SC", "PR.PS", "DE.CM"]
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "mappings": [
+    {
+      "threat_id": "TC-S01",
+      "threat_type": "Spoofing",
+      "scenario": "An attacker replays stolen customer session cookies to place orders as another shopper at checkout.",
+      "technique_id": "T1539",
+      "categories": [
+        {
+          "id": "PR.AA",
+          "name": "Identity Management, Authentication, and Access Control",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "DE.CM",
+          "name": "Continuous Monitoring",
+          "function_id": "DE",
+          "function_name": "Detect"
+        },
+        {
+          "id": "GV.PO",
+          "name": "Policy",
+          "function_id": "GV",
+          "function_name": "Govern"
+        },
+        {
+          "id": "PR.DS",
+          "name": "Data Security",
+          "function_id": "PR",
+          "function_name": "Protect"
+        }
+      ]
+    },
+    {
+      "threat_id": "TC-T01",
+      "threat_type": "Tampering",
+      "scenario": "An attacker edits the cart total in the browser before the order is submitted, and the server trusts the client price.",
+      "technique_id": "T1565",
+      "categories": [
+        {
+          "id": "PR.DS",
+          "name": "Data Security",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "PR.PS",
+          "name": "Platform Security",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "DE.CM",
+          "name": "Continuous Monitoring",
+          "function_id": "DE",
+          "function_name": "Detect"
+        },
+        {
+          "id": "RS.MI",
+          "name": "Incident Mitigation",
+          "function_id": "RS",
+          "function_name": "Respond"
+        },
+        {
+          "id": "RC.RP",
+          "name": "Incident Recovery Plan Execution",
+          "function_id": "RC",
+          "function_name": "Recover"
+        }
+      ]
+    },
+    {
+      "threat_id": "TC-R01",
+      "threat_type": "Repudiation",
+      "scenario": "A customer disputes a completed order and the service cannot show who placed it because order events are not logged.",
+      "technique_id": null,
+      "categories": [
+        {
+          "id": "DE.AE",
+          "name": "Adverse Event Analysis",
+          "function_id": "DE",
+          "function_name": "Detect"
+        },
+        {
+          "id": "RS.AN",
+          "name": "Incident Analysis",
+          "function_id": "RS",
+          "function_name": "Respond"
+        },
+        {
+          "id": "GV.PO",
+          "name": "Policy",
+          "function_id": "GV",
+          "function_name": "Govern"
+        }
+      ]
+    },
+    {
+      "threat_id": "TC-I01",
+      "threat_type": "Information Disclosure",
+      "scenario": "The order lookup endpoint returns another customer's shipping address when the order number is changed in the URL.",
+      "technique_id": "T1213",
+      "categories": [
+        {
+          "id": "PR.DS",
+          "name": "Data Security",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "PR.AA",
+          "name": "Identity Management, Authentication, and Access Control",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "DE.CM",
+          "name": "Continuous Monitoring",
+          "function_id": "DE",
+          "function_name": "Detect"
+        }
+      ]
+    },
+    {
+      "threat_id": "TC-D01",
+      "threat_type": "Denial of Service",
+      "scenario": "Bots flood the coupon validation endpoint during a sale and exhaust the checkout database connection pool.",
+      "technique_id": "T1499",
+      "categories": [
+        {
+          "id": "PR.IR",
+          "name": "Technology Infrastructure Resilience",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "DE.CM",
+          "name": "Continuous Monitoring",
+          "function_id": "DE",
+          "function_name": "Detect"
+        },
+        {
+          "id": "RS.MI",
+          "name": "Incident Mitigation",
+          "function_id": "RS",
+          "function_name": "Respond"
+        },
+        {
+          "id": "RC.RP",
+          "name": "Incident Recovery Plan Execution",
+          "function_id": "RC",
+          "function_name": "Recover"
+        }
+      ]
+    },
+    {
+      "threat_id": "TC-E01",
+      "threat_type": "Elevation of Privilege",
+      "scenario": "A support agent account can call the refund API without a second approval and issue refunds to any card.",
+      "technique_id": "T1548",
+      "categories": [
+        {
+          "id": "PR.AA",
+          "name": "Identity Management, Authentication, and Access Control",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "PR.PS",
+          "name": "Platform Security",
+          "function_id": "PR",
+          "function_name": "Protect"
+        },
+        {
+          "id": "DE.CM",
+          "name": "Continuous Monitoring",
+          "function_id": "DE",
+          "function_name": "Detect"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "GV": {
+      "name": "Govern",
+      "summary": "Establish, communicate, and monitor the organization's cybersecurity risk management strategy, expectations, and policy.",
+      "threat_count": 2,
+      "categories": [
+        "GV.PO"
+      ]
+    },
+    "ID": {
+      "name": "Identify",
+      "summary": "Develop the organization's understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities.",
+      "threat_count": 0,
+      "categories": []
+    },
+    "PR": {
+      "name": "Protect",
+      "summary": "Develop and implement appropriate safeguards to ensure delivery of critical services.",
+      "threat_count": 5,
+      "categories": [
+        "PR.AA",
+        "PR.DS",
+        "PR.IR",
+        "PR.PS"
+      ]
+    },
+    "DE": {
+      "name": "Detect",
+      "summary": "Develop and implement appropriate activities to identify the occurrence of a cybersecurity event.",
+      "threat_count": 6,
+      "categories": [
+        "DE.AE",
+        "DE.CM"
+      ]
+    },
+    "RS": {
+      "name": "Respond",
+      "summary": "Develop and implement appropriate activities to take action regarding a detected cybersecurity incident.",
+      "threat_count": 3,
+      "categories": [
+        "RS.AN",
+        "RS.MI"
+      ]
+    },
+    "RC": {
+      "name": "Recover",
+      "summary": "Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity incident.",
+      "threat_count": 2,
+      "categories": [
+        "RC.RP"
+      ]
+    }
+  },
+  "markdown": "| Threat | STRIDE | Technique | NIST CSF |\n|---|---|---|---|\n| An attacker replays stolen customer session cookies to place orders as another shopper at checkout. | Spoofing | T1539 | PR.AA (Protect), DE.CM (Detect), GV.PO (Govern), PR.DS (Protect) |\n| An attacker edits the cart total in the browser before the order is submitted, and the server trusts the client price. | Tampering | T1565 | PR.DS (Protect), PR.PS (Protect), DE.CM (Detect), RS.MI (Respond), RC.RP (Recover) |\n| A customer disputes a completed order and the service cannot show who placed it because order events are not logged. | Repudiation | - | DE.AE (Detect), RS.AN (Respond), GV.PO (Govern) |\n| The order lookup endpoint returns another customer's shipping address when the order number is changed in the URL. | Information Disclosure | T1213 | PR.DS (Protect), PR.AA (Protect), DE.CM (Detect) |\n| Bots flood the coupon validation endpoint during a sale and exhaust the checkout database connection pool. | Denial of Service | T1499 | PR.IR (Protect), DE.CM (Detect), RS.MI (Respond), RC.RP (Recover) |\n| A support agent account can call the refund API without a second approval and issue refunds to any card. | Elevation of Privilege | T1548 | PR.AA (Protect), PR.PS (Protect), DE.CM (Detect) |"
+}

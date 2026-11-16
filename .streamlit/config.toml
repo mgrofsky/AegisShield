@@ -1,0 +1,60 @@
+# Streamlit settings for AegisShield. Safe to commit: no keys live here.
+# Operator keys (NVD, OTX) go in .streamlit/secrets.toml, which git ignores.
+
+[client]
+# Hide the developer items (Deploy, Rerun, Clear cache) from visitors.
+toolbarMode = "minimal"
+showErrorDetails = "none"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+# The largest upload the server accepts, in MB, on every upload route. It
+# must cover the largest file any page takes: a packet capture
+# (pcap_service.MAX_UPLOAD_BYTES, 25 MB); a workspace import
+# (workspace.MAX_WORKSPACE_BYTES) is 10 MB. Each page's uploader also
+# passes its own smaller limit to the browser, and each page checks the size
+# again before reading the file. tests/aegisshield/test_streamlit_config.py
+# keeps this number in step with those limits.
+maxUploadSize = 25
+
+[theme]
+# Dark only, with AegisShield's design tokens (aegisshield/ui/theme.py TOKENS).
+base = "dark"
+primaryColor = "#3b82f6"
+backgroundColor = "#080c14"
+secondaryBackgroundColor = "#131a2b"
+textColor = "#e2e8f0"
+linkColor = "#60a5fa"
+linkUnderline = false
+borderColor = "#222d42"
+dataframeBorderColor = "#192131"
+dataframeHeaderBackgroundColor = "#0f1522"
+dataframeHeaderTextColor = "#94a3b8"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "10px"
+buttonRadius = "6px"
+baseFontSize = 14
+paddingTop = "2rem"
+paddingBottom = "4rem"
+codeFontSize = "0.8rem"
+codeBackgroundColor = "#060a10"
+codeTextColor = "#e2e8f0"
+font = "Geist:https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap, sans-serif"
+codeFont = "JetBrains Mono:https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap, monospace"
+headingFontWeights = [700, 600, 600, 600, 600, 600]
+redColor = "#ef4444"
+orangeColor = "#f59e0b"
+yellowColor = "#f59e0b"
+blueColor = "#38bdf8"
+greenColor = "#22c55e"
+violetColor = "#a78bfa"
+grayColor = "#7b8aa3"
+
+[theme.sidebar]
+backgroundColor = "#0c1018"
+secondaryBackgroundColor = "#131a2b"
+borderColor = "#192131"
+paddingTop = "0.5rem"

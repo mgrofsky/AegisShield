@@ -1,0 +1,12 @@
+# Development only (not needed to run the app): tests, lint, browser checks.
+# Install: pip install -r requirements.txt -r requirements-dev.txt
+#          python -m playwright install chromium   (for tools/browser_check.py)
+pytest==9.2.0
+pytest-cov==7.1.0
+ruff==0.17.5
+playwright==1.65.1
+# The PDF tests read the rendered files back (pypdf also comes with xhtml2pdf).
+pypdf==7.1.0
+
+# The tests use the installed openai SDK's HTTP library directly (it comes with openai).
+httpx2==2.16.0

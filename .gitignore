@@ -1,23 +1,29 @@
-venv/
+# Python
 __pycache__/
-.DS_Store
-aegisshield.pxd
-local_config.py
-.vscode
-.venv
-.streamlit
-output.txt
-test.py
-aegisshield/
-get-pip.py
-error_log.txt
-old_batch_outputs
-aegisshield_errors.log
-logs/error.log
-.ruff_cache/
+*.py[cod]
+build/
+
+# Virtual environments
+.venv/
+.venv-garak/
+venv/
+
+# Tool caches and coverage output
 .pytest_cache/
-.pre-commit-config.yaml
-.coverage.Loki.local.38434.XVejpvXx.c
-WARP.md
-.gitignore
+.ruff_cache/
 .coverage
+.coverage.*
+coverage.xml
+
+# Logs
+logs/
+*.log
+error_log.txt
+
+# Local settings and secrets
+.streamlit/secrets.toml
+local_config.py
+.vscode/
+
+# macOS
+.DS_Store

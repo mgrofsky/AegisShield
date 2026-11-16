@@ -1,0 +1,181 @@
+/* The page around the office in Streamlit.
+
+   office.css reads design tokens it expects on :root. Here they are set on
+   the office's own wrapper so nothing leaks into the app. Values are the
+   app's design tokens (theme.TOKENS), with --bg-card resolved to an opaque panel color because
+   Streamlit's page is light. The rest of this file adds what
+   office.css leaves out: the panel header the shim builds, the room's size in
+   Streamlit, readable activity bubbles, and reduced motion. */
+.aegis-office-root {
+  --bg-card: #0b1120;
+  --border: rgba(56, 72, 104, 0.35);
+  --border-strong: rgba(56, 72, 104, 0.55);
+  --text-primary: #e2e8f0;
+  --text-soft: #94a3b8;
+  --text-muted: #7b8aa3;
+  --crit: #ef4444;
+  --ok: #22c55e;
+  --warn: #f59e0b;
+  --ag-lead: #f5b942;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  display: block;
+  width: 100%;
+  color: var(--text-primary);
+  font-family: "Geist", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+}
+
+.aegis-office-root .agent-roster {
+  margin-top: 0;
+  padding: 14px 16px 16px;
+  border-color: var(--border-strong);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* Header: title and subtitle on the left, the run status on the right. */
+.aegis-office-root .agent-roster-head {
+  align-items: center;
+  margin-bottom: 12px;
+}
+.aegis-office-root .ao-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.aegis-office-root .agent-roster-title {
+  color: var(--text-primary);
+  font-size: 0.82rem;
+}
+.aegis-office-root .ao-state {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-soft);
+}
+.aegis-office-root .ao-meter {
+  position: relative;
+  width: 120px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(148, 163, 184, 0.16);
+  overflow: hidden;
+}
+.aegis-office-root .ao-meter > i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  border-radius: 3px;
+  background: var(--ag-lead);
+  transition: width 0.6s ease;
+}
+.aegis-office-root .ao-chip {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.64rem;
+  font-weight: 600;
+}
+.aegis-office-root .ao-chip[data-state="running"] { color: var(--ag-lead); border-color: rgba(245, 185, 66, 0.55); }
+.aegis-office-root .ao-chip[data-state="complete"] { color: var(--ok); border-color: rgba(34, 197, 94, 0.55); }
+.aegis-office-root .ao-chip[data-state="failed"] { color: var(--crit); border-color: rgba(239, 68, 68, 0.6); }
+.aegis-office-root .ao-chip[data-state="cancelled"] { color: var(--warn); border-color: rgba(245, 158, 11, 0.55); }
+.aegis-office-root .ao-error {
+  margin: 0 0 10px;
+  padding: 6px 10px;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  border-radius: var(--radius-sm);
+  background: rgba(239, 68, 68, 0.08);
+  color: #fca5a5;
+  font-size: 0.78rem;
+}
+.aegis-office-root .ao-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* The room: taller than office.css's 400 px so seven desks breathe, and
+   no taller than the viewport allows under Streamlit's header. */
+.aegis-office-root .agent-office { border: 0; background: transparent; }
+.aegis-office-root .office.lg { height: clamp(360px, calc(100vh - 230px), 600px); }
+.aegis-office-root .office-vector .desk .lbl { font-size: 0.68rem; color: #cbd5e1; }
+
+/* The desk, edge, and packet layers share one coordinate box. It starts
+   below the top edge so a top desk's two-line bubble is not cut off by the
+   room's overflow, stops short of the bottom for the lower labels, and keeps
+   72 px from each side so the outermost desks' bubbles fit. The
+   edge layer's inline inset (set by office_vector.js) is overridden for the
+   same box. */
+.aegis-office-root .office-vector .office-desks,
+.aegis-office-root .office-vector .office-packets {
+  inset: 44px 72px 14px 72px;
+}
+.aegis-office-root .office-vector .office-edges {
+  inset: auto !important;
+  top: 44px !important;
+  left: 72px !important;
+  width: calc(100% - 144px) !important;
+  height: calc(100% - 58px) !important;
+}
+
+/* The rug is a child of the room, not of the desk layer, and office.css
+   centers it on the room. Move it onto the Lead, which sits at 52 percent of
+   the desk layer's height in the seven-desk ring (roster.js ringPos with
+   seven seats: the top seat is 163 units above the Lead, the lowest two 147
+   below, so the Lead's fraction is 9 + 0.526 * 82 = 52 percent). */
+.aegis-office-root .office .rug {
+  top: calc(44px + (100% - 58px) * 0.52 - 24%) !important;
+}
+
+/* Activity bubbles: office.css keeps them on one line, and the Lead's note
+   can be a long sentence, so wrap to two lines at most. */
+.aegis-office-root .office-vector .desk .bubble {
+  top: -10px;
+  width: max-content;
+  max-width: 220px;
+  white-space: normal;
+  text-align: center;
+  /* The line height is the vertical padding: the clamp cuts at exactly two
+     lines, where real padding would show the top of a third. */
+  line-height: 1.7;
+  font-size: 0.64rem;
+  color: var(--text-primary);
+  padding: 0 8px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.aegis-office-root .office-vector .desk .bubble[hidden] { display: none; }
+.aegis-office-root .office-vector .desk.lead .bubble { border-color: rgba(245, 185, 66, 0.45); }
+
+/* A text cue for each settled state, so status is not told by color alone
+   (office.css shows done only as a softer glow). Pseudo-element content
+   from this stylesheet, not record text. */
+.aegis-office-root .office-vector .desk .lbl::after { font-weight: 500; }
+.aegis-office-root .office-vector .desk.working .lbl::after { content: " \00b7  working"; color: var(--ag-lead); }
+.aegis-office-root .office-vector .desk.done .lbl::after { content: " \00b7  done"; color: var(--ok); }
+.aegis-office-root .office-vector .desk.fallback .lbl::after { content: " \00b7  skipped"; color: var(--warn); }
+.aegis-office-root .office-vector .desk.error .lbl::after { content: " \00b7  failed"; color: #fca5a5; }
+.aegis-office-root .office-vector .desk.fallback .lbl { color: var(--text-muted); }
+
+/* Reduced motion: no pulsing heads, no traveling packets. Active links stay
+   drawn, so the picture still shows who is talking to whom. */
+@media (prefers-reduced-motion: reduce) {
+  .aegis-office-root .desk.working .head { animation: none; }
+  .aegis-office-root .office-vector .office-packets { display: none; }
+  .aegis-office-root .ao-meter > i { transition: none; }
+  .aegis-office-root .office-vector .desk .head { transition: none; }
+}

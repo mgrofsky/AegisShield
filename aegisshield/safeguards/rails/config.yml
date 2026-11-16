@@ -1,0 +1,24 @@
+# NeMo Guardrails configuration for AegisShield's own model calls.
+#
+# No model is configured: these rails never call a model to judge text.
+# AegisShield calls its provider itself and runs the rails through
+# LLMRails.check on text it supplies. Every rail calls a local, deterministic
+# action registered by aegisshield.safeguards.engine.
+#
+# NeMo's "retrieval" rail type runs only inside NeMo's own generation flow,
+# which AegisShield does not use, so the retrieved-content rail set runs as
+# input rails gated on the context variable aegis_rail_set; the typed-input
+# rail runs only when that variable is "input".
+models: []
+
+rails:
+  input:
+    flows:
+      - aegis typed instructions
+      - aegis retrieved instructions
+  output:
+    flows:
+      - aegis answer leak
+      - aegis answer injection
+      - aegis answer secrets
+      - aegis answer exfiltration

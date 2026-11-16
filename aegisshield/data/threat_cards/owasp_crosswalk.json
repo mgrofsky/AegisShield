@@ -1,0 +1,97 @@
+{
+  "version": "2026-06",
+  "source": "OWASP Top 10 cross-walk distilled from owasp.org/www-project-top-10-for-large-language-model-applications, owasp.org/www-project-agentic-security-initiative, OWASP MCP/Skills working drafts (2026), and OWASP ML Top 10 (2024).",
+  "license": "Cards reference OWASP material under CC-BY-SA-4.0; attribution preserved.",
+  "categories": [
+    {
+      "theme": "Prompt-injection / instruction subversion",
+      "owasp_llm": "LLM01 Prompt Injection",
+      "owasp_asi": "ASI06 Intent Breaking & Goal Manipulation",
+      "owasp_mcp": "MCP01 Tool Call Hijack",
+      "owasp_skills": "SK01 Skill-Prompt Injection",
+      "owasp_ml": null,
+      "summary": "Adversarial input overrides the system prompt or coerces an action the user did not intend."
+    },
+    {
+      "theme": "Sensitive data leak from model output",
+      "owasp_llm": "LLM02 Sensitive Information Disclosure",
+      "owasp_asi": "ASI07 Misaligned & Deceptive Behavior",
+      "owasp_mcp": "MCP02 Resource Over-Disclosure",
+      "owasp_skills": "SK04 Skill Data Exfiltration",
+      "owasp_ml": "ML08 Model Skewing",
+      "summary": "The model emits secrets, training data, or another tenant's content via its output."
+    },
+    {
+      "theme": "Supply-chain compromise",
+      "owasp_llm": "LLM03 Supply Chain",
+      "owasp_asi": null,
+      "owasp_mcp": "MCP05 Compromised Server",
+      "owasp_skills": "SK05 Skill Supply Chain",
+      "owasp_ml": "ML06 AI Supply Chain Attack",
+      "summary": "A compromised model, fine-tune, dataset, plugin, MCP server, or skill reaches production."
+    },
+    {
+      "theme": "Data / model poisoning",
+      "owasp_llm": "LLM04 Data and Model Poisoning",
+      "owasp_asi": "ASI01 Memory Poisoning",
+      "owasp_mcp": null,
+      "owasp_skills": "SK06 Skill Poisoning",
+      "owasp_ml": "ML02 Data Poisoning",
+      "summary": "Adversaries plant samples in training, fine-tune, RAG, agent memory, or skill catalog to bias outputs."
+    },
+    {
+      "theme": "Improper output handling at the call site",
+      "owasp_llm": "LLM05 Improper Output Handling",
+      "owasp_asi": "ASI11 Unexpected Code Execution",
+      "owasp_mcp": "MCP03 Unsafe Tool Output",
+      "owasp_skills": "SK07 Skill Output Handling",
+      "owasp_ml": null,
+      "summary": "Caller treats LLM/MCP/skill output as safe HTML, SQL, shell, or eval input → XSS, SQLi, RCE."
+    },
+    {
+      "theme": "Excessive agency / over-broad capabilities",
+      "owasp_llm": "LLM06 Excessive Agency",
+      "owasp_asi": "ASI02 Tool Misuse / ASI03 Privilege Compromise",
+      "owasp_mcp": "MCP04 Over-Permissive Capabilities",
+      "owasp_skills": "SK02 Skill Privilege Sprawl",
+      "owasp_ml": null,
+      "summary": "Tools/agents/skills hold more privilege than the calling user actually has."
+    },
+    {
+      "theme": "Identity / impersonation",
+      "owasp_llm": null,
+      "owasp_asi": "ASI09 Identity Spoofing & Impersonation",
+      "owasp_mcp": "MCP06 Caller Spoofing",
+      "owasp_skills": "SK08 Skill Identity Confusion",
+      "owasp_ml": null,
+      "summary": "Adversary acts as another user or system in agent / MCP / skill traffic."
+    },
+    {
+      "theme": "Resource exhaustion / cost",
+      "owasp_llm": "LLM10 Unbounded Consumption",
+      "owasp_asi": "ASI04 Resource Overload",
+      "owasp_mcp": "MCP07 Quota Bypass",
+      "owasp_skills": "SK09 Skill Loop / DoS",
+      "owasp_ml": "ML04 Membership Inference (DoS variant)",
+      "summary": "Token amplification, recursive prompts, or expensive tool calls drive cost or denial of service."
+    },
+    {
+      "theme": "Misalignment / hallucination cascade",
+      "owasp_llm": "LLM09 Misinformation",
+      "owasp_asi": "ASI05 Cascading Hallucinations / ASI07 Deceptive Behavior",
+      "owasp_mcp": null,
+      "owasp_skills": "SK10 Skill Hallucination",
+      "owasp_ml": "ML01 Adversarial Attack",
+      "summary": "The model emits confident but wrong output; cascading through agents/tools compounds the harm."
+    },
+    {
+      "theme": "Privacy / membership / inversion",
+      "owasp_llm": "LLM08 Vector and Embedding Weaknesses",
+      "owasp_asi": null,
+      "owasp_mcp": null,
+      "owasp_skills": null,
+      "owasp_ml": "ML03 Model Inversion / ML04 Membership Inference",
+      "summary": "Embeddings or model parameters leak training-set membership or reconstruct private inputs."
+    }
+  ]
+}

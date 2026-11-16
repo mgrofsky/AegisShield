@@ -1,18 +1,10 @@
 [run]
-source = .
-omit = 
-    main-batch.py
-    api_key_handler_local.py 
-    local_config.example.py
+source =
+    aegisshield
+    main
+branch = True
+# research/ holds the paper's material and the first-generation research
+# runner; the app does not use it, so it is not measured.
+omit =
+    research/*
     tests/*
-    */tests/*
-    */dist-packages/*
-    */lib32/python*/*/dist-packages/*
-    */include/python*/*/dist-packages/*
-    */local/lib/python*/*/dist-packages/*
-    */local/lib64/python*/*/dist-packages/*
-    */local/lib32/python*/*/dist-packages/*
-    */local/include/python*/*/dist-packages/*
-    */lib/python*/*/site-packages/*
-    main-batch.py 
-    */lib/python*/*/site-packages/* 

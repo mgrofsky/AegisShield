@@ -1,0 +1,79 @@
+# A tiny made-up release in the ATLAS format 6 layout, for the refresh tool's tests.
+format-version: 6.1.0
+collection:
+  name: ATLAS
+  version: '2099.01'
+  id: ATLAS-collection
+  modified-date: '2099-01-15'
+matrix:
+  name: ATLAS
+  id: ATLAS-matrix
+tactics:
+  AML.TA0002:
+    id: AML.TA0002
+    name: Reconnaissance
+    description: The adversary is gathering information.
+    uuid: drop-me
+  AML.TA0005:
+    id: AML.TA0005
+    name: Execution
+    description: The adversary is running something.
+techniques:
+  AML.T0051:
+    id: AML.T0051
+    name: LLM Prompt Injection
+    description: Crafted prompts make the model misbehave.
+    maturity: Realized
+    platforms: [Generative AI]
+  AML.T0051.000:
+    id: AML.T0051.000
+    name: Direct
+    description: Injected directly by a user.
+  AML.T0000:
+    id: AML.T0000
+    name: Search Open Technical Databases
+    description: Public research.
+mitigations:
+  AML.M0000:
+    id: AML.M0000
+    name: Limit Public Release of Information
+    description: Say less in public.
+    categories: [Policy]
+case-studies:
+  AML.CS0000:
+    id: AML.CS0000
+    name: A Case
+    description: What happened.
+    actor: someone
+entities:
+  AML.E0000:
+    id: AML.E0000
+    name: An Entity
+relationships:
+  ATLAS-matrix:
+    sequences:
+      - {source: ATLAS-matrix, target: AML.TA0002, relationship-type: sequences}
+      - {source: ATLAS-matrix, target: AML.TA0005, relationship-type: sequences}
+  AML.T0051:
+    achieves:
+      - {source: AML.T0051, target: AML.TA0005, relationship-type: achieves}
+  AML.T0051.000:
+    achieves:
+      - {source: AML.T0051.000, target: AML.TA0005, relationship-type: achieves}
+    specializes:
+      - {source: AML.T0051.000, target: AML.T0051, relationship-type: specializes}
+  AML.T0000:
+    achieves:
+      - {source: AML.T0000, target: AML.TA0002, relationship-type: achieves}
+      - {source: AML.T0000, target: AML.TA0005, relationship-type: achieves}
+  AML.M0000:
+    mitigates:
+      - {source: AML.M0000, target: AML.T0000, relationship-type: mitigates, description: step}
+      - {source: AML.M0000, target: AML.T0051.000, relationship-type: mitigates}
+  AML.CS0000:
+    employs:
+      - {source: AML.CS0000, target: AML.T0000, relationship-type: employs, step-id: S00}
+      - {source: AML.CS0000, target: AML.T0051.000, relationship-type: employs, step-id: S01}
+      - {source: AML.CS0000, target: AML.T0000, relationship-type: employs, step-id: S02}
+    attributed-to:
+      - {source: AML.CS0000, target: AML.E0000, relationship-type: attributed-to}

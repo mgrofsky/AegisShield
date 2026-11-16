@@ -1,0 +1,185 @@
+/* Styles only the tool pages use (vulnerability lookup, policies, PCAP
+   analysis). Built on the tokens in theme.css; every class starts with tx-. */
+
+.tx-muted {
+  color: var(--text-muted);
+  font-size: var(--type-sm);
+  margin: 0;
+}
+.tx-line {
+  color: var(--text-soft);
+  font-size: var(--type-base);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.tx-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.tx-name {
+  color: var(--text-primary);
+  font-size: var(--type-md);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.tx-mono {
+  font-family: var(--mono);
+  font-size: var(--type-sm);
+  color: var(--text-soft);
+}
+
+/* the "what was not checked" list */
+.tx-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-soft);
+  font-size: var(--type-base);
+}
+.tx-list li {
+  margin: 2px 0;
+  overflow-wrap: anywhere;
+}
+
+/* CVE rows */
+.tx-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.tx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--type-sm);
+}
+.tx-table th {
+  background: var(--bg-raised);
+  color: var(--text-muted);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+.tx-table td {
+  border-top: 1px solid var(--border);
+  color: var(--text-soft);
+  padding: 7px 10px;
+  vertical-align: top;
+}
+.tx-table td.tx-num {
+  font-family: var(--mono);
+  white-space: nowrap;
+}
+.tx-table a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+.tx-table a:hover {
+  text-decoration: underline;
+}
+.tx-table .tx-desc {
+  color: var(--text-muted);
+  max-width: 46ch;
+  overflow-wrap: anywhere;
+}
+.tx-sub {
+  display: block;
+  color: var(--text-muted);
+  font-size: var(--type-xs);
+}
+
+/* policy cards */
+.tx-card-title {
+  color: var(--text-primary);
+  font-size: var(--type-md);
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.tx-card-summary {
+  color: var(--text-soft);
+  font-size: var(--type-sm);
+  line-height: 1.5;
+  margin: 0 0 8px;
+  min-height: 3.6em;
+}
+.tx-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+/* coverage bars */
+.tx-bars {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 6px 12px;
+  align-items: center;
+  font-size: var(--type-sm);
+  color: var(--text-soft);
+}
+.tx-progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.2);
+  overflow: hidden;
+}
+.tx-progress::-webkit-progress-bar {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+}
+.tx-progress::-webkit-progress-value {
+  background: var(--accent);
+  border-radius: 999px;
+}
+.tx-progress::-moz-progress-bar {
+  background: var(--accent);
+}
+.tx-progress.tx-low::-webkit-progress-value {
+  background: var(--warn);
+}
+.tx-progress.tx-low::-moz-progress-bar {
+  background: var(--warn);
+}
+
+/* the policy text while it streams in */
+.st-key-tx_stream {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+/* policy text in the reader: headings at document scale, not page scale */
+.st-key-ax_card_policy_reader_body h1 { font-size: var(--type-xl); }
+.st-key-ax_card_policy_reader_body h2 { font-size: var(--type-lg); margin-top: var(--space-4, 1rem); }
+.st-key-ax_card_policy_reader_body h3 { font-size: var(--type-md); }
+.st-key-ax_card_policy_reader_body p,
+.st-key-ax_card_policy_reader_body li { color: var(--text-soft); line-height: 1.6; }
+.st-key-ax_card_pcap_ai h2 { font-size: var(--type-lg); }
+.st-key-ax_card_pcap_ai h3 { font-size: var(--type-md); }
+.st-key-tx_stream h2 { font-size: var(--type-lg); }
+
+/* the policy catalog: the cards of one row share its height, and the
+   button sits at the bottom of each card */
+.st-key-pol_catalog [data-testid="stHorizontalBlock"] {
+  align-items: stretch;
+}
+.st-key-pol_catalog [data-testid="stColumn"] > [data-testid="stVerticalBlock"] {
+  height: 100%;
+}
+.st-key-pol_catalog [data-testid="stColumn"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"] {
+  flex: 1 1 auto;
+}
+.st-key-pol_catalog [class*="st-key-ax_card_pol_"] {
+  height: 100%;
+}
+.st-key-pol_catalog [class*="st-key-ax_card_pol_"] > :last-child {
+  margin-top: auto;
+}

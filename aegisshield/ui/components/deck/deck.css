@@ -1,0 +1,1507 @@
+/* The "agents at work" deck on the Generate step.
+   Every class is prefixed dk- so nothing here meets a page's .panel, .card,
+   .chip, .btn, .brand, or .status rules. Built by deck_view.js with
+   createElement and textContent only. Sizes follow the deck's own box
+   (container units), not the viewport, because the deck sits inside the
+   page instead of filling it. */
+
+.dk {
+  /* page tokens (set by host.css), with the deck's values as fallbacks */
+  --dk-bg: var(--bg-base, #080c14);
+  --dk-text: var(--text-primary, #e2e8f0);
+  --dk-blue: var(--area-blue, #3b82f6);
+  --dk-amber: var(--warn, #f59e0b);
+  --dk-red: var(--crit, #ef4444);
+  --dk-pink: var(--ag-dread, #f472b6);
+  --dk-violet: var(--ag-mitre, #a78bfa);
+  --dk-cyan: var(--ag-valid, #22d3ee);
+  --dk-mono: var(--mono, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  /* the deck's own */
+  --dk-raised: #111a2d;
+  --dk-well: #070b14;
+  --dk-line: rgba(72, 92, 130, 0.4);
+  --dk-line-strong: rgba(104, 128, 172, 0.62);
+  --dk-soft: #a8b5c9;
+  --dk-muted: #8493ab;
+  --dk-green: #10b981;
+  --dk-fs-xs: 11px;
+  --dk-fs-sm: 12px;
+  --dk-fs-md: 13px;
+  --dk-fs-lg: 15px;
+  --dk-sprite-h: clamp(37px, calc((100cqh - 820px) * 0.07 + 37px), 56px);
+  --dk-sprite-active: calc(var(--dk-sprite-h) + 22px);
+  --dk-work-h: clamp(130px, calc((100cqh - 820px) * 0.16 + 130px), 176px);
+
+  container: dk / size;
+  display: block;
+  /* The space under the sticky top bar, less a small gap above and below.
+     A screen tall enough for the 820px design keeps exactly the height it
+     had (100vh - 96px); a shorter one gets all the room under the bar, and
+     the short-deck rules near the end of this file tighten the rows. Below
+     620px the page scrolls. */
+  height: clamp(
+    620px,
+    min(calc(100vh - var(--topbar-height, 50px) - 20px), max(820px, calc(100vh - 96px))),
+    1080px
+  );
+  margin-top: 0.75rem;
+  color: var(--dk-text);
+  font: var(--dk-fs-md) / 1.35 "Geist", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.dk[hidden],
+.dk [hidden] {
+  display: none !important;
+}
+.dk *,
+.dk *::before,
+.dk *::after {
+  box-sizing: border-box;
+}
+.dk-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dk-app {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  border: 1px solid var(--dk-line);
+  border-radius: 10px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(59, 130, 246, 0.045) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(59, 130, 246, 0.045) 1px, transparent 1px) 0 0 / 32px 32px,
+    radial-gradient(1200px 600px at 60% -10%, rgba(59, 130, 246, 0.1), transparent 70%),
+    var(--dk-bg);
+}
+
+/* ---------- HUD ---------- */
+.dk-hud {
+  padding: 8px 16px 6px;
+  border-bottom: 1px solid var(--dk-line);
+  background: rgba(8, 12, 20, 0.82);
+}
+.dk-hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.dk-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.dk-brand-mark {
+  width: 10px;
+  height: 28px;
+  border-radius: 2px;
+  background: linear-gradient(var(--dk-cyan), var(--dk-blue));
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+  flex: none;
+}
+.dk .dk-title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--dk-fs-lg);
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  color: var(--dk-text);
+  text-transform: none;
+}
+.dk .dk-subtitle {
+  margin: 0;
+  font-size: var(--dk-fs-sm);
+  line-height: 1.3;
+  color: var(--dk-soft);
+}
+.dk-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+.dk .dk-btn {
+  background: var(--dk-raised);
+  border: 1px solid var(--dk-line-strong);
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 0;
+  font: inherit;
+  font-size: var(--dk-fs-sm);
+  font-weight: 400;
+  color: var(--dk-text);
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.5;
+  box-shadow: none;
+  min-height: 0;
+  min-width: 0;
+  width: auto;
+  flex: none;
+  transition: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.dk .dk-btn:hover {
+  border-color: var(--dk-blue);
+  transform: none;
+}
+.dk .dk-btn:focus-visible {
+  outline: 2px solid var(--dk-cyan);
+  outline-offset: 2px;
+}
+.dk .dk-btn[aria-pressed="true"] {
+  background: rgba(59, 130, 246, 0.22);
+  border-color: var(--dk-blue);
+  color: #fff;
+}
+.dk-hud-track {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+.dk-clock {
+  font-family: var(--dk-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.dk-clock-now {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.dk-clock small {
+  font-size: var(--dk-fs-sm);
+  color: var(--dk-muted);
+  margin-left: 6px;
+}
+.dk-timeline {
+  display: flex;
+  gap: 2px;
+  height: 14px;
+}
+.dk-tl-seg {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 4px;
+  background: rgba(104, 128, 172, 0.16);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.dk-tl-seg[data-state="skipped"] {
+  background: repeating-linear-gradient(135deg, rgba(245, 158, 11, 0.55) 0 2px, rgba(245, 158, 11, 0.12) 2px 4px);
+}
+.dk-tl-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: var(--c);
+  box-shadow: 0 0 8px var(--c);
+}
+.dk-tl-seg[data-state="skipped"] .dk-tl-fill {
+  display: none;
+}
+.dk-tl-seg[data-state="failed"] .dk-tl-fill {
+  background: var(--dk-red);
+  box-shadow: 0 0 8px var(--dk-red);
+}
+/* a working stage whose share done is not known: a soft moving band */
+.dk-tl-seg.dk-busy .dk-tl-fill {
+  width: 100%;
+  box-shadow: none;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 22%, transparent) 0 35%, var(--c) 50%, color-mix(in srgb, var(--c) 22%, transparent) 65% 100%) 0 0 / 200% 100%;
+  animation: dk-busy 1.8s linear infinite;
+}
+@keyframes dk-busy {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+.dk-step {
+  font-size: var(--dk-fs-md);
+  white-space: nowrap;
+  color: var(--dk-text);
+  max-width: 46cqw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dk-step.dk-step-warn,
+.dk-step.dk-step-warn b {
+  color: #fbbf24;
+}
+.dk-step b {
+  font-family: var(--dk-mono);
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ---------- main layout ---------- */
+.dk-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(268px, 21cqw, 380px) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) clamp(150px, calc(100cqh - 626px), 270px);
+  gap: 8px 10px;
+  padding: 8px 16px 12px;
+  min-height: 0;
+}
+.dk-flow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+.dk-panel {
+  position: relative;
+  background: rgba(12, 19, 34, 0.86);
+  border: 1px solid var(--dk-line);
+  border-radius: 8px;
+  min-width: 0;
+  min-height: 0;
+}
+.dk-panel::before,
+.dk-panel::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--dk-line-strong);
+  pointer-events: none;
+}
+.dk-panel::before {
+  top: -1px;
+  left: -1px;
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: 8px 0 0 0;
+}
+.dk-panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: 0;
+  border-top: 0;
+  border-radius: 0 0 8px 0;
+}
+.dk .dk-ptitle {
+  font: 600 var(--dk-fs-xs) / 1 var(--dk-mono);
+  letter-spacing: 0.1em;
+  color: var(--dk-muted);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- agent rail ---------- */
+.dk-rail,
+.dk-steplist {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dk-line-strong) transparent;
+}
+.dk-steplist {
+  padding: 8px 12px;
+  gap: 6px;
+}
+.dk-agent {
+  flex: none;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(72, 92, 130, 0.22);
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+.dk-agent-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 8px;
+  min-height: calc(var(--dk-sprite-h) + 2px);
+}
+.dk-sprite-wrap {
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--dk-sprite-h) * 0.86 + 2px);
+}
+/* a long unbroken word wraps inside its column instead of running under the state label */
+.dk-plate,
+.dk-pname,
+.dk-ptech,
+.dk-preason,
+.dk-work-sub,
+.dk-sl .dk-nm,
+.dk-sl .dk-tech,
+.dk-sl .dk-why {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.dk-pname {
+  font-size: var(--dk-fs-md);
+  font-weight: 650;
+  line-height: 1.2;
+  color: var(--dk-text);
+}
+.dk-ptech {
+  font-size: var(--dk-fs-xs);
+  color: var(--dk-muted);
+  line-height: 1.25;
+}
+.dk-preason {
+  grid-column: 2 / span 2;
+  font-size: var(--dk-fs-xs);
+  color: #fbbf24;
+  line-height: 1.25;
+  margin-top: -2px;
+  padding-bottom: 2px;
+}
+.dk-agent[data-state="failed"] .dk-preason {
+  color: #fca5a5;
+}
+.dk-pstatus {
+  font: var(--dk-fs-xs) / 1.3 var(--dk-mono);
+  text-align: right;
+  color: var(--dk-muted);
+  white-space: nowrap;
+}
+.dk-pstatus b {
+  display: block;
+  font-weight: 600;
+}
+.dk-agent[data-state="waiting"] .dk-pname {
+  color: var(--dk-soft);
+}
+.dk-agent[data-state="done"] .dk-pstatus b {
+  color: #34d399;
+}
+.dk-agent[data-state="skipped"] .dk-pstatus b {
+  color: #fbbf24;
+}
+.dk-agent[data-state="failed"] .dk-pstatus b {
+  color: #f87171;
+}
+.dk-agent[data-state="failed"] {
+  border-color: rgba(239, 68, 68, 0.55);
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.12), transparent 70%);
+}
+.dk-agent[data-state="working"] {
+  border-color: var(--c);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 16%, transparent), transparent 70%);
+  box-shadow: 0 0 22px -8px var(--c), inset 0 0 0 1px color-mix(in srgb, var(--c) 30%, transparent);
+  padding: 5px 6px 7px;
+  margin: 2px 0;
+}
+.dk-agent[data-state="working"] .dk-pstatus b {
+  color: var(--ct);
+}
+.dk-agent[data-state="working"] .dk-agent-head {
+  min-height: calc(var(--dk-sprite-active) + 4px);
+}
+.dk-agent[data-state="working"] .dk-sprite {
+  height: var(--dk-sprite-active);
+}
+.dk-agent[data-state="working"] .dk-sprite-wrap {
+  width: calc(var(--dk-sprite-active) * 0.86 + 2px);
+}
+
+/* sprite: one body for every agent; only --c (phase color) and the chest emblem differ */
+.dk-sprite {
+  display: block;
+  height: var(--dk-sprite-h);
+  aspect-ratio: 48 / 56;
+  overflow: visible;
+}
+.dk-sp-head {
+  fill: #0d1730;
+  stroke: var(--c);
+  stroke-width: 2;
+}
+.dk-sp-torso {
+  fill: color-mix(in srgb, var(--c) 24%, #0d1730);
+  stroke: var(--c);
+  stroke-width: 2;
+}
+.dk-sp-visor {
+  fill: #050912;
+  stroke: color-mix(in srgb, var(--c) 50%, transparent);
+  stroke-width: 1;
+}
+.dk-sp-arm,
+.dk-sp-neck,
+.dk-sp-ant {
+  fill: var(--c);
+}
+.dk-sp-antl {
+  stroke: var(--c);
+  stroke-width: 1.6;
+}
+.dk-sp-thr {
+  fill: var(--c);
+  opacity: 0.3;
+}
+.dk-sp-emb {
+  fill: none;
+  stroke: #eaf1ff;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dk-eye {
+  display: none;
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.dk-eye-open {
+  fill: var(--c);
+  stroke: none;
+}
+.dk-sp-badge {
+  display: none;
+}
+.dk-sp-badge path {
+  fill: none;
+  stroke: #04121a;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: none;
+}
+.dk-sprite[data-state="waiting"] {
+  filter: saturate(0.15) brightness(0.8);
+  opacity: 0.72;
+}
+.dk-sprite[data-state="waiting"] .dk-eye-flat {
+  display: block;
+}
+.dk-sprite[data-state="working"] {
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--c) 75%, transparent));
+}
+.dk-sprite[data-state="working"] .dk-eye-open {
+  display: block;
+}
+.dk-sprite[data-state="working"] .dk-sp-thr {
+  opacity: 0.75;
+}
+.dk-sprite[data-state="done"] .dk-eye-happy {
+  display: block;
+}
+.dk-sprite[data-state="done"] .dk-sp-badge {
+  display: block;
+}
+.dk-sprite[data-state="done"] .dk-sp-badge circle {
+  fill: var(--dk-green);
+}
+.dk-sprite[data-state="done"] .dk-b-check {
+  display: block;
+}
+.dk-sprite[data-state="skipped"] {
+  --c: #8a94a8;
+}
+.dk-sprite[data-state="skipped"] .dk-sp-head,
+.dk-sprite[data-state="skipped"] .dk-sp-torso {
+  stroke: var(--dk-amber);
+  stroke-dasharray: 3 2.6;
+  fill: #10151f;
+}
+.dk-sprite[data-state="skipped"] .dk-sp-emb {
+  stroke: #8a94a8;
+}
+.dk-sprite[data-state="skipped"] .dk-sp-thr {
+  display: none;
+}
+.dk-sprite[data-state="skipped"] .dk-eye-flat {
+  display: block;
+}
+.dk-sprite[data-state="skipped"] .dk-sp-badge {
+  display: block;
+}
+.dk-sprite[data-state="skipped"] .dk-sp-badge circle {
+  fill: var(--dk-amber);
+}
+.dk-sprite[data-state="skipped"] .dk-b-skip {
+  display: block;
+}
+.dk-sprite[data-state="failed"] {
+  --c: #ef4444;
+}
+.dk-sprite[data-state="failed"] .dk-sp-body {
+  transform: rotate(-7deg);
+  transform-origin: 24px 50px;
+}
+.dk-sprite[data-state="failed"] .dk-sp-thr {
+  display: none;
+}
+.dk-sprite[data-state="failed"] .dk-eye-x {
+  display: block;
+}
+.dk-sprite[data-state="failed"] .dk-sp-badge {
+  display: block;
+}
+.dk-sprite[data-state="failed"] .dk-sp-badge circle {
+  fill: var(--dk-red);
+}
+.dk-sprite[data-state="failed"] .dk-b-x {
+  display: block;
+}
+
+/* live work panel (sits inside the working agent's row) */
+.dk-work {
+  height: var(--dk-work-h);
+  margin-top: 5px;
+  padding: 7px 9px;
+  border: 1px solid color-mix(in srgb, var(--c) 55%, transparent);
+  border-radius: 6px;
+  background: var(--dk-well);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dk-work-head {
+  font: 600 var(--dk-fs-xs) / 1.3 var(--dk-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ct);
+}
+.dk-work-sub {
+  font-size: var(--dk-fs-sm);
+  font-weight: 600;
+  color: var(--dk-text);
+  line-height: 1.28;
+  /* a long title keeps two lines, so the text being written keeps three */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  flex: none;
+}
+.dk .dk-work-body {
+  font-size: var(--dk-fs-sm);
+  line-height: 1.38;
+  color: var(--dk-soft);
+  margin: 0;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  /* the only part of the panel that gives up room: when the text is longer
+     than the space left, it shows its newest lines and cuts the oldest */
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.dk-work-line {
+  display: block;
+}
+.dk-work-head,
+.dk .dk-work-rows {
+  flex: none;
+}
+.dk-work-cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 1px;
+  vertical-align: -2px;
+  background: var(--ct);
+}
+.dk .dk-work-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--dk-fs-sm);
+  line-height: 1.28;
+  color: var(--dk-soft);
+}
+.dk .dk-work-rows li {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: anywhere;
+}
+.dk .dk-work-rows li.dk-dim {
+  color: var(--dk-muted);
+}
+.dk-work-rows b {
+  color: var(--dk-text);
+  font-weight: 600;
+}
+.dk-summary {
+  flex: none;
+  margin-top: auto;
+  padding: 9px 10px;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.07);
+  font-size: var(--dk-fs-sm);
+  line-height: 1.45;
+  color: var(--dk-soft);
+  overflow-wrap: anywhere;
+}
+.dk-summary strong {
+  display: block;
+  color: #34d399;
+  font-size: var(--dk-fs-md);
+}
+.dk-summary b {
+  color: var(--dk-text);
+}
+.dk-summary[data-tone="warn"] {
+  border-color: rgba(245, 158, 11, 0.55);
+  background: rgba(245, 158, 11, 0.07);
+}
+.dk-summary[data-tone="warn"] strong {
+  color: #fbbf24;
+}
+.dk-summary[data-tone="fail"] {
+  border-color: rgba(239, 68, 68, 0.6);
+  background: rgba(239, 68, 68, 0.09);
+  color: var(--dk-text);
+}
+.dk-summary[data-tone="fail"] strong {
+  color: #f87171;
+}
+
+/* plain-text step list */
+.dk .dk-sl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--dk-fs-md);
+}
+.dk .dk-sl li {
+  display: grid;
+  grid-template-columns: 1.7em minmax(0, 1fr) auto;
+  gap: 0 6px;
+  margin: 0;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(72, 92, 130, 0.25);
+  line-height: 1.3;
+  color: var(--dk-text);
+}
+.dk-sl .dk-n {
+  font-family: var(--dk-mono);
+  color: var(--dk-muted);
+}
+.dk-sl .dk-nm b {
+  font-weight: 650;
+}
+.dk-sl .dk-tech {
+  grid-column: 2 / span 2;
+  font-size: var(--dk-fs-xs);
+  color: var(--dk-muted);
+}
+.dk-sl .dk-st {
+  font: var(--dk-fs-xs) / 1.5 var(--dk-mono);
+  text-align: right;
+  white-space: nowrap;
+}
+.dk-sl li[data-state="working"] .dk-st {
+  color: #fff;
+  font-weight: 600;
+}
+.dk-sl li[data-state="done"] .dk-st {
+  color: #34d399;
+}
+.dk-sl li[data-state="skipped"] .dk-st {
+  color: #fbbf24;
+}
+.dk-sl li[data-state="failed"] .dk-st {
+  color: #f87171;
+}
+.dk .dk-sl li[data-state="waiting"] {
+  color: var(--dk-soft);
+}
+.dk-sl .dk-why {
+  grid-column: 2 / span 2;
+  font-size: var(--dk-fs-xs);
+  color: #fbbf24;
+}
+.dk-sl li[data-state="failed"] .dk-why {
+  color: #fca5a5;
+}
+
+/* ---------- board ---------- */
+.dk-board {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dk-board-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 18px;
+}
+.dk-root-chip {
+  font-size: var(--dk-fs-xs);
+  font-family: var(--dk-mono);
+  color: #bfd4ff;
+  border: 1px solid rgba(59, 130, 246, 0.6);
+  border-radius: 10px;
+  padding: 1px 9px;
+  background: rgba(59, 130, 246, 0.12);
+  visibility: hidden;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dk-root-chip.dk-on {
+  visibility: visible;
+}
+.dk-board-count {
+  flex: none;
+  font: var(--dk-fs-xs) / 1 var(--dk-mono);
+  color: var(--dk-soft);
+}
+.dk-cols {
+  --dk-rows: 3;
+  --dk-card-min: min-content;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--dk-ncols, 6), minmax(0, 1fr));
+  gap: 8px;
+  min-height: 0;
+  overflow: hidden auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dk-line-strong) transparent;
+}
+.dk-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  min-height: 100%;
+}
+.dk-col-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex: none;
+  font-size: var(--dk-fs-sm);
+  font-weight: 650;
+  color: var(--dk-soft);
+  background: #0c1322;
+  border-top: 2px solid var(--dk-line-strong);
+  padding: 3px 0 2px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dk-col-cards {
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(var(--dk-rows), minmax(var(--dk-card-min), 1fr));
+  gap: 6px;
+  min-height: 0;
+}
+.dk-card {
+  position: relative;
+  border: 1px solid var(--dk-line);
+  border-radius: 6px;
+  background: rgba(17, 26, 45, 0.92);
+  padding: 5px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.dk-card.dk-incoming {
+  border: 1px dashed color-mix(in srgb, var(--dk-blue) 75%, transparent);
+  background: rgba(59, 130, 246, 0.06);
+}
+.dk-card.dk-incoming > * {
+  visibility: hidden;
+}
+.dk-ghost {
+  display: none;
+}
+.dk-card.dk-incoming .dk-ghost {
+  display: block;
+  visibility: visible;
+  position: absolute;
+  inset: 0;
+  padding: 7px;
+  font: var(--dk-fs-xs) / 1.4 var(--dk-mono);
+  color: #8ab4ff;
+}
+.dk-card.dk-focus {
+  border-color: var(--fc);
+  box-shadow: 0 0 0 1px var(--fc), 0 0 16px -4px var(--fc);
+}
+.dk-card.dk-hit {
+  animation: dk-hit 0.7s ease-out 1;
+}
+@keyframes dk-hit {
+  0% {
+    box-shadow: 0 0 0 2px var(--hc), 0 0 26px 2px var(--hc);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.dk-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.dk-cid {
+  font: 600 var(--dk-fs-xs) / 1.2 var(--dk-mono);
+  color: var(--dk-soft);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.dk-score {
+  font: 600 var(--dk-fs-xs) / 1.35 var(--dk-mono);
+  border: 1px dashed rgba(132, 147, 171, 0.45);
+  border-radius: 9px;
+  padding: 0 6px;
+  color: var(--dk-muted);
+  white-space: nowrap;
+}
+.dk-score.dk-on {
+  border: 1px solid var(--dk-pink);
+  background: rgba(244, 114, 182, 0.16);
+  color: #fbcfe8;
+}
+.dk .dk-ctitle {
+  margin: 0;
+  font-size: var(--dk-fs-sm);
+  line-height: 1.25;
+  color: var(--dk-text);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--dk-title-lines, 4);
+  line-clamp: var(--dk-title-lines, 4);
+  flex: 0 1 auto;
+  min-height: 1.25em;
+}
+.dk-chip {
+  margin-top: auto;
+  flex: none;
+  font-size: var(--dk-fs-xs);
+  line-height: 1.2;
+  border: 1px dashed rgba(132, 147, 171, 0.4);
+  border-radius: 4px;
+  padding: 2px 4px;
+  color: var(--dk-muted);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow-wrap: anywhere;
+}
+.dk-chip.dk-on {
+  border: 1px solid rgba(59, 130, 246, 0.65);
+  background: rgba(59, 130, 246, 0.13);
+  color: #cfe0ff;
+}
+.dk-chip b {
+  font-family: var(--dk-mono);
+  font-weight: 600;
+  color: #fff;
+}
+.dk-marks {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+}
+.dk-mark {
+  font-size: var(--dk-fs-xs);
+  line-height: 1.35;
+  border: 1px dashed rgba(132, 147, 171, 0.4);
+  border-radius: 4px;
+  padding: 0 4px;
+  color: var(--dk-muted);
+  white-space: nowrap;
+}
+.dk-mark.dk-on {
+  border-style: solid;
+  color: #fff;
+}
+.dk-mark.dk-path.dk-on {
+  border-color: rgba(59, 130, 246, 0.7);
+  background: rgba(59, 130, 246, 0.14);
+  color: #cfe0ff;
+}
+.dk-mark.dk-fix.dk-on {
+  border-color: rgba(244, 114, 182, 0.7);
+  background: rgba(244, 114, 182, 0.13);
+  color: #fbcfe8;
+}
+.dk-mark.dk-test.dk-on {
+  border-color: rgba(167, 139, 250, 0.75);
+  background: rgba(167, 139, 250, 0.14);
+  color: #ddd6fe;
+}
+/* more than three threats in a category: smaller cards, and the board scrolls */
+.dk-cols.dk-compact {
+  --dk-title-lines: 2;
+}
+.dk-cols.dk-compact .dk-chip {
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+.dk-cols.dk-compact .dk-card {
+  padding: 4px 6px;
+  gap: 2px;
+}
+
+/* ---------- bottom strip ---------- */
+.dk-strip {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 290px) minmax(262px, 296px);
+  gap: 8px;
+  min-height: 0;
+}
+.dk-strip .dk-panel {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+.dk-log {
+  flex: 1;
+  overflow-y: auto;
+  font-size: var(--dk-fs-sm);
+  line-height: 1.45;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dk-line-strong) transparent;
+}
+.dk-cols:focus-visible,
+.dk-log:focus-visible {
+  outline: 2px solid var(--dk-cyan);
+  outline-offset: 2px;
+}
+.dk-log-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  color: var(--dk-soft);
+}
+.dk-log-row time {
+  font-family: var(--dk-mono);
+  color: var(--dk-muted);
+}
+.dk-log-row span {
+  overflow-wrap: anywhere;
+}
+.dk-log-row.dk-k-finish span,
+.dk-log-row.dk-k-end span {
+  color: #6ee7b7;
+}
+.dk-log-row.dk-k-skip span {
+  color: #fbbf24;
+}
+.dk-log-row.dk-k-fail span {
+  color: #fca5a5;
+}
+.dk-log-row.dk-k-start span {
+  color: var(--dk-text);
+}
+.dk-log-row:last-child:not(.dk-k-fail):not(.dk-k-skip):not(.dk-k-end):not(.dk-k-finish) span {
+  color: #fff;
+}
+.dk-tally {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 3px 8px;
+  align-items: center;
+  font-size: var(--dk-fs-xs);
+  overflow: hidden auto;
+  scrollbar-width: thin;
+}
+.dk-tally .dk-lab {
+  color: var(--dk-soft);
+}
+.dk-tally .dk-num {
+  font-family: var(--dk-mono);
+  color: #fff;
+  text-align: right;
+  white-space: nowrap;
+}
+.dk-tally .dk-num.dk-off {
+  color: var(--dk-muted);
+}
+.dk-tally .dk-note {
+  grid-column: 1 / -1;
+  color: #fbbf24;
+  line-height: 1.3;
+}
+.dk-pips {
+  display: flex;
+  gap: 2px;
+  min-width: 0;
+  overflow: hidden;
+}
+.dk-pip {
+  flex: 0 1 4px;
+  min-width: 1.5px;
+  width: 4px;
+  height: 9px;
+  border-radius: 1px;
+  background: rgba(132, 147, 171, 0.22);
+}
+.dk-pip.dk-on {
+  background: var(--c);
+  box-shadow: 0 0 5px var(--c);
+}
+.dk-pip.dk-off {
+  visibility: hidden;
+}
+.dk-bar {
+  flex: 1;
+  height: 9px;
+  border-radius: 2px;
+  background: rgba(132, 147, 171, 0.22);
+  overflow: hidden;
+}
+.dk-bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--c);
+}
+.dk-legend-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+.dk-legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  font-size: var(--dk-fs-xs);
+  color: var(--dk-soft);
+}
+.dk-legend-item .dk-sprite {
+  height: 32px;
+}
+.dk .dk-legend-note {
+  font-size: var(--dk-fs-xs);
+  color: var(--dk-muted);
+  margin: 0;
+  line-height: 1.3;
+}
+.dk-phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  font-size: var(--dk-fs-xs);
+  color: var(--dk-soft);
+}
+.dk-phases i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 4px;
+  background: var(--c);
+}
+
+/* ---------- narrow columns (set by deck_view.js from the measured column
+   width: six columns in a 1280px or 1440px window, or a seventh column) ---------- */
+.dk-tight .dk-main {
+  grid-template-rows: minmax(0, 1fr) 172px;
+}
+.dk-tight .dk-cols {
+  --dk-title-lines: 3;
+}
+.dk-tight .dk-cols .dk-col-head {
+  white-space: normal;
+  min-height: calc(2.5em + 7px);
+}
+.dk-tight .dk-cols .dk-chip {
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+.dk-tight .dk-cols .dk-card-top {
+  flex-wrap: wrap;
+  gap: 2px 4px;
+}
+.dk-tight .dk-cols .dk-cid {
+  letter-spacing: 0;
+}
+.dk-tight .dk-cols .dk-score {
+  padding: 0 4px;
+}
+.dk-tight .dk-cols .dk-marks {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.dk-tight .dk-cols.dk-compact {
+  --dk-title-lines: 2;
+}
+
+/* ---------- a narrow content area (a 1280px window leaves about 900px) ---------- */
+@container dk (max-width: 1120px) {
+  .dk-main {
+    padding: 8px 10px 10px;
+    gap: 8px;
+  }
+  .dk-hud {
+    padding: 8px 10px 6px;
+  }
+  .dk-cols {
+    gap: 5px;
+  }
+  .dk-board {
+    padding: 6px;
+  }
+  .dk-card {
+    padding: 4px 5px;
+  }
+  .dk-tally {
+    gap: 2px 8px;
+  }
+  .dk-strip {
+    grid-template-columns: minmax(0, 1fr) 190px 212px;
+  }
+  /* no room for the pips beside the label and the number: the numbers stay */
+  .dk-tally {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .dk-pips {
+    display: none;
+  }
+  .dk-legend-item .dk-sprite {
+    height: 26px;
+  }
+}
+
+/* ---------- a short deck (a 1366x768 or 1280x720 window) ----------
+   The deck is sized to the space under the top bar, so on a short screen it
+   is shorter than the 820px design. The agent rail spans the full height and
+   must show all eleven agents without scrolling: smaller sprites, tighter
+   rows, a shorter work panel that still shows three lines of the text being
+   written, and smaller bottom panels. The board keeps scrolling inside its
+   own panel. Text stays at 11px or more. */
+@container dk (max-height: 760px) {
+  .dk-app {
+    --dk-sprite-h: 28px;
+    --dk-sprite-active: 40px;
+    --dk-work-h: 114px;
+  }
+  .dk-hud {
+    padding: 6px 12px 5px;
+  }
+  .dk-brand-mark {
+    height: 24px;
+  }
+  .dk-hud-track {
+    margin-top: 4px;
+  }
+  .dk-clock-now {
+    font-size: 20px;
+  }
+  .dk-main,
+  .dk-tight .dk-main {
+    grid-template-rows: minmax(0, 1fr) 140px;
+    gap: 6px 10px;
+    padding: 6px 12px 8px;
+  }
+  .dk-rail {
+    padding: 4px 6px;
+  }
+  /* the step list (the default view when the system reduces motion) */
+  .dk-steplist {
+    padding: 5px 10px;
+    gap: 4px;
+  }
+  .dk .dk-sl li {
+    padding: 1px 0;
+    line-height: 1.16;
+  }
+  .dk-sl .dk-st {
+    line-height: 1.3;
+  }
+  .dk-pname {
+    line-height: 1.15;
+  }
+  .dk-ptech,
+  .dk-preason {
+    line-height: 1.2;
+  }
+  /* a reason keeps one line here, ending in an ellipsis when it is long;
+     the event log has it in full */
+  .dk-preason,
+  .dk-sl .dk-why {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dk-agent[data-state="working"] {
+    padding: 3px 6px 5px;
+    margin: 1px 0;
+  }
+  .dk-work {
+    margin-top: 3px;
+    padding: 5px 8px;
+    gap: 1px;
+  }
+  .dk-strip .dk-panel {
+    padding: 6px 9px;
+    gap: 4px;
+  }
+  .dk-tally {
+    row-gap: 1px;
+  }
+  .dk-legend-item .dk-sprite {
+    height: 24px;
+  }
+}
+/* the shortest deck the layout holds (about 620px) */
+@container dk (max-height: 668px) {
+  .dk-app {
+    --dk-sprite-h: 26px;
+    --dk-sprite-active: 32px;
+    --dk-work-h: 108px;
+  }
+  .dk-main,
+  .dk-tight .dk-main {
+    padding: 5px 12px 6px;
+  }
+  .dk-rail {
+    padding: 2px 6px;
+  }
+  .dk-agent[data-state="working"] {
+    padding: 2px 6px 4px;
+  }
+  .dk .dk-work-body {
+    line-height: 1.3;
+  }
+  .dk .dk-subtitle {
+    line-height: 1.2;
+  }
+}
+
+/* ---------- a wide content area ---------- */
+@container dk (min-width: 1700px) {
+  .dk-app {
+    --dk-fs-xs: 12px;
+    --dk-fs-sm: 13.5px;
+    --dk-fs-md: 15px;
+    --dk-fs-lg: 17px;
+    font-size: var(--dk-fs-md);
+  }
+  .dk-main {
+    grid-template-rows: minmax(0, 1fr) clamp(150px, calc(100cqh - 700px), 420px);
+  }
+}
+
+/* ---------- calm ---------- */
+.dk.dk-reduce .dk-card.dk-hit,
+.dk.dk-reduce .dk-tl-seg.dk-busy .dk-tl-fill {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dk-card.dk-hit,
+  .dk-tl-seg.dk-busy .dk-tl-fill {
+    animation: none;
+  }
+}
+
+/* ---------- results: an add-on that did not finish (below the downloads) ---------- */
+.addon-failed {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--crit, #ef4444) 45%, transparent);
+  border-radius: var(--radius-sm, 6px);
+  background: color-mix(in srgb, var(--crit, #ef4444) 8%, transparent);
+  color: var(--text-primary, #e2e8f0);
+  font-size: var(--type-sm, 0.8rem);
+  line-height: 1.4;
+}
+.addon-failed-text {
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+.addon-failed .addon-failed-retry {
+  flex: none;
+  min-width: 0;
+}
+
+/* why Generate is locked while a re-attached run is still going (app.js) */
+.generate-lock-note {
+  margin: 0.5rem 0 0;
+  font-size: 13px;
+  color: var(--warn, #f59e0b);
+}
+.generate-lock-note[hidden] {
+  display: none;
+}
+
+/* ---------- reading a threat ---------- */
+/* the card the arrow keys are on: only while the board has keyboard focus,
+   so cards at rest keep their usual look */
+.dk-cols:focus-visible .dk-card.dk-active,
+.dk-cols:focus .dk-card.dk-active {
+  outline: 2px solid var(--dk-cyan);
+  outline-offset: 1px;
+}
+.dk-detail {
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 6;
+  padding: 8px 12px;
+  overflow: hidden auto;
+  background: #0b1222;
+  border-color: var(--dk-line-strong);
+  scrollbar-width: thin;
+}
+.dk-detail:focus-visible {
+  outline: 2px solid var(--dk-cyan);
+  outline-offset: 2px;
+}
+.dk .dk-detail-title {
+  margin: 0 0 4px;
+  font: 600 var(--dk-fs-sm) / 1.3 var(--dk-mono);
+  color: #fff;
+}
+.dk .dk-detail-rows {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px 10px;
+  margin: 0;
+  font-size: var(--dk-fs-sm);
+  line-height: 1.35;
+}
+.dk .dk-detail-rows dt {
+  color: var(--dk-muted);
+  font-size: var(--dk-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 1px;
+}
+.dk .dk-detail-rows dd {
+  margin: 0;
+  color: var(--dk-text);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- what the lookups found ---------- */
+/* a lookup agent with something to read opens its list: by keyboard, hover, or click */
+.dk-agent-head[data-lookup],
+.dk-sl .dk-nm[data-lookup] {
+  cursor: pointer;
+  border-radius: 5px;
+}
+.dk-agent-head[data-lookup]:focus-visible,
+.dk-sl .dk-nm[data-lookup]:focus-visible {
+  outline: 2px solid var(--dk-cyan);
+  outline-offset: 1px;
+}
+.dk-agent-head[data-lookup][aria-expanded="true"] .dk-ptech {
+  color: var(--dk-soft);
+}
+.dk .dk-detail-note {
+  margin: 0 0 6px;
+  font-size: var(--dk-fs-xs);
+  line-height: 1.35;
+  color: var(--dk-soft);
+}
+.dk-detail-ids {
+  display: block;
+  font: var(--dk-fs-xs) / 1.45 var(--dk-mono);
+  color: var(--dk-muted);
+}
+.dk .dk-detail-link {
+  color: #67e8f9;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.dk .dk-detail-link:focus-visible {
+  outline: 2px solid var(--dk-cyan);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+.dk-log-row.dk-k-find span {
+  color: var(--dk-soft);
+}
+.dk .dk-detail-rows dt.dk-plain {
+  /* a long product name wraps in its own column instead of pushing the ids out */
+  max-width: 14em;
+  overflow-wrap: anywhere;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--dk-fs-sm);
+  padding-top: 0;
+  color: var(--dk-soft);
+}
+/* the current check holds to one line while NVD works, so the
+   latest result below it keeps its room */
+.dk .dk-work-body.dk-oneline {
+  /* one line does not shrink: the spare id row gives way instead */
+  flex: none;
+}
+.dk .dk-work-body.dk-oneline .dk-work-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* a lookup agent's result stays on one line: ordinary values fit, the worst
+   cases end in an ellipsis (the full sentence is in its list) */
+.dk-ptech.dk-noted,
+.dk-sl .dk-tech.dk-noted {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.dk .dk-work-rows li.dk-clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

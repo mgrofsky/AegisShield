@@ -1,0 +1,15 @@
+{
+ "type": "bundle",
+ "id": "bundle--00000000-0000-4000-8000-000000000000",
+ "objects": [
+  {"type": "x-mitre-collection", "id": "x-mitre-collection--1", "name": "Made-up ATT&CK", "x_mitre_version": "99.1"},
+  {"type": "attack-pattern", "id": "attack-pattern--1", "name": "Phishing",
+   "kill_chain_phases": [{"kill_chain_name": "mitre-attack", "phase_name": "initial-access"}],
+   "external_references": [{"source_name": "mitre-attack", "external_id": "T1566"}]},
+  {"type": "attack-pattern", "id": "attack-pattern--2", "name": "Spearphishing Link",
+   "kill_chain_phases": [{"kill_chain_name": "mitre-attack", "phase_name": "initial-access"}],
+   "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]},
+  {"type": "attack-pattern", "id": "attack-pattern--3", "name": "Old", "revoked": true,
+   "external_references": [{"source_name": "mitre-attack", "external_id": "T1000"}]}
+ ]
+}

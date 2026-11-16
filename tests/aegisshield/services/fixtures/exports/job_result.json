@@ -1,0 +1,303 @@
+{
+  "threat_model": [
+    {
+      "Threat Type": "Spoofing",
+      "Scenario": "An attacker replays stolen customer session cookies to place orders as another shopper at checkout.",
+      "Assumptions": [
+        {
+          "name": "Sessions use signed cookies with a 30 day lifetime"
+        }
+      ],
+      "Potential Impact": "Fraudulent orders charged to saved payment methods.",
+      "MITRE ATT&CK Keywords": [
+        "valid accounts",
+        "steal web session cookie"
+      ],
+      "ID": "TC-S01"
+    },
+    {
+      "Threat Type": "Tampering",
+      "Scenario": "An attacker edits the cart total in the browser before the order is submitted, and the server trusts the client price.",
+      "Assumptions": [
+        {
+          "name": "Prices are recalculated only in the browser"
+        }
+      ],
+      "Potential Impact": "Goods sold below cost; revenue loss.",
+      "MITRE ATT&CK Keywords": [
+        "data manipulation",
+        "exploit public-facing application"
+      ],
+      "ID": "TC-T01"
+    },
+    {
+      "Threat Type": "Repudiation",
+      "Scenario": "A customer disputes a completed order and the service cannot show who placed it because order events are not logged.",
+      "Assumptions": [],
+      "Potential Impact": "Chargebacks the merchant cannot contest.",
+      "MITRE ATT&CK Keywords": [
+        "indicator removal"
+      ],
+      "ID": "TC-R01"
+    },
+    {
+      "Threat Type": "Information Disclosure",
+      "Scenario": "The order lookup endpoint returns another customer's shipping address when the order number is changed in the URL.",
+      "Assumptions": [
+        {
+          "name": "Order numbers are sequential"
+        }
+      ],
+      "Potential Impact": "Exposure of customer names and addresses.",
+      "MITRE ATT&CK Keywords": [
+        "data from information repositories"
+      ],
+      "ID": "TC-I01"
+    },
+    {
+      "Threat Type": "Denial of Service",
+      "Scenario": "Bots flood the coupon validation endpoint during a sale and exhaust the checkout database connection pool.",
+      "Assumptions": [
+        {
+          "name": "No rate limit on coupon checks"
+        }
+      ],
+      "Potential Impact": "Checkout unavailable during peak sales.",
+      "MITRE ATT&CK Keywords": [
+        "endpoint denial of service"
+      ],
+      "ID": "TC-D01"
+    },
+    {
+      "Threat Type": "Elevation of Privilege",
+      "Scenario": "A support agent account can call the refund API without a second approval and issue refunds to any card.",
+      "Assumptions": [
+        {
+          "name": "Refund API checks only that the caller is staff"
+        }
+      ],
+      "Potential Impact": "Unauthorized refunds and payment fraud.",
+      "MITRE ATT&CK Keywords": [
+        "abuse elevation control mechanism"
+      ],
+      "ID": "TC-E01"
+    }
+  ],
+  "improvement_suggestions": [
+    "Describe how the checkout service talks to the payment provider.",
+    "List which roles can issue refunds and how they sign in.",
+    "Say where order and payment events are logged and for how long."
+  ],
+  "threat_model_markdown": "| ID | Threat Type | Scenario |\n|---|---|---|\n| TC-S01 | Spoofing | An attacker replays stolen customer session cookies to place orders as another shopper at checkout. |\n| TC-T01 | Tampering | An attacker edits the cart total in the browser before the order is submitted, and the server trusts the client price. |\n| TC-R01 | Repudiation | A customer disputes a completed order and the service cannot show who placed it because order events are not logged. |\n| TC-I01 | Information Disclosure | The order lookup endpoint returns another customer's shipping address when the order number is changed in the URL. |\n| TC-D01 | Denial of Service | Bots flood the coupon validation endpoint during a sale and exhaust the checkout database connection pool. |\n| TC-E01 | Elevation of Privilege | A support agent account can call the refund API without a second approval and issue refunds to any card. |",
+  "mitre_attack_markdown": "### TC-S01 Spoofing\n- T1539 Steal Web Session Cookie\n### TC-T01 Tampering\n- T1565 Data Manipulation\n### TC-R01 Repudiation\n- No technique mapped\n### TC-I01 Information Disclosure\n- T1213 Data from Information Repositories\n### TC-D01 Denial of Service\n- T1499 Endpoint Denial of Service\n### TC-E01 Elevation of Privilege\n- T1548 Abuse Elevation Control Mechanism",
+  "nvd_vulnerabilities_markdown": "- **CVE-2024-24762** (python-multipart): regular expression denial of service in form parsing. CVSS 7.5.",
+  "otx_data_markdown": "- Pulse: Card skimming scripts injected into checkout pages (12 indicators).",
+  "attack_tree_code": "graph TD\n    A[\"Compromise checkout\"] --> B[\"TC-S01 Replay a stolen session\"]\n    A --> C[\"TC-T01 Change the cart total\"]\n    A --> D[\"TC-I01 Read another order\"]\n    B --> B1[\"Steal cookie through a malicious browser extension\"]\n    B --> B2[\"Reuse cookie before it expires\"]\n    C --> C1[\"Edit the price field in the request\"]\n    D --> D1[\"Change the order number in the URL\"]\n",
+  "mitre_data": [
+    {
+      "threat": {
+        "Threat Type": "Spoofing",
+        "Scenario": "An attacker replays stolen customer session cookies to place orders as another shopper at checkout.",
+        "Assumptions": [
+          {
+            "name": "Sessions use signed cookies with a 30 day lifetime"
+          }
+        ],
+        "Potential Impact": "Fraudulent orders charged to saved payment methods.",
+        "MITRE ATT&CK Keywords": [
+          "valid accounts",
+          "steal web session cookie"
+        ],
+        "ID": "TC-S01"
+      },
+      "mitre_techniques": [
+        {
+          "name": "Steal Web Session Cookie",
+          "description": "Steal Web Session Cookie (ATT&CK).",
+          "id": "attack-pattern--t1539",
+          "technique_id": "T1539",
+          "framework": "ATT&CK",
+          "tactic": "Credential Access"
+        }
+      ]
+    },
+    {
+      "threat": {
+        "Threat Type": "Tampering",
+        "Scenario": "An attacker edits the cart total in the browser before the order is submitted, and the server trusts the client price.",
+        "Assumptions": [
+          {
+            "name": "Prices are recalculated only in the browser"
+          }
+        ],
+        "Potential Impact": "Goods sold below cost; revenue loss.",
+        "MITRE ATT&CK Keywords": [
+          "data manipulation",
+          "exploit public-facing application"
+        ],
+        "ID": "TC-T01"
+      },
+      "mitre_techniques": [
+        {
+          "name": "Data Manipulation",
+          "description": "Data Manipulation (ATT&CK).",
+          "id": "attack-pattern--t1565",
+          "technique_id": "T1565",
+          "framework": "ATT&CK",
+          "tactic": "Impact"
+        }
+      ]
+    },
+    {
+      "threat": {
+        "Threat Type": "Repudiation",
+        "Scenario": "A customer disputes a completed order and the service cannot show who placed it because order events are not logged.",
+        "Assumptions": [],
+        "Potential Impact": "Chargebacks the merchant cannot contest.",
+        "MITRE ATT&CK Keywords": [
+          "indicator removal"
+        ],
+        "ID": "TC-R01"
+      },
+      "mitre_techniques": []
+    },
+    {
+      "threat": {
+        "Threat Type": "Information Disclosure",
+        "Scenario": "The order lookup endpoint returns another customer's shipping address when the order number is changed in the URL.",
+        "Assumptions": [
+          {
+            "name": "Order numbers are sequential"
+          }
+        ],
+        "Potential Impact": "Exposure of customer names and addresses.",
+        "MITRE ATT&CK Keywords": [
+          "data from information repositories"
+        ],
+        "ID": "TC-I01"
+      },
+      "mitre_techniques": [
+        {
+          "name": "Data from Information Repositories",
+          "description": "Data from Information Repositories (ATT&CK).",
+          "id": "attack-pattern--t1213",
+          "technique_id": "T1213",
+          "framework": "ATT&CK",
+          "tactic": "Collection"
+        }
+      ]
+    },
+    {
+      "threat": {
+        "Threat Type": "Denial of Service",
+        "Scenario": "Bots flood the coupon validation endpoint during a sale and exhaust the checkout database connection pool.",
+        "Assumptions": [
+          {
+            "name": "No rate limit on coupon checks"
+          }
+        ],
+        "Potential Impact": "Checkout unavailable during peak sales.",
+        "MITRE ATT&CK Keywords": [
+          "endpoint denial of service"
+        ],
+        "ID": "TC-D01"
+      },
+      "mitre_techniques": [
+        {
+          "name": "Endpoint Denial of Service",
+          "description": "Endpoint Denial of Service (ATT&CK).",
+          "id": "attack-pattern--t1499",
+          "technique_id": "T1499",
+          "framework": "ATT&CK",
+          "tactic": "Impact"
+        }
+      ]
+    },
+    {
+      "threat": {
+        "Threat Type": "Elevation of Privilege",
+        "Scenario": "A support agent account can call the refund API without a second approval and issue refunds to any card.",
+        "Assumptions": [
+          {
+            "name": "Refund API checks only that the caller is staff"
+          }
+        ],
+        "Potential Impact": "Unauthorized refunds and payment fraud.",
+        "MITRE ATT&CK Keywords": [
+          "abuse elevation control mechanism"
+        ],
+        "ID": "TC-E01"
+      },
+      "mitre_techniques": [
+        {
+          "name": "Abuse Elevation Control Mechanism",
+          "description": "Abuse Elevation Control Mechanism (ATT&CK).",
+          "id": "attack-pattern--t1548",
+          "technique_id": "T1548",
+          "framework": "ATT&CK",
+          "tactic": "Privilege Escalation"
+        }
+      ]
+    }
+  ],
+  "detected_patterns": [
+    "Web storefront",
+    "Payment provider integration"
+  ],
+  "pattern_source": "description",
+  "mitigations_markdown": "| Threat ID | Threat Type | Mitigation |\n|-----------|-------------|------------|\n| TC-S01 | Spoofing | Bind sessions to the device, shorten their lifetime, and ask for the card security code at checkout. |\n| TC-T01 | Tampering | Recalculate every price and total on the server and ignore client totals. |\n| TC-R01 | Repudiation | Log each order event with the account, time, and source address to append-only storage. |\n| TC-I01 | Information Disclosure | Check that the signed-in customer owns the order before returning it; use random order ids. |\n| TC-D01 | Denial of Service | Rate limit coupon checks per client and cache valid coupon codes. |\n| TC-E01 | Elevation of Privilege | Require a second approver for refunds above a set amount. |\n",
+  "dread_assessment": {
+    "Risk Assessment": [
+      {
+        "ID": "TC-S01",
+        "Damage Potential": 8,
+        "Reproducibility": 6,
+        "Exploitability": 6,
+        "Affected Users": 7,
+        "Discoverability": 5
+      },
+      {
+        "ID": "TC-T01",
+        "Damage Potential": 7,
+        "Reproducibility": 7,
+        "Exploitability": 6,
+        "Affected Users": 8,
+        "Discoverability": 6
+      },
+      {
+        "ID": "TC-R01",
+        "Damage Potential": 5,
+        "Reproducibility": 6,
+        "Exploitability": 5,
+        "Affected Users": 4,
+        "Discoverability": 4
+      },
+      {
+        "ID": "TC-I01",
+        "Damage Potential": 8,
+        "Reproducibility": 8,
+        "Exploitability": 7,
+        "Affected Users": 7,
+        "Discoverability": 7
+      },
+      {
+        "ID": "TC-D01",
+        "Damage Potential": 6,
+        "Reproducibility": 7,
+        "Exploitability": 7,
+        "Affected Users": 9,
+        "Discoverability": 6
+      },
+      {
+        "ID": "TC-E01",
+        "Damage Potential": 9,
+        "Reproducibility": 5,
+        "Exploitability": 4,
+        "Affected Users": 6,
+        "Discoverability": 4
+      }
+    ]
+  },
+  "dread_assessment_markdown": "| ID | Damage Potential | Reproducibility | Exploitability | Affected Users | Discoverability | Risk Score |\n|----|----|----|----|----|----|----|\n| TC-S01 | 8 | 6 | 6 | 7 | 5 | 6.40 |\n| TC-T01 | 7 | 7 | 6 | 8 | 6 | 6.80 |\n| TC-R01 | 5 | 6 | 5 | 4 | 4 | 4.80 |\n| TC-I01 | 8 | 8 | 7 | 7 | 7 | 7.40 |\n| TC-D01 | 6 | 7 | 7 | 9 | 6 | 7.00 |\n| TC-E01 | 9 | 5 | 4 | 6 | 4 | 5.60 |\n",
+  "test_cases_markdown": "## TC-S01 Session replay\n\n```gherkin\nFeature: Session binding at checkout\n  Scenario: A replayed session cookie cannot place an order\n    Given a customer session cookie copied to a new device\n    When the copied session submits an order\n    Then the order is refused and the customer is asked to sign in again\n```\n\n## TC-T01 Cart total tampering\n\n```gherkin\nFeature: Server side pricing\n  Scenario: A changed cart total is ignored\n    Given a cart with one item priced at 40.00\n    When the client submits the order with a total of 1.00\n    Then the order is charged 40.00\n```\n"
+}
