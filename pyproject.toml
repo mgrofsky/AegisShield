@@ -1,30 +1,28 @@
+# Project metadata only. The app is not built or installed as a package: it
+# runs from a checkout with streamlit run main.py, and its dependencies are
+# installed from requirements.txt (locally, in CI, in the Docker image, and on
+# Streamlit Community Cloud, which reads requirements.txt before this file).
+[project]
+name = "aegisshield"
+version = "0.1.0"
+description = "Threat modeling, vulnerability lookup, policy drafting, and packet capture analysis with a language model, in one Streamlit app."
+license = { file = "LICENSE" }
+requires-python = ">=3.13"
+
 [tool.ruff]
 line-length = 100
-target-version = "py312"
+target-version = "py313"
+# Lint the app, its tests, the entry point, and the developer tools only.
+# research/ holds the paper's material (case studies, batch inputs and
+# outputs, the notebook) and the first-generation batch runner; the app does
+# not use it, so it is kept out of lint, tests, and coverage. The notebook in
+# research/colab_notebook/ is a published analysis, kept as it is.
+include = ["aegisshield/**/*.py", "tests/**/*.py", "main.py", "tools/**/*.py"]
+extend-exclude = ["research"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "C4"]
 ignore = ["E501", "B007", "F841"]
-exclude = [
-    "aegisshield_errors.log",
-    "output.txt",
-    "test.py",
-    "__pycache__",
-    ".pytest_cache",
-    ".streamlit",
-    ".vscode",
-    "logs",
-    "batch_outputs",
-    "old_batch_outputs",
-    "batch_inputs",
-    "case_studies",
-    "MITRE_ATTACK_DATA",
-    "tests/__pycache__",
-    "tests/*",
-    "api_key_handler_local.py"
-]
-
-
 
 [tool.ruff.lint.isort]
-known-first-party = ["tabs"]
+known-first-party = ["aegisshield"]

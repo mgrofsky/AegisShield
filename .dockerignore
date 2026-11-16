@@ -1,6 +1,11 @@
-.gitignore
-api_key.txt
-venv/
-__pycache__/
-test_functions.py
-local_config.py
+# Allowlist: the image holds only what the app needs at run time. No tests,
+# research data, case studies, notebooks, tools, evidence, or local secrets.
+*
+!main.py
+!aegisshield/
+!.streamlit/config.toml
+!MITRE_ATTACK_DATA/
+!nist-sp-800-53-controls-mapping.json
+!requirements.txt
+**/__pycache__
+**/*.pyc

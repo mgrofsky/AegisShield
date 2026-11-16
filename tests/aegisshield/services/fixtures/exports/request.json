@@ -1,0 +1,26 @@
+{
+  "app_profile": {
+    "app_type": "Web application",
+    "industry_sector": "Retail",
+    "sensitive_data": "Payment and customer data",
+    "internet_facing": "Yes",
+    "num_employees": "101-500",
+    "authentication": [
+      "Password",
+      "MFA"
+    ],
+    "compliance_requirements": [
+      "PCI DSS",
+      "GDPR"
+    ],
+    "selected_technologies": {
+      "Django": "cpe:2.3:a:djangoproject:django:",
+      "PostgreSQL": "cpe:2.3:a:postgresql:postgresql:"
+    },
+    "selected_versions": {
+      "Django": "4.2.1",
+      "PostgreSQL": "16.2"
+    }
+  },
+  "app_description": "An online retail checkout service. Shoppers sign in, build a cart, apply coupons, and pay through a hosted payment provider. Support staff can issue refunds."
+}

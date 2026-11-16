@@ -1,0 +1,782 @@
+/* AegisShield theme for Streamlit.
+   Tokens are AegisShield's design tokens (see theme.TOKENS). The native
+   theme in .streamlit/config.toml sets colors, fonts, radii, and padding;
+   this file only adds what config.toml cannot express. Every selector is a
+   stable hook: a data-testid, an st-key-* class from a widget key, or a
+   class this app writes itself (ax-*). Generated class names are never
+   used. Dark theme only. */
+
+:root {
+  /* surfaces */
+  --bg-base: #080c14;
+  --bg-surface: #131a2b;
+  --bg-raised: #10162a;
+  --bg-sidebar: #0c1018;
+  --bg-terminal: #060a10;
+  --border: rgba(56, 72, 104, 0.35);
+  --border-strong: rgba(56, 72, 104, 0.55);
+
+  /* text (contrast on --bg-surface: primary 13:1, soft 6.5:1, muted 4.8:1) */
+  --text-primary: #e2e8f0;
+  --text-soft: #94a3b8;
+  --text-muted: #7b8aa3;
+
+  /* areas: Defense (blue) and Compliance (GRC) */
+  --area-blue: #3b82f6;
+  --area-grc: #22b8cf;
+  --area-neutral: #94a3b8;
+  --accent: var(--area-blue);
+  --accent-text: #60a5fa;
+  --accent-dim: #1d4ed8;
+  --accent-glow: rgba(59, 130, 246, 0.14);
+
+  /* semantic status, always paired with an icon or a word */
+  --ok: #22c55e;
+  --warn: #f59e0b;
+  --crit: #ef4444;
+  --info: #38bdf8;
+  --ok-text: #4ade80;
+  --warn-text: #fbbf24;
+  --crit-text: #f87171;
+  --info-text: #7dd3fc;
+
+  /* type scale (Major Third, base 14px) */
+  --type-xs: 0.72rem;
+  --type-sm: 0.8rem;
+  --type-base: 0.875rem;
+  --type-md: 1rem;
+  --type-lg: 1.25rem;
+  --type-xl: 1.563rem;
+  --type-2xl: 1.953rem;
+
+  /* 4px spacing grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 16px 48px rgba(0, 0, 0, 0.55);
+
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ax-shield: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E");
+  --focus-ring: 0 0 0 2px var(--bg-base), 0 0 0 4px #60a5fa;
+}
+
+/* The area marker that page_header() writes remaps the accent for the
+   whole page. Area names come from a fixed enum in theme.py. */
+.stApp:has(.ax-area-compliance) {
+  --accent: var(--area-grc);
+  --accent-text: #5fd3e6;
+  --accent-glow: rgba(34, 184, 207, 0.14);
+}
+
+/* ---------------------------------------------------------------- chrome */
+
+.stApp,
+[data-testid="stAppViewContainer"] {
+  background: var(--bg-base);
+}
+
+/* The header has nothing in it for visitors (client.toolbarMode =
+   "minimal"), so it is see-through and lets the page start under it;
+   config.toml's paddingTop gives the gap. Its buttons stay clickable. */
+[data-testid="stHeader"] {
+  background: transparent;
+  pointer-events: none;
+}
+[data-testid="stHeader"] :is(button, a, [data-testid="stToolbar"]) {
+  pointer-events: auto;
+}
+
+/* With the sidebar collapsed, Streamlit puts the logo and the expand
+   control in the header at the top left, over the page. The main scroller
+   then starts below the header, so no page content is ever drawn under
+   that control, scrolled or not. */
+.stApp:has([data-testid="stExpandSidebarButton"]) [data-testid="stMain"] {
+  margin-top: 3.75rem;
+  max-height: calc(100% - 3.75rem);
+}
+.stApp:has([data-testid="stExpandSidebarButton"]) [data-testid="stMainBlockContainer"] {
+  padding-top: var(--space-3);
+}
+
+[data-testid="stMainBlockContainer"] {
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+  max-width: 1440px;
+}
+
+/* The empty part of a progress bar reads as a track on a raised card
+   (Streamlit fills it with the secondary background, which is nearly the
+   card's own color). */
+[data-testid="stProgressBarTrack"] {
+  background-color: rgba(148, 163, 184, 0.24);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.16);
+}
+
+/* --------------------------------------------------------------- sidebar */
+
+[data-testid="stSidebar"] {
+  background: var(--bg-sidebar);
+}
+[data-testid="stSidebarContent"] {
+  display: flex;
+  flex-direction: column;
+}
+[data-testid="stSidebarUserContent"] {
+  margin-top: auto;
+  padding-bottom: var(--space-4);
+}
+
+/* brand row: the shield from st.logo plus the product name */
+[data-testid="stSidebarHeader"] {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-2);
+}
+[data-testid="stSidebarHeader"] > :has([data-testid="stSidebarLogo"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+[data-testid="stSidebarHeader"] > :has([data-testid="stSidebarLogo"])::after {
+  content: "AegisShield";
+  color: var(--text-primary);
+  font-size: var(--type-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+[data-testid="stSidebarLogo"] {
+  height: 22px;
+  width: auto;
+}
+
+[data-testid="stSidebarNav"] {
+  padding-top: var(--space-2);
+}
+[data-testid="stNavSectionHeader"] {
+  color: var(--text-muted);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: var(--space-4);
+}
+
+/* A colored dot before each area's heading, matched by the pages the
+   section holds (their URL paths are fixed in routes.py). */
+[data-testid="stNavSectionHeader"] > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+[data-testid="stNavSectionHeader"] > span:first-child::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--area-neutral);
+}
+:has(> li a[href$="/threat-models"]) > [data-testid="stNavSectionHeader"] > span:first-child::before {
+  background: var(--area-blue);
+}
+:has(> li a[href$="/policies"]) > [data-testid="stNavSectionHeader"] > span:first-child::before {
+  background: var(--area-grc);
+}
+
+[data-testid="stSidebarNavLink"] {
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  color: var(--text-soft);
+  transition: background-color 120ms var(--ease), color 120ms var(--ease);
+}
+[data-testid="stSidebarNavLink"] span {
+  color: inherit;
+}
+[data-testid="stSidebarNavLink"]:hover {
+  background: rgba(148, 163, 184, 0.08);
+  color: var(--text-primary);
+}
+[data-testid="stSidebarNavLink"][aria-current="page"] {
+  background: var(--bg-surface);
+  border-left-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------- headings */
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+}
+[data-testid="stHeadingWithActionElements"] [data-testid="stHeaderActionElements"] {
+  display: none;
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+[data-testid="stBaseButton-primary"],
+[data-testid="stBaseButton-secondary"],
+[data-testid="stBaseButton-tertiary"],
+[data-testid="stDownloadButton"] button,
+[data-testid="stFormSubmitButton"] button {
+  font-weight: 600;
+  min-height: 36px;
+  transition: background-color 120ms var(--ease), border-color 120ms var(--ease),
+    color 120ms var(--ease);
+}
+/* White on #3b82f6 is 3.7:1; the darker blue keeps button text at AA. */
+[data-testid="stBaseButton-primary"] {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+[data-testid="stBaseButton-primary"]:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent-dim);
+  color: #ffffff;
+}
+[data-testid="stBaseButton-secondary"],
+[data-testid="stDownloadButton"] button {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stDownloadButton"] button:hover {
+  border-color: var(--area-blue);
+  color: var(--text-primary);
+  background: #18213a;
+}
+[data-testid="stBaseButton-tertiary"] {
+  color: var(--text-soft);
+}
+[data-testid="stBaseButton-tertiary"]:hover {
+  color: var(--text-primary);
+}
+/* A destructive action: its widget key ends in _danger. Secondary is
+   outlined red; primary (the confirm in a dialog) is filled red. */
+[class*="_danger"] [data-testid="stBaseButton-secondary"] {
+  background: transparent;
+  border-color: rgba(239, 68, 68, 0.55);
+  color: var(--crit-text);
+}
+[class*="_danger"] [data-testid="stBaseButton-secondary"]:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--crit);
+  color: var(--crit-text);
+}
+[class*="_danger"] [data-testid="stBaseButton-primary"] {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: #ffffff;
+}
+[class*="_danger"] [data-testid="stBaseButton-primary"]:hover {
+  background: #991b1b;
+  border-color: #991b1b;
+}
+button:disabled,
+button:disabled:hover {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------- focus rings */
+
+/* Dialogs and menus are portaled outside .stApp, so these rules are not
+   scoped to it. */
+:is(button, a, input, textarea, select, summary, [role="tab"],
+  [role="button"], [role="switch"], [role="combobox"], [tabindex]):focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------- inputs */
+
+[data-testid="stTextInputRootElement"],
+[data-testid="stTextArea"] textarea,
+[data-testid="stNumberInputContainer"] {
+  background: var(--bg-terminal);
+}
+[data-testid="stWidgetLabel"] p {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+/* ----------------------------------------------------------------- tabs */
+
+[data-testid="stTabs"] [role="tablist"] {
+  border-bottom: 1px solid var(--border);
+  gap: var(--space-2);
+}
+[data-testid="stTab"] {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+[data-testid="stTab"][aria-selected="true"] {
+  color: var(--text-primary);
+}
+
+/* ------------------------------------------------------------- expanders */
+
+[data-testid="stExpander"] details {
+  background: var(--bg-raised);
+  border-color: var(--border);
+  border-radius: var(--radius-md);
+}
+[data-testid="stExpander"] summary {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------- bordered containers */
+
+/* kit.card(): the raised card surface. */
+[class*="st-key-ax_card_"] {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+/* --------------------------------------------------------------- metrics */
+
+[data-testid="stMetric"] {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+[data-testid="stMetricLabel"] p {
+  color: var(--text-soft);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+[data-testid="stMetricValue"] {
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------- alerts */
+
+[data-testid="stAlertContainer"] {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------------------- dialogs */
+
+[data-testid="stDialog"] [role="dialog"] {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+}
+
+/* ----------------------------------------------------------- file upload */
+
+[data-testid="stFileUploaderDropzone"] {
+  background: var(--bg-terminal);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+}
+[data-testid="stFileUploaderDropzone"]:hover {
+  border-color: var(--area-blue);
+}
+
+/* ------------------------------------------------- code, tables, frames */
+
+[data-testid="stCode"] pre,
+.stApp pre {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+[data-testid="stTable"] table {
+  border-collapse: collapse;
+}
+[data-testid="stTable"] th {
+  color: var(--text-soft);
+  font-size: var(--type-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+[data-testid="stDataFrame"] {
+  border-radius: var(--radius-md);
+}
+
+/* ------------------------------------------------------- kit components */
+
+.ax-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-1) 0 var(--space-4);
+  margin-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  animation: ax-rise 220ms var(--ease) both;
+}
+.ax-header-rail {
+  flex: none;
+  width: 4px;
+  align-self: stretch;
+  min-height: 40px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.ax-area-neutral .ax-header-rail {
+  background: var(--area-neutral);
+}
+.ax-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.ax-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ax-header h1.ax-title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--type-xl);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+.ax-subtitle {
+  margin: var(--space-1) 0 0;
+  color: var(--text-soft);
+  font-size: var(--type-base);
+  max-width: 72ch;
+}
+
+.ax-section {
+  margin: var(--space-5) 0 var(--space-2);
+}
+.ax-section h2.ax-section-title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.ax-section p {
+  margin: var(--space-1) 0 0;
+  color: var(--text-muted);
+  font-size: var(--type-sm);
+}
+
+/* kit.stat_row sets --ax-cols so the rows are full or balanced. */
+.ax-tiles {
+  display: grid;
+  grid-template-columns: repeat(var(--ax-cols, 4), minmax(0, 1fr));
+  gap: var(--space-3);
+}
+@media (max-width: 640px) {
+  .ax-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.ax-tile {
+  position: relative;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--tone, var(--border-strong));
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  min-height: 92px;
+  box-shadow: var(--shadow-1);
+}
+.ax-tile-label {
+  color: var(--text-soft);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ax-tile-value {
+  margin-top: var(--space-2);
+  color: var(--text-primary);
+  font-family: var(--mono);
+  font-size: var(--type-xl);
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.ax-tile-hint {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--type-sm);
+}
+
+.ax-tone-neutral { --tone: var(--border-strong); --tone-text: var(--text-soft); --tone-bg: rgba(148, 163, 184, 0.1); }
+.ax-tone-accent { --tone: var(--accent); --tone-text: var(--accent-text); --tone-bg: var(--accent-glow); }
+.ax-tone-info { --tone: var(--info); --tone-text: var(--info-text); --tone-bg: rgba(56, 189, 248, 0.12); }
+.ax-tone-ok { --tone: var(--ok); --tone-text: var(--ok-text); --tone-bg: rgba(34, 197, 94, 0.12); }
+.ax-tone-warn { --tone: var(--warn); --tone-text: var(--warn-text); --tone-bg: rgba(245, 158, 11, 0.12); }
+.ax-tone-crit { --tone: var(--crit); --tone-text: var(--crit-text); --tone-bg: rgba(239, 68, 68, 0.12); }
+
+.ax-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 8px;
+  border: 1px solid var(--tone);
+  border-radius: 999px;
+  background: var(--tone-bg);
+  color: var(--tone-text);
+  font-size: var(--type-xs);
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.stApp dl.ax-kv,
+.stApp .ax-status dl {
+  padding: 0;
+}
+.ax-kv dt,
+.ax-status dt {
+  margin: 0;
+}
+.ax-kv {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+}
+.ax-kv dt {
+  color: var(--text-muted);
+  font-size: var(--type-sm);
+  font-weight: 600;
+}
+.ax-kv dd {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--type-sm);
+  overflow-wrap: anywhere;
+}
+.ax-kv dd.ax-mono {
+  font-family: var(--mono);
+}
+
+[class*="st-key-ax_empty_"] {
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-7) var(--space-5) var(--space-6);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(19, 26, 43, 0.6), rgba(8, 12, 20, 0));
+  animation: ax-rise 260ms var(--ease) both;
+}
+[class*="st-key-ax_empty_"] [data-testid="stPageLink"] {
+  width: auto;
+}
+[class*="st-key-ax_empty_"] [data-testid="stPageLink"] a {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  padding: 4px 14px;
+}
+[class*="st-key-ax_empty_"] [data-testid="stPageLink"] a:hover {
+  border-color: var(--area-blue);
+}
+.ax-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+.ax-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--accent-glow);
+  color: var(--accent-text);
+  margin-bottom: var(--space-2);
+}
+.ax-empty-icon::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: currentColor;
+  -webkit-mask: var(--ax-shield) center / contain no-repeat;
+  mask: var(--ax-shield) center / contain no-repeat;
+}
+.ax-empty h3.ax-empty-title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--type-md);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.ax-empty p {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--text-soft);
+  font-size: var(--type-base);
+}
+
+.ax-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--tone);
+  border-radius: var(--radius-md);
+  background: var(--tone-bg);
+  color: var(--text-primary);
+  font-size: var(--type-base);
+}
+.ax-notice-label {
+  flex: none;
+  color: var(--tone-text);
+  font-weight: 700;
+}
+
+/* The mock-mode banner at the top of every page. */
+.ax-mock {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-md);
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--text-primary);
+  font-size: var(--type-sm);
+}
+.ax-mock strong {
+  color: var(--warn-text);
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+}
+/* On a live-view page (wide canvas) the banner is a slim one-line strip,
+   so the live view starts higher. */
+.stApp:has(.ax-wide) .ax-mock {
+  margin-bottom: var(--space-2);
+  padding: 2px var(--space-3);
+  font-size: var(--type-xs);
+}
+.stApp:has(.ax-wide) .ax-mock span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ax-lead {
+  margin: var(--space-4) 0 var(--space-2);
+  color: var(--text-soft);
+  font-size: var(--type-sm);
+  font-weight: 600;
+}
+
+/* Sidebar status block. */
+.ax-status {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+}
+.ax-status-title {
+  color: var(--text-muted);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+.ax-status dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 6px var(--space-3);
+  margin: 0;
+  font-size: var(--type-sm);
+}
+.ax-status dt {
+  color: var(--text-soft);
+}
+.ax-status dd {
+  margin: 0;
+  justify-self: end;
+}
+
+/* -------------------------------------------- wide canvas (deck pages) */
+
+/* wide_canvas() writes .ax-wide. The deck sizes from its own box and
+   switches to a narrow card layout when a board column is under 168px,
+   which needs about 1400px of deck. So the deck gets almost the whole
+   width (4px gutters, room for a classic 15px scrollbar at 1440), and the
+   rest of the page keeps the usual gutter. */
+[data-testid="stMain"]:has(.ax-wide) [data-testid="stMainBlockContainer"] {
+  max-width: none;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+[data-testid="stMain"]:has(.ax-wide) [data-testid="stMainBlockContainer"]
+  > [data-testid="stVerticalBlock"] > :not(:has(.aegis-deck-root)) {
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+}
+
+/* --------------------------------------------------------------- motion */
+
+@keyframes ax-rise {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  [data-testid="stSidebar"],
+  [data-testid="stHeader"],
+  .ax-mock {
+    display: none;
+  }
+}
+
+/* The Safeguards and Review flags blocks (aegisshield/ui/safeguards_view.py). */
+.sg-quiet { color: var(--text-muted); font-size: var(--type-sm); margin: 0; overflow-wrap: anywhere; }
+.sg-label { color: var(--text-muted); font-size: var(--type-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; margin: var(--space-3) 0 var(--space-1); }
+.sg-list { margin: 0 0 var(--space-2) 1.1rem; padding: 0; color: var(--text-soft);
+  font-size: var(--type-sm); }
+.sg-list li { margin: 2px 0; overflow-wrap: anywhere; }
+.sg-id { font-family: var(--mono); font-size: var(--type-sm); color: var(--accent-text);
+  background: var(--accent-glow); padding: 1px 6px; border-radius: 4px; text-decoration: none; }
+.sg-field { color: var(--text-muted); font-family: var(--mono); font-size: var(--type-xs); }
+.sg-title { color: var(--text-soft); }

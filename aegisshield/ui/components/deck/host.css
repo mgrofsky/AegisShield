@@ -1,0 +1,22 @@
+/* The page around the deck in Streamlit. deck.css reads a few design
+   tokens with fallbacks and expects them on :root. Here they are set on the
+   deck's own wrapper so nothing leaks into the app. Values are the app's
+   design tokens (theme.TOKENS). */
+.aegis-deck-root {
+  --bg-base: #080c14;
+  --text-primary: #e2e8f0;
+  --area-blue: #3b82f6;
+  --warn: #f59e0b;
+  --crit: #ef4444;
+  --ag-mitre: #a78bfa;
+  --ag-dread: #f472b6;
+  --ag-valid: #22d3ee;
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* Streamlit's header is 3.75rem tall (60px at the default font size). */
+  --topbar-height: 60px;
+  display: block;
+  width: 100%;
+}
+.aegis-deck-root > .dk {
+  margin-top: 0;
+}

@@ -1,0 +1,7488 @@
+{
+ "about": "Poll bodies from one agentic threat model run on the mock client, sampled every 1 s; each model call paced to 6 s. Regenerate with tools/build_office_replay.py.",
+ "model_calls": 14,
+ "frames": [
+  {
+   "seen": 0.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "Threat Model Lead gathering threat intelligence",
+    "agentic": true,
+    "lead": {
+     "status": "working",
+     "note": "Planning the run"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "queued",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 1.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "Threat Model Lead gathering threat intelligence",
+    "agentic": true,
+    "lead": {
+     "status": "working",
+     "note": "Planning the run"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "queued",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 2.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "Threat Model Lead gathering threat intelligence",
+    "agentic": true,
+    "lead": {
+     "status": "working",
+     "note": "Planning the run"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "queued",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 3.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "Threat Model Lead gathering threat intelligence",
+    "agentic": true,
+    "lead": {
+     "status": "working",
+     "note": "Planning the run"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "queued",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 4.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "Threat Model Lead gathering threat intelligence",
+    "agentic": true,
+    "lead": {
+     "status": "working",
+     "note": "Planning the run"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "queued",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 5.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "Threat Model Lead gathering threat intelligence",
+    "agentic": true,
+    "lead": {
+     "status": "working",
+     "note": "Planning the run"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "queued",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 6.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "STRIDE Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Checkout sessions, pricing, and refunds."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "working",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": 0.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 7.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "STRIDE Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Checkout sessions, pricing, and refunds."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "working",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": 0.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 8.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "STRIDE Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Checkout sessions, pricing, and refunds."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "working",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": 0.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 9.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "STRIDE Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Checkout sessions, pricing, and refunds."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "working",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": 0.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 10.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "STRIDE Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Checkout sessions, pricing, and refunds."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "working",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": 0.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 11.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 0,
+    "total": 7,
+    "current": "STRIDE Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Checkout sessions, pricing, and refunds."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "working",
+      "activity": "Mapping tampering and disclosure paths across the application's data flows",
+      "started_at": 0.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "queued",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 12.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 13.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 14.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 15.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 16.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 17.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 18.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 19.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 20.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 21.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 22.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 23.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 24.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 25.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 26.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 27.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 28.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 29.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 30.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 31.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 32.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 33.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 34.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 35.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 36.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 37.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 38.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 39.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 40.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 41.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 42.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 43.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 44.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 45.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 46.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 47.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 48.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 1,
+    "total": 7,
+    "current": "MITRE ATT&CK Mapper working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Map each threat to web attack techniques."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "working",
+      "activity": "Aligning threats to ATT&CK techniques for the likely attack paths",
+      "started_at": 6.0,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "queued",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 49.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 2,
+    "total": 7,
+    "current": "DREAD Risk Scorer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Rank threats by fraud loss."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "working",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": 42.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 50.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 2,
+    "total": 7,
+    "current": "DREAD Risk Scorer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Rank threats by fraud loss."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "working",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": 42.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 51.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 2,
+    "total": 7,
+    "current": "DREAD Risk Scorer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Rank threats by fraud loss."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "working",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": 42.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 52.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 2,
+    "total": 7,
+    "current": "DREAD Risk Scorer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Rank threats by fraud loss."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "working",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": 42.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 53.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 2,
+    "total": 7,
+    "current": "DREAD Risk Scorer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Rank threats by fraud loss."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "working",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": 42.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 54.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 2,
+    "total": 7,
+    "current": "DREAD Risk Scorer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Rank threats by fraud loss."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "working",
+      "activity": "Scoring business impact and data exposure",
+      "started_at": 42.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "queued",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 55.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 3,
+    "total": 7,
+    "current": "Mitigations Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Server side controls first."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "working",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": 48.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 56.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 3,
+    "total": 7,
+    "current": "Mitigations Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Server side controls first."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "working",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": 48.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 57.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 3,
+    "total": 7,
+    "current": "Mitigations Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Server side controls first."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "working",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": 48.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 58.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 3,
+    "total": 7,
+    "current": "Mitigations Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Server side controls first."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "working",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": 48.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 59.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 3,
+    "total": 7,
+    "current": "Mitigations Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Server side controls first."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "working",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": 48.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 60.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 3,
+    "total": 7,
+    "current": "Mitigations Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Server side controls first."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "working",
+      "activity": "Drafting safeguards for the highest risks",
+      "started_at": 48.17,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "queued",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 61.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 4,
+    "total": 7,
+    "current": "Validation Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Tests for pricing and session reuse."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "working",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": 54.18,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 62.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 4,
+    "total": 7,
+    "current": "Validation Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Tests for pricing and session reuse."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "working",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": 54.18,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 63.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 4,
+    "total": 7,
+    "current": "Validation Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Tests for pricing and session reuse."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "working",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": 54.18,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 64.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 4,
+    "total": 7,
+    "current": "Validation Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Tests for pricing and session reuse."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "working",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": 54.18,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 65.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 4,
+    "total": 7,
+    "current": "Validation Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Tests for pricing and session reuse."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "working",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": 54.18,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 66.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 4,
+    "total": 7,
+    "current": "Validation Engineer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Tests for pricing and session reuse."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "working",
+      "activity": "Writing validation tests for the key controls",
+      "started_at": 54.18,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "queued",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 67.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 5,
+    "total": 7,
+    "current": "Teammate Reviewer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Review the finished draft (threats, techniques, and DREAD rows) for relevance and false positives; flag anything that does not fit the application's stated scope so it can be dropped."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "working",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": 60.19,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 68.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 5,
+    "total": 7,
+    "current": "Teammate Reviewer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Review the finished draft (threats, techniques, and DREAD rows) for relevance and false positives; flag anything that does not fit the application's stated scope so it can be dropped."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "working",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": 60.19,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 69.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 5,
+    "total": 7,
+    "current": "Teammate Reviewer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Review the finished draft (threats, techniques, and DREAD rows) for relevance and false positives; flag anything that does not fit the application's stated scope so it can be dropped."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "working",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": 60.19,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 70.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 5,
+    "total": 7,
+    "current": "Teammate Reviewer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Review the finished draft (threats, techniques, and DREAD rows) for relevance and false positives; flag anything that does not fit the application's stated scope so it can be dropped."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "working",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": 60.19,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 71.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 5,
+    "total": 7,
+    "current": "Teammate Reviewer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Review the finished draft (threats, techniques, and DREAD rows) for relevance and false positives; flag anything that does not fit the application's stated scope so it can be dropped."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "working",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": 60.19,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 72.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 5,
+    "total": 7,
+    "current": "Teammate Reviewer working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Review the finished draft (threats, techniques, and DREAD rows) for relevance and false positives; flag anything that does not fit the application's stated scope so it can be dropped."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "working",
+      "activity": "Reviewing draft threats and DREAD rows for false positives",
+      "started_at": 60.19,
+      "finished_at": null,
+      "findings": null
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "queued",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": null,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 73.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 6,
+    "total": 7,
+    "current": "Rebuttal Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Negative validation: challenge each high-scoring DREAD row with exactly one counterexample drawn from the actual scope, then downgrade or explain. No new attack surface is introduced."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "working",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": 66.2,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 74.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 6,
+    "total": 7,
+    "current": "Rebuttal Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Negative validation: challenge each high-scoring DREAD row with exactly one counterexample drawn from the actual scope, then downgrade or explain. No new attack surface is introduced."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "working",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": 66.2,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 75.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 6,
+    "total": 7,
+    "current": "Rebuttal Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Negative validation: challenge each high-scoring DREAD row with exactly one counterexample drawn from the actual scope, then downgrade or explain. No new attack surface is introduced."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "working",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": 66.2,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 76.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 6,
+    "total": 7,
+    "current": "Rebuttal Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Negative validation: challenge each high-scoring DREAD row with exactly one counterexample drawn from the actual scope, then downgrade or explain. No new attack surface is introduced."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "working",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": 66.2,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 77.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 6,
+    "total": 7,
+    "current": "Rebuttal Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Negative validation: challenge each high-scoring DREAD row with exactly one counterexample drawn from the actual scope, then downgrade or explain. No new attack surface is introduced."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "working",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": 66.2,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 78.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 6,
+    "total": 7,
+    "current": "Rebuttal Analyst working",
+    "agentic": true,
+    "lead": {
+     "status": "orchestrating",
+     "note": "Negative validation: challenge each high-scoring DREAD row with exactly one counterexample drawn from the actual scope, then downgrade or explain. No new attack surface is introduced."
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "working",
+      "activity": "Negative-validating the top DREAD rows against real scope",
+      "started_at": 66.2,
+      "finished_at": null,
+      "findings": null
+     }
+    ]
+   }
+  },
+  {
+   "seen": 79.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "Synthesizing attack tree and report",
+    "agentic": true,
+    "lead": {
+     "status": "synthesizing",
+     "note": "Threat Model Lead assembling the final model"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  },
+  {
+   "seen": 80.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "Synthesizing attack tree and report",
+    "agentic": true,
+    "lead": {
+     "status": "synthesizing",
+     "note": "Threat Model Lead assembling the final model"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  },
+  {
+   "seen": 81.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "Synthesizing attack tree and report",
+    "agentic": true,
+    "lead": {
+     "status": "synthesizing",
+     "note": "Threat Model Lead assembling the final model"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  },
+  {
+   "seen": 82.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "Synthesizing attack tree and report",
+    "agentic": true,
+    "lead": {
+     "status": "synthesizing",
+     "note": "Threat Model Lead assembling the final model"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  },
+  {
+   "seen": 83.0,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "Synthesizing attack tree and report",
+    "agentic": true,
+    "lead": {
+     "status": "synthesizing",
+     "note": "Threat Model Lead assembling the final model"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  },
+  {
+   "seen": 84.01,
+   "status": "running",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "Synthesizing attack tree and report",
+    "agentic": true,
+    "lead": {
+     "status": "synthesizing",
+     "note": "Threat Model Lead assembling the final model"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  },
+  {
+   "seen": 85.01,
+   "status": "complete",
+   "error": null,
+   "progress": {
+    "step": 7,
+    "total": 7,
+    "current": "complete",
+    "agentic": true,
+    "lead": {
+     "status": "done",
+     "note": "Threat model complete"
+    },
+    "agents": [
+     {
+      "id": "stride",
+      "role": "STRIDE Analyst",
+      "section": "STRIDE",
+      "status": "done",
+      "activity": "STRIDE Analyst",
+      "started_at": 0.0,
+      "finished_at": 6.0,
+      "findings": 6
+     },
+     {
+      "id": "mitre",
+      "role": "MITRE ATT&CK Mapper",
+      "section": "MITRE",
+      "status": "done",
+      "activity": "MITRE ATT&CK Mapper",
+      "started_at": 6.0,
+      "finished_at": 42.17,
+      "findings": 6
+     },
+     {
+      "id": "dread",
+      "role": "DREAD Risk Scorer",
+      "section": "DREAD",
+      "status": "done",
+      "activity": "DREAD Risk Scorer",
+      "started_at": 42.17,
+      "finished_at": 48.17,
+      "findings": 6
+     },
+     {
+      "id": "mitigations",
+      "role": "Mitigations Engineer",
+      "section": "MITIGATIONS",
+      "status": "done",
+      "activity": "Mitigations Engineer",
+      "started_at": 48.17,
+      "finished_at": 54.18,
+      "findings": null
+     },
+     {
+      "id": "test_cases",
+      "role": "Validation Engineer",
+      "section": "TEST_CASES",
+      "status": "done",
+      "activity": "Validation Engineer",
+      "started_at": 54.18,
+      "finished_at": 60.19,
+      "findings": null
+     },
+     {
+      "id": "teammate",
+      "role": "Teammate Reviewer",
+      "section": "TEAMMATE",
+      "status": "done",
+      "activity": "Teammate Reviewer",
+      "started_at": 60.19,
+      "finished_at": 66.2,
+      "findings": 1
+     },
+     {
+      "id": "rebuttal",
+      "role": "Rebuttal Analyst",
+      "section": "REBUTTAL",
+      "status": "done",
+      "activity": "Rebuttal Analyst",
+      "started_at": 66.2,
+      "finished_at": 72.2,
+      "findings": 1
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+# NVIDIA garak, for AI workflow scans (aegisshield/aiscan). Install it into
+# its OWN virtual environment and point AEGIS_GARAK_PYTHON at that
+# environment's python, for example:
+#   python -m venv .venv-garak && .venv-garak/bin/pip install -r requirements-aiscan.txt
+#   AEGIS_AI_SCAN=1 AEGIS_GARAK_PYTHON=$PWD/.venv-garak/bin/python streamlit run main.py
+# Never install it into the app's environment: garak 0.17.1 downgrades openai
+# and pulls in torch. The app runs garak only as a subprocess, so it never
+# imports it. It is not in requirements.txt, CI, or the Docker image.
+garak==0.17.1

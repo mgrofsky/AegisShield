@@ -1,197 +1,101 @@
-# NIST SP 800-53 Rev. 5 Controls Implementation in AegisShield
+# NIST SP 800-53 Rev. 5 alignment
 
-This document provides a comprehensive mapping of NIST SP 800-53 Rev. 5 security controls implemented within the AegisShield Threat Modeler application.
+This document lists the places where AegisShield's code does something that lines up with a NIST SP 800-53 Rev. 5 control. The same content, in machine-readable form, is in [`nist-sp-800-53-controls-mapping.json`](nist-sp-800-53-controls-mapping.json).
 
-## Overview
+Read it as the maintainers' description of the code, nothing more:
 
-AegisShield implements multiple NIST SP 800-53 Rev. 5 controls across its architecture, demonstrating compliance with federal cybersecurity standards and best practices for secure system development.
+- It is not an assessment. No assessor has reviewed it, and nothing here has been tested against the control assessment procedures in SP 800-53A.
+- It is not a statement of compliance with SP 800-53, FedRAMP, FISMA, or any other program. Whether these behaviors meet a control in your environment depends on how you deploy and operate the app, and is your call.
+- A control appears here only if code in this repository carries it. Each entry names the files and the functions or classes involved, and the tests that exercise them. A test (`tests/aegisshield/services/test_nist_800_53_service.py`) fails if any of those files or names stops existing, so the evidence cannot silently point at code that is gone.
 
-## Implemented Controls by Category
+Each control has a scope:
 
-### Access Control (AC)
+- **application**: a safeguard in the app itself.
+- **capability**: a feature that can help your organization with its own work on the control. The app does not meet the control for you.
 
-#### AC-3: Access Enforcement
-- **Location**: `api_key_handler.py`
-- **Implementation**: API key validation and access control enforcement
-- **Description**: Validates API keys before granting access to external services (OpenAI, NVD, AlienVault OTX)
-- **Code Comments**: Lines 73, 82
+## Summary
 
-### Identification and Authentication (IA)
+| Control | Name | Scope | Main code |
+|---------|------|-------|-----------|
+| IA-5 | Authenticator Management | application | `aegisshield/ui/state.py` |
+| SC-4 | Information in Shared System Resources | application | `aegisshield/jobs/runner.py` |
+| SI-10 | Information Input Validation | application | `aegisshield/services/pcap_service.py` |
+| SI-11 | Error Handling | application | `aegisshield/jobs/runner.py` |
+| SI-15 | Information Output Filtering | application | `aegisshield/services/export_service.py` |
+| RA-3 | Risk Assessment | capability | `aegisshield/pipeline/run.py` |
+| PM-16 | Threat Awareness Program | capability | `aegisshield/pipeline/otx_service.py` |
 
-#### IA-2: Identification and Authentication (Organizational Users)
-- **Location**: `api_key_handler.py`
-- **Implementation**: Authentication to external services via API keys
-- **Description**: Manages authentication credentials for external threat intelligence and AI services
+Seven controls in five families (IA, SC, SI, RA, PM).
 
-#### IA-5: Authenticator Management
-- **Location**: `api_key_handler.py`
-- **Implementation**: Secure API key management and storage
-- **Description**: 
-  - Secure storage using Streamlit secrets
-  - Password-type input fields for sensitive credentials
-  - Session-based credential management
-- **Sub-controls**:
-  - IA-5(1): Password-Based Authentication - Masked input fields, secure storage
-- **Code Comments**: Lines 4, 15, 20, 72, 78
+## Application safeguards
 
-### System and Communications Protection (SC)
+### IA-5: Authenticator Management
 
-#### SC-7: Boundary Protection
-- **Location**: `nvd_search.py`, `alientvault_search.py`
-- **Implementation**: Secure external API communications
-- **Description**: 
-  - Resilient communication with external threat intelligence sources
-  - Retry mechanisms for network failures
-  - Secure API endpoints for NVD and OTX services
-- **Code Comments**: Lines 13, 37, 69, 128
+The authenticators here are the API keys the app holds for outside services (OpenAI, NVD, AlienVault OTX). The app does not identify or authenticate its own users; it has no accounts.
 
-#### SC-12: Cryptographic Key Establishment and Management
-- **Location**: `api_key_handler.py`
-- **Implementation**: API key lifecycle management
-- **Description**: Management of cryptographic keys for external service authentication
-- **Sub-controls**:
-  - SC-12(2): Symmetric Keys - API key management
-- **Code Comments**: Lines 5, 16
+- A visitor's keys are typed into masked inputs and kept only in that visitor's Streamlit session state. The input is emptied once the key is stored (`aegisshield/ui/state.py`: `set_api_key`, `key_input_changed`; `aegisshield/ui/pages/settings.py`: `_keys_section`).
+- The operator can set NVD and OTX keys in Streamlit secrets. There is no operator fallback for the OpenAI key (`get_api_key`).
+- Keys are passed by value into the job that needs them. The job runner drops the job function, which holds the key, as soon as the job ends (`aegisshield/jobs/runner.py`: `JobRunner._run`).
+- Failed-job log lines pass through `redact_keys` (`aegisshield/core/text.py`). OpenAI SDK errors are re-raised without their message, and the client's `repr` shows no key (`aegisshield/llm/openai_client.py`: `OpenAIClient._complete`, `OpenAIClient.__repr__`).
 
-### System and Information Integrity (SI)
+### SC-4: Information in Shared System Resources
 
-#### SI-4: Information System Monitoring
-- **Location**: `nvd_search.py`, `alientvault_search.py`
-- **Implementation**: Continuous monitoring and threat intelligence collection
-- **Description**:
-  - Continuous vulnerability monitoring via NVD
-  - External threat intelligence monitoring via AlienVault OTX
-  - Connection failure monitoring and logging
-- **Code Comments**: Lines 15, 38, 66
+One Streamlit process serves every visitor, so one visitor's work must not be reachable from another's session.
 
-#### SI-7: Software, Firmware, and Information Integrity
-- **Location**: `nvd_search.py`
-- **Implementation**: Vulnerability assessment and software integrity monitoring
-- **Description**: 
-  - Automated vulnerability identification for software components
-  - Technology version vulnerability analysis
-  - CVE-based integrity assessment
-- **Code Comments**: Lines 11, 126
+- Job ids come from `secrets.token_urlsafe(32)`, and the runner offers no way to list jobs. A session sees only the jobs whose ids it holds (`JobRunner.submit`, `JobRunner.snapshot`).
+- While a job runs, its id is also in the page URL (`?run=`) so a reload can find it. Anyone with that URL can open the job while it runs and for 30 seconds after it ends. Each page removes the id from the URL when the job finishes, fails, is cancelled, or is no longer held (`aegisshield/ui/state.py`: `adopt_job`, `requested_run_id`, `set_run_param`).
+- Finished jobs are dropped after a time to live (15 minutes by default), and a job still running at the job timeout is marked failed and told to stop (`JobRunner._sweep_locked`).
+- At most `AEGIS_MAX_CONCURRENT_JOBS` jobs (4 by default) run at once in the process, and at most 1 packet capture analysis, 2 vulnerability lookups, 2 policies, and 3 threat models at once across all visitors. A refused job gets a fixed sentence (`JobRunner.__init__`, `JobRunner.submit`; `aegisshield/config.py`: `Settings`).
+- By default the workspace is a `MappingStore` over the visitor's own session state. The on-disk `FileStore` is one file shared by everyone, used only when the operator sets `AEGIS_DATA_DIR`; the app logs a warning when it is set (`aegisshield/storage/stores.py`: `warn_if_shared_workspace`; `aegisshield/ui/state.py`: `workspace_store`).
 
-#### SI-11: Error Handling
-- **Location**: `error_handler.py`
-- **Implementation**: Systematic error handling and user notification
-- **Description**:
-  - Centralized exception management
-  - User-friendly error messages without sensitive data exposure
-  - Comprehensive error capture and logging
-- **Sub-controls**: Complete error handling framework
-- **Code Comments**: Lines 14, 53, 82, 97
+### SI-10: Information Input Validation
 
-### Audit and Accountability (AU)
+Checks run on the server, whatever the browser sent.
 
-#### AU-3: Content of Audit Records
-- **Location**: `error_handler.py`, `nvd_search.py`, `alientvault_search.py`
-- **Implementation**: Comprehensive logging with structured content
-- **Description**:
-  - Complete error context and metadata capture
-  - API interaction logging
-  - Vulnerability scan result logging
-  - Threat intelligence query logging
-- **Code Comments**: Lines 10, 32, 50, 61, 70, 98, 127
+- The Streamlit server accepts at most 25 MB per upload (`maxUploadSize` in `.streamlit/config.toml`).
+- A packet capture is checked for size (25 MB), extension (`.pcap` or `.pcapng`), and pcap or pcapng magic bytes before it is written to disk (`aegisshield/services/pcap_service.py`: `validate_upload`, `detect_capture_format`).
+- An architecture image (10 MB) and a workspace import (10 MB) are refused by their reported size before they are read (`aegisshield/ui/tool_parts.py`: `upload_too_large`). An image must be a PNG or JPEG by its own first bytes (`aegisshield/pipeline/threat_model_service.py`: `decode_image`).
+- A workspace import is refused when its schema version, keys, types, or record ids are wrong (`aegisshield/storage/workspace.py`: `Workspace.from_json`, `Workspace.from_dict`, `Record.from_dict`).
+- Text limits: description 20,000 characters, diagram description 10,000, profile values 200 characters and lists 500 items (the threat-model request refuses anything longer: `aegisshield/pipeline/schemas.py`: `AppProfile`, `ThreatModelRequest`), version strings 32 characters, and edited policy text 100,000 characters.
+- Visitor text has control and invisible characters, including bidirectional controls, removed (`aegisshield/core/text.py`: `clean_text`, `strip_invisible`, `sanitize_user_markdown`). Model names read from the environment must be in `AVAILABLE_MODELS` (`aegisshield/config.py`: `get_settings`).
 
-#### AU-4: Audit Storage Capacity
-- **Location**: `error_handler.py`
-- **Implementation**: Log file management and storage
-- **Description**: Automated log directory creation and file management
-- **Code Comments**: Lines 11, 33
+### SI-11: Error Handling
 
-#### AU-6: Audit Review, Analysis, and Reporting
-- **Location**: `error_handler.py`
-- **Implementation**: Error analysis and reporting capabilities
-- **Description**:
-  - Structured log format for analysis
-  - User notification as part of error handling
-  - Console output for immediate audit review
-- **Code Comments**: Lines 12, 52, 66, 83, 99
+- Errors shown to a visitor are fixed sentences from the app's own code that never carry provider text, a library's exception text, or keys. A failed job's message is chosen by exception class, except that a job may show one of its service's own fixed sentences (`pcap_service.JOB_ERRORS`, the safeguards' `JOB_ERRORS`, and the scan service's `JOB_ERRORS`), and the exception's class and message are logged with key-shaped text redacted (`aegisshield/jobs/runner.py`: `plain_error`, `JobRunner._run`; `aegisshield/core/errors.py`).
+- OpenAI SDK errors are logged by class and HTTP status and re-raised as a fixed message (`OpenAIClient._complete`).
+- `tshark` failures are logged on the server and shown as fixed sentences (`aegisshield/services/pcap_service.py`: `_run_tshark`).
+- `.streamlit/config.toml` sets `showErrorDetails = "none"`, so an unexpected exception is not shown in the page.
 
-#### AU-8: Time Stamps
-- **Location**: `error_handler.py`
-- **Implementation**: Precise timestamp generation for all logged events
-- **Description**: Consistent timestamp format for all audit records
-- **Code Comments**: Lines 13, 34, 51, 59
+### SI-15: Information Output Filtering
 
-### Risk Assessment (RA)
+Model output and visitor text are treated as untrusted when they are written into exports or shown.
 
-#### RA-3: Risk Assessment
-- **Location**: `alientvault_search.py`
-- **Implementation**: Threat intelligence integration for risk analysis
-- **Description**: Industry-specific threat intelligence collection to support risk assessment activities
-- **Code Comments**: Lines 12, 67
+- Every string placed into the HTML export is escaped. Markdown is rendered with raw HTML escaped and images reduced to their alt text. The HTML export carries a Content-Security-Policy that allows no scripts and no outside resources (`aegisshield/services/export_service.py`: `escape`, `markdown_html`, `to_html_report`).
+- In the HTML export and the PDFs, links stay links only for http, https, mailto, and in-page fragments; any other link becomes plain text (`aegisshield/core/text.py`: `is_safe_link`; `export_service.restrict_links`, `safe_link`; `aegisshield/services/policy_service.py`: `markdown_to_html`). In the page, model text that names a `javascript:`, `vbscript:`, `data:`, or `file:` scheme anywhere has every link shown as plain text (`aegisshield/ui/kit.py`: `model_markdown`); Streamlit's own renderer also refuses `javascript:` and `vbscript:` links.
+- Every PDF the app makes (the threat-model report and policies) goes through one renderer whose resource policy refuses every network fetch and every local file read; only images embedded in the document load (`aegisshield/services/pdf_render.py`: `locked_resource_policy`, `html_to_pdf`; `report_service.render_pdf`).
+- Packet-derived text is escaped in the PCAP markdown report (`render_markdown_report`).
 
-#### RA-5: Vulnerability Scanning
-- **Location**: `nvd_search.py`
-- **Implementation**: Automated vulnerability identification and assessment
-- **Description**:
-  - Automated CVE discovery via NVD API
-  - Technology-specific vulnerability scanning
-  - CVSS score-based vulnerability prioritization
-- **Code Comments**: Lines 12, 125
+## Capabilities for your organization
 
-### Program Management (PM)
+### RA-3: Risk Assessment
 
-#### PM-16: Threat Awareness Program
-- **Location**: `alientvault_search.py`
-- **Implementation**: External threat intelligence consumption
-- **Description**: Structured threat intelligence collection to support organizational threat awareness
-- **Code Comments**: Lines 13, 68
+The threat-model wizard drafts a STRIDE threat model, an attack tree, a DREAD assessment, mitigations, and test cases for a system you describe (`aegisshield/pipeline/run.py`: `run_threat_model`; `aegisshield/pipeline/workflow_service.py`; `aegisshield/pipeline/dread_service.py`). The output is written by a language model. It is a draft for a person to review and can be an input to a risk assessment; it is not one.
 
-## Control Implementation Matrix
+### PM-16: Threat Awareness Program
 
-| Control Family | Control | Implementation Status | Primary Module |
-|---------------|---------|---------------------|----------------|
-| AC | AC-3 | ✅ Implemented | api_key_handler.py |
-| IA | IA-2 | ✅ Implemented | api_key_handler.py |
-| IA | IA-5 | ✅ Implemented | api_key_handler.py |
-| SC | SC-7 | ✅ Implemented | nvd_search.py, alientvault_search.py |
-| SC | SC-12 | ✅ Implemented | api_key_handler.py |
-| SI | SI-4 | ✅ Implemented | nvd_search.py, alientvault_search.py |
-| SI | SI-7 | ✅ Implemented | nvd_search.py |
-| SI | SI-11 | ✅ Implemented | error_handler.py |
-| AU | AU-3 | ✅ Implemented | error_handler.py, nvd_search.py, alientvault_search.py |
-| AU | AU-4 | ✅ Implemented | error_handler.py |
-| AU | AU-6 | ✅ Implemented | error_handler.py |
-| AU | AU-8 | ✅ Implemented | error_handler.py |
-| RA | RA-3 | ✅ Implemented | alientvault_search.py |
-| RA | RA-5 | ✅ Implemented | nvd_search.py |
-| PM | PM-16 | ✅ Implemented | alientvault_search.py |
+With an OTX key, a threat-model run fetches recent AlienVault OTX reports for the selected industry sector, and a vulnerability lookup fetches OTX reports for each technology. The vulnerability lookup also marks CVEs that are in the CISA Known Exploited Vulnerabilities catalog (`aegisshield/pipeline/otx_service.py`: `lookup_otx`; `aegisshield/services/kev_service.py`; `aegisshield/services/vuln_lookup.py`: `run_lookup`). These are read-only lookups of public sources.
 
-## Compliance Benefits
+## Controls the code does not carry
 
-This implementation provides several compliance benefits:
+These controls are sometimes claimed for tools like this one. They are not listed above because the code does not carry them:
 
-1. **Federal Risk and Authorization Management Program (FedRAMP)**: Many of these controls are required for FedRAMP compliance
-2. **FISMA Compliance**: Supports Federal Information Security Management Act requirements
-3. **Cybersecurity Framework**: Aligns with NIST Cybersecurity Framework categories
-4. **Industry Standards**: Demonstrates security best practices for cybersecurity applications
+- **AC-3 Access Enforcement, IA-2 Identification and Authentication**: the app has no users, accounts, or access control. Anyone who can reach a deployment can use it.
+- **SC-7 Boundary Protection**: retries and timeouts on outgoing API calls are not boundary protection.
+- **SC-12 Cryptographic Key Establishment and Management**: API keys are not cryptographic keys, and the app establishes none.
+- **SI-4 System Monitoring, SI-7 Software, Firmware, and Information Integrity**: looking up public CVE data for products a user names does not monitor or verify this system.
+- **AU-3, AU-4, AU-6, AU-8 (audit records, storage, review, time stamps)**: the app writes ordinary application logs to a stream. It keeps no audit records, manages no log storage, and its log lines carry no user identity.
+- **RA-5 Vulnerability Monitoring and Scanning**: the app never scans or probes another system. The vulnerability lookup reads public databases about product versions a user names. The optional AI workflow scan runs garak only against the app's own workflow steps, through a loopback endpoint.
 
-## Additional Controls Consideration
+## Keeping this current
 
-While AegisShield implements core security controls, organizations may want to consider additional controls based on their specific security requirements:
-
-- **AC-2**: Account Management (if multi-user capabilities are added)
-- **AC-6**: Least Privilege (for role-based access)
-- **CM-2**: Baseline Configuration (for infrastructure management)
-- **CP-9**: Information System Backup (for data protection)
-- **IR-4**: Incident Handling (for security incident response)
-
-## Documentation and Evidence
-
-All control implementations are documented directly in the source code with specific NIST SP 800-53 Rev. 5 control references, providing clear traceability for compliance audits and assessments.
-
-## Maintenance and Updates
-
-This mapping should be reviewed and updated whenever:
-- New NIST SP 800-53 revisions are published
-- Application functionality is modified
-- Security requirements change
-- Compliance frameworks are updated
-
----
-
-*This document was generated as part of the AegisShield Threat Modeler security documentation. For questions regarding specific control implementations, refer to the commented source code or contact the development team.*
+When code named here changes, update the JSON and this page together. The test above catches renamed or deleted files and functions; it cannot tell whether the behavior described is still true, so read the code when you change it.

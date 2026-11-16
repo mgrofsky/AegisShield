@@ -1,0 +1,42 @@
+# AegisShield rails (Colang 1.0). Each subflow calls one action from
+# aegisshield.safeguards.engine. An action returns {"blocked": bool,
+# "text": str}; a blocked result refuses and stops, any other result
+# replaces the text under check with the action's text (the same text when
+# nothing was found).
+
+define bot refuse to respond
+  "Withheld by AegisShield safeguards."
+
+# Input rails: text the visitor typed. A hit is fenced as data, never blocked.
+define subflow aegis typed instructions
+  if $aegis_rail_set == "input"
+    $verdict = execute aegis_typed_instructions(text=$user_message)
+    $user_message = $verdict.text
+
+# Retrieved-content rails: text from anywhere else. A hit is replaced by a
+# visible marker naming the source.
+define subflow aegis retrieved instructions
+  if $aegis_rail_set == "retrieved"
+    $verdict = execute aegis_retrieved_instructions(text=$user_message)
+    $user_message = $verdict.text
+
+# Output rails: every model answer.
+define subflow aegis answer leak
+  $verdict = execute aegis_answer_leak(text=$bot_message)
+  if $verdict.blocked
+    bot refuse to respond
+    stop
+
+define subflow aegis answer injection
+  $verdict = execute aegis_answer_injection(text=$bot_message)
+  if $verdict.blocked
+    bot refuse to respond
+    stop
+
+define subflow aegis answer secrets
+  $verdict = execute aegis_answer_secrets(text=$bot_message)
+  $bot_message = $verdict.text
+
+define subflow aegis answer exfiltration
+  $verdict = execute aegis_answer_exfiltration(text=$bot_message)
+  $bot_message = $verdict.text

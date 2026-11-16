@@ -1,0 +1,412 @@
+{
+  "_comment": "Fingerprint name -> NVD vendor:product. 'product_name' is the one canonical display name for the product (the only product text the risk-assessment wizard copies into its description). 'from' says where the pair came from: wizard_catalog = TECHNOLOGY_TYPES in static/app.js (kept identical by a test); nvd_cpe_dictionary_<date> = confirmed against the NVD CPE dictionary on that date. 'accepted' lists other vendor:product pairs NVD has filed the same product under (a deprecated entry is followed only to the main pair or one of these). 'eol' is the endoflife.date product slug, when one exists. A product is left out rather than guessed.",
+  "products": [
+    {
+      "vendor": "apache",
+      "product": "http_server",
+      "product_name": "Apache HTTP Server",
+      "names": [
+        "Apache HTTP Server",
+        "Apache",
+        "Apache httpd",
+        "httpd"
+      ],
+      "eol": "apache-http-server",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "f5",
+      "product": "nginx",
+      "product_name": "nginx",
+      "accepted": [
+        "nginx:nginx"
+      ],
+      "names": [
+        "Nginx"
+      ],
+      "eol": "nginx",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "php",
+      "product": "php",
+      "product_name": "PHP",
+      "names": [
+        "PHP"
+      ],
+      "eol": "php",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "wordpress",
+      "product": "wordpress",
+      "product_name": "WordPress",
+      "names": [
+        "WordPress"
+      ],
+      "eol": "wordpress",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "jquery",
+      "product": "jquery",
+      "product_name": "jQuery",
+      "names": [
+        "jQuery"
+      ],
+      "eol": "jquery",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "openssl",
+      "product": "openssl",
+      "product_name": "OpenSSL",
+      "names": [
+        "OpenSSL"
+      ],
+      "eol": "openssl",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "microsoft",
+      "product": "internet_information_services",
+      "product_name": "Microsoft IIS",
+      "names": [
+        "IIS",
+        "Microsoft IIS",
+        "Microsoft-IIS"
+      ],
+      "eol": null,
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "apache",
+      "product": "tomcat",
+      "product_name": "Apache Tomcat",
+      "names": [
+        "Apache Tomcat",
+        "Tomcat"
+      ],
+      "eol": "tomcat",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "nodejs",
+      "product": "node.js",
+      "product_name": "Node.js",
+      "names": [
+        "Node.js"
+      ],
+      "eol": "nodejs",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "openjsf",
+      "product": "express",
+      "product_name": "Express",
+      "names": [
+        "Express",
+        "Express.js"
+      ],
+      "eol": "express",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "drupal",
+      "product": "drupal",
+      "product_name": "Drupal",
+      "names": [
+        "Drupal"
+      ],
+      "eol": "drupal",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "joomla",
+      "product": "joomla\\!",
+      "product_name": "Joomla",
+      "names": [
+        "Joomla",
+        "Joomla!"
+      ],
+      "eol": "joomla",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "getbootstrap",
+      "product": "bootstrap",
+      "product_name": "Bootstrap",
+      "names": [
+        "Bootstrap"
+      ],
+      "eol": "bootstrap",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "djangoproject",
+      "product": "django",
+      "product_name": "Django",
+      "names": [
+        "Django"
+      ],
+      "eol": "django",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "laravel",
+      "product": "laravel",
+      "product_name": "Laravel",
+      "names": [
+        "Laravel"
+      ],
+      "eol": "laravel",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "vmware",
+      "product": "spring_framework",
+      "product_name": "Spring Framework",
+      "names": [
+        "Spring Framework",
+        "Spring"
+      ],
+      "eol": "spring-framework",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "haproxy",
+      "product": "haproxy",
+      "product_name": "HAProxy",
+      "names": [
+        "HAProxy"
+      ],
+      "eol": "haproxy",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "product_name": "Jenkins",
+      "names": [
+        "Jenkins"
+      ],
+      "eol": "jenkins",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "gitlab",
+      "product": "gitlab",
+      "product_name": "GitLab",
+      "names": [
+        "GitLab"
+      ],
+      "eol": "gitlab",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "grafana",
+      "product": "grafana",
+      "product_name": "Grafana",
+      "names": [
+        "Grafana"
+      ],
+      "eol": "grafana",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "elastic",
+      "product": "kibana",
+      "product_name": "Kibana",
+      "names": [
+        "Kibana"
+      ],
+      "eol": "kibana",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "elastic",
+      "product": "elasticsearch",
+      "product_name": "Elasticsearch",
+      "names": [
+        "Elasticsearch"
+      ],
+      "eol": "elasticsearch",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "oracle",
+      "product": "mysql",
+      "product_name": "MySQL",
+      "accepted": [
+        "mysql:mysql"
+      ],
+      "names": [
+        "MySQL"
+      ],
+      "eol": "mysql",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "mariadb",
+      "product": "mariadb",
+      "product_name": "MariaDB",
+      "names": [
+        "MariaDB"
+      ],
+      "eol": "mariadb",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "postgresql",
+      "product": "postgresql",
+      "product_name": "PostgreSQL",
+      "names": [
+        "PostgreSQL"
+      ],
+      "eol": "postgresql",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "redis",
+      "product": "redis",
+      "product_name": "Redis",
+      "names": [
+        "Redis"
+      ],
+      "eol": "redis",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "mongodb",
+      "product": "mongodb",
+      "product_name": "MongoDB",
+      "names": [
+        "MongoDB"
+      ],
+      "eol": "mongodb",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "nextcloud",
+      "product": "nextcloud_server",
+      "product_name": "Nextcloud",
+      "names": [
+        "Nextcloud"
+      ],
+      "eol": "nextcloud",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "moodle",
+      "product": "moodle",
+      "product_name": "Moodle",
+      "names": [
+        "Moodle"
+      ],
+      "eol": "moodle",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "redhat",
+      "product": "keycloak",
+      "product_name": "Keycloak",
+      "names": [
+        "Keycloak"
+      ],
+      "eol": "keycloak",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "eclipse",
+      "product": "jetty",
+      "product_name": "Jetty",
+      "names": [
+        "Jetty"
+      ],
+      "eol": "eclipse-jetty",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "lighttpd",
+      "product": "lighttpd",
+      "product_name": "lighttpd",
+      "names": [
+        "lighttpd"
+      ],
+      "eol": null,
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "caddyserver",
+      "product": "caddy",
+      "product_name": "Caddy",
+      "names": [
+        "Caddy"
+      ],
+      "eol": "caddy",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "envoyproxy",
+      "product": "envoy",
+      "product_name": "Envoy",
+      "names": [
+        "Envoy"
+      ],
+      "eol": "envoy",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "traefik",
+      "product": "traefik",
+      "product_name": "Traefik",
+      "names": [
+        "Traefik",
+        "Traefik Proxy"
+      ],
+      "eol": "traefik",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "facebook",
+      "product": "react",
+      "product_name": "React",
+      "names": [
+        "React"
+      ],
+      "eol": "react",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "angular",
+      "product": "angular",
+      "product_name": "Angular",
+      "names": [
+        "Angular"
+      ],
+      "eol": "angular",
+      "from": "nvd_cpe_dictionary_2026-11-12"
+    },
+    {
+      "vendor": "angularjs",
+      "product": "angular.js",
+      "product_name": "AngularJS",
+      "names": [
+        "AngularJS"
+      ],
+      "eol": "angularjs",
+      "from": "wizard_catalog"
+    },
+    {
+      "vendor": "vuejs",
+      "product": "vue.js",
+      "product_name": "Vue.js",
+      "names": [
+        "Vue.js",
+        "Vue"
+      ],
+      "eol": "vue",
+      "from": "wizard_catalog"
+    }
+  ]
+}

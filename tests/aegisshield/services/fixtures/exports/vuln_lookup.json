@@ -1,0 +1,112 @@
+{
+  "status": "complete",
+  "started_at": "2026-11-13T10:00:00+00:00",
+  "finished_at": "2026-11-13T10:00:42+00:00",
+  "technologies": [
+    {
+      "name": "Django",
+      "version": "4.2.1",
+      "lookup_version": "4.2.1",
+      "product": "django",
+      "product_name": "Django",
+      "source": "profile",
+      "state": "vulnerabilities_found",
+      "reason": null,
+      "failed_source": null,
+      "cve_count": 2,
+      "critical_count": 1,
+      "high_count": 1,
+      "kev_count": 0,
+      "eol": {
+        "is_eol": false,
+        "cycle": "4.2",
+        "eol": "2026-04-30",
+        "url": "https://endoflife.date/django"
+      },
+      "note": null,
+      "description": "Django 4.2.1 has 2 known vulnerabilities.",
+      "cves": [
+        {
+          "cve_id": "CVE-2023-36053",
+          "cvss_score": 9.8,
+          "severity": "CRITICAL",
+          "published": "2023-07-03",
+          "description": "Potential regular expression denial of service in EmailValidator and URLValidator.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36053",
+          "known_exploited": false,
+          "epss": 0.0123,
+          "epss_percentile": 0.82
+        },
+        {
+          "cve_id": "CVE-2023-41164",
+          "cvss_score": 7.5,
+          "severity": "HIGH",
+          "published": "2023-11-03",
+          "description": "Potential denial of service in django.utils.encoding.uri_to_iri().",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41164",
+          "known_exploited": null
+        }
+      ],
+      "exploits": [],
+      "otx_pulses": [],
+      "errors": {}
+    },
+    {
+      "name": "PostgreSQL",
+      "version": "16.2",
+      "lookup_version": "16.2",
+      "product": "postgresql",
+      "product_name": "PostgreSQL",
+      "source": "profile",
+      "state": "checked_none_found",
+      "reason": null,
+      "failed_source": null,
+      "cve_count": 0,
+      "critical_count": 0,
+      "high_count": 0,
+      "kev_count": null,
+      "eol": null,
+      "note": null,
+      "description": "PostgreSQL 16.2 has no known vulnerabilities in NVD.",
+      "cves": [],
+      "exploits": [],
+      "otx_pulses": [],
+      "errors": {
+        "kev": "The KEV feed could not be loaded."
+      }
+    },
+    {
+      "name": "Redis",
+      "version": "",
+      "lookup_version": "",
+      "product": "redis",
+      "product_name": "Redis",
+      "source": "profile",
+      "state": "not_checked",
+      "reason": "no_version",
+      "failed_source": null,
+      "cve_count": null,
+      "critical_count": null,
+      "high_count": null,
+      "kev_count": null,
+      "eol": null,
+      "note": "Add a version to check this technology.",
+      "description": "Redis was not checked because no version was given.",
+      "cves": [],
+      "exploits": [],
+      "otx_pulses": [],
+      "errors": {}
+    }
+  ],
+  "summary": {
+    "tech_count": 3,
+    "checked_count": 2,
+    "not_checked_count": 1,
+    "cve_count": 2,
+    "critical_count": 1,
+    "high_count": 1,
+    "kev_count": null,
+    "exploit_count": 0,
+    "eol_count": 0
+  }
+}

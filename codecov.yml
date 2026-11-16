@@ -14,4 +14,11 @@ comment:
   behavior: default
   require_changes: false
   require_base: no
-  require_head: yes 
+  require_head: yes
+
+# Coverage is measured for aegisshield/ and main.py only (see .coveragerc);
+# research/ holds the paper's material and the frozen first-generation pipeline.
+ignore:
+  - "research/**"
+  - "tests/**"
+  - "tools/**"

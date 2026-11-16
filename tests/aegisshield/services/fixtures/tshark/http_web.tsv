@@ -1,0 +1,2 @@
+2.000000000	10.0.0.15	192.0.2.90	GET	legacy.example.com	/admin/config.php	sqlmap/1.7.2#stable
+2.100000000	10.0.0.15	192.0.2.90	GET	legacy.example.com	/index.html	Mozilla/5.0

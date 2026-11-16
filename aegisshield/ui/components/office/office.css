@@ -1,0 +1,75 @@
+/* The office's rules.
+
+   Two groups: the live roster panel and the vector office. Every selector is
+   prefixed with .aegis-office-root, the wrapper the shim builds, so no rule
+   can match an element outside the office; the keyframes are renamed with an
+   aegis-office prefix for the same reason. */
+
+/* Agentic threat model live roster */
+.aegis-office-root .agent-roster {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+}
+
+.aegis-office-root .agent-roster-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.aegis-office-root .agent-roster-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.aegis-office-root .agent-roster-sub {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Office shell frame */
+.aegis-office-root .agent-office {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #060b14;
+  overflow: hidden;
+}
+
+/* Office view */
+.aegis-office-root .office { position: relative; background: radial-gradient(ellipse at 50% 40%, #16213a, #0b1120); border-radius: var(--radius-md); height: 150px; overflow: hidden; border: 1px solid var(--border); }
+.aegis-office-root .office.lg { height: 400px; }
+.aegis-office-root .desk { position: absolute; width: 54px; text-align: center; }
+.aegis-office-root .desk .head { width: 26px; height: 26px; border-radius: 50%; margin: 0 auto; border: 2px solid rgba(255, 255, 255, .15); }
+.aegis-office-root .desk.lg .head { width: 34px; height: 34px; }
+.aegis-office-root .desk .lbl { font-size: .56rem; color: var(--text-soft); margin-top: 3px; font-family: var(--mono); }
+.aegis-office-root .desk.lg .lbl { font-size: .64rem; }
+.aegis-office-root .desk.working .head { animation: aegis-office-deskbob 1.2s ease-in-out infinite; box-shadow: 0 0 14px currentColor; }
+.aegis-office-root .desk.done .head { box-shadow: 0 0 8px currentColor; }
+@keyframes aegis-office-deskbob { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+.aegis-office-root .office .tag { position: absolute; bottom: 8px; left: 8px; z-index: 5; font-family: var(--mono); font-size: .6rem; color: var(--text-muted); background: rgba(8, 12, 20, .82); border: 1px solid var(--border); border-radius: 4px; padding: .1rem .35rem; }
+.aegis-office-root .office .rug { position: absolute; border-radius: 50%; border: 1px dashed rgba(148, 163, 184, .25); }
+.aegis-office-root .bubble { position: absolute; transform: translate(-50%, -100%); font-size: .56rem; font-family: var(--mono); color: var(--text-soft); background: rgba(8, 12, 20, .85); border: 1px solid var(--border); border-radius: 6px; padding: .1rem .35rem; white-space: nowrap; }
+
+/* Live vector office */
+.aegis-office-root .office-vector .office-desks { position: absolute; inset: 0; }
+.aegis-office-root .office-vector .desk { transform: translate(-50%, -50%); width: 64px; z-index: 1; }
+.aegis-office-root .office-vector .desk.working { z-index: 3; }
+.aegis-office-root .office-vector .desk .head { transition: box-shadow .2s ease; }
+.aegis-office-root .office-vector .desk.fallback .head { opacity: .45; filter: grayscale(1); box-shadow: none; }
+.aegis-office-root .office-vector .desk.error .head { box-shadow: 0 0 12px var(--crit); border-color: var(--crit); }
+.aegis-office-root .office-vector .desk .lbl { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 3px; white-space: nowrap; padding: 1px 5px; border-radius: 4px; background: rgba(8, 12, 20, .72); border: 1px solid var(--border); }
+.aegis-office-root .office-vector .desk.lead .lbl { color: var(--ag-lead); font-weight: 600; }
+.aegis-office-root .office-vector .desk .bubble { top: -6px; left: 50%; z-index: 4; }
+
+/* Traveling data packets */
+.aegis-office-root .office-vector .office-packets { position: absolute; inset: 0; pointer-events: none; }
+.aegis-office-root .office-vector .office-packet { position: absolute; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; border-radius: 50%; background: currentColor; box-shadow: 0 0 7px currentColor, 0 0 3px currentColor; }
