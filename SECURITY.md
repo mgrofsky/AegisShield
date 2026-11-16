@@ -18,7 +18,7 @@ Security fixes are made on the `main` branch only. There are no maintained relea
 If you discover a security vulnerability in AegisShield, please report it by:
 
 1. **DO NOT** open a public GitHub issue
-2. Email the maintainers directly with details including:
+2. Email [security@grofsky.com](mailto:security@grofsky.com) with details including:
    - Description of the vulnerability
    - Steps to reproduce
    - Potential impact
