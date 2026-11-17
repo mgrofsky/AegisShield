@@ -308,7 +308,7 @@ Run it without `--only` for every check. Screenshots and readings go to `build/b
 AEGIS_SMOKE_BEDROCK_API_KEY=... AEGIS_SMOKE_BEDROCK_REGION=us-east-1 python tools/provider_smoke.py --provider bedrock --real
 ```
 
-Contributor notes: only `aegisshield/ui` imports Streamlit; services take the model client as an argument; model names come from `aegisshield/config.py`; keys are passed by value and never stored. If you change code named in [NIST-SP-800-53-CONTROLS.md](NIST-SP-800-53-CONTROLS.md), update it and its JSON together.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to report a bug or send a pull request. Contributor notes: only `aegisshield/ui` imports Streamlit; services take the model client as an argument; model names come from `aegisshield/config.py`; keys are passed by value and never stored. If you change code named in [NIST-SP-800-53-CONTROLS.md](NIST-SP-800-53-CONTROLS.md), update it and its JSON together.
 
 ## Security and NIST SP 800-53
 
