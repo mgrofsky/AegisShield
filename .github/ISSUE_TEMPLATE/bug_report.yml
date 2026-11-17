@@ -1,0 +1,64 @@
+name: Bug report
+description: Something in the app is broken or gives a wrong result
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report a security vulnerability here. See [SECURITY.md](https://github.com/mgrofsky/AegisShield/blob/main/SECURITY.md).
+        Remove API keys, internal host names, and anything private from what you paste.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the page ...
+        2. Choose ...
+        3. See ...
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where it happened
+      options:
+        - Threat-model wizard
+        - Vulnerability lookup
+        - Policies
+        - PCAP analysis
+        - AI workflow scan
+        - Settings or dashboard
+        - Exports
+        - Something else
+    validations:
+      required: true
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Model provider
+      options:
+        - Mock mode
+        - Claude
+        - Amazon Bedrock
+        - OpenAI
+        - Gemini
+        - Not relevant
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: How you run it
+      description: Local, Docker, or Streamlit Community Cloud, with the commit and Python version if you know them.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error text or log lines
+      render: text
