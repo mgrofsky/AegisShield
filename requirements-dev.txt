@@ -3,10 +3,10 @@
 #          python -m playwright install chromium   (for tools/browser_check.py)
 pytest==9.2.0
 pytest-cov==7.1.0
-ruff==0.17.5
-playwright==1.65.1
+ruff==0.17.6
+playwright==1.65.2
 # The PDF tests read the rendered files back (pypdf also comes with xhtml2pdf).
-pypdf==7.1.0
+pypdf==7.1.1
 
 # The tests use the installed openai SDK's HTTP library directly (it comes with openai).
-httpx2==2.16.0
+httpx2==2.16.2
